@@ -66,6 +66,6 @@ These are the tools (or tech) we're using in this repo. The list would increase 
 
 - [ChakraUI v2](https://v2.chakra-ui.com/) for our design system and UI components. Note we're using ChakraUI's v2 as opposed to the latest version 3 which includes a lot of breaking changes that are not backward compatible
 - Icons set from [Lucide](https://lucide.dev/icons/)
-- Slider carousel from [embbla](https://www.embla-carousel.com/)
+- Slider carousel from [embla](https://www.embla-carousel.com/)
 
 
