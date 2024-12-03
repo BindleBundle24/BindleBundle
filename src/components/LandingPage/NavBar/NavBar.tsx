@@ -20,8 +20,8 @@ import CloseBtn from "@/components/Icons/CloseBtn";
 
 const NavBar = () => {
   return (
-    <div className="bg-white w-full h-[72px] flex justify-center items-center shadow-sm  border-b border-[#D4CACA] relative">
-      <div className="bg-transparent w-[358px] md:w-[1257px] flex justify-between items-center  h-12 mx-auto">
+    <div className="bg-white w-full h-[72px] flex justify-center items-center relative">
+      <div className="bg-transparent w-[358px] md:w-[1257px] flex justify-between py-5 items-center shadown-sm  border-b border-[#D4CACA]  md:h-16 mx-auto">
         <div className="flex justify-between md:justify-start items-center w-full md:w-[630px] gap-[37px]">
           {" "}
           <Link

@@ -1,47 +1,95 @@
-import { Accordion, HStack } from "@chakra-ui/react"
-import * as React from "react"
-import { LuChevronDown } from "react-icons/lu"
+import {
+  AccordionItem,
+  AccordionItemContent,
+  AccordionItemTrigger,
+  AccordionRoot,
+} from "@chakra-ui/react";
+import React, { useState } from "react";
 
-interface AccordionItemTriggerProps extends Accordion.ItemTriggerProps {
-  indicatorPlacement?: "start" | "end"
+import { Minus, Plus } from "lucide-react";
+
+interface AccordionLayoutProps {
+  children: React.ReactNode;
+  title: string;
 }
 
-export const AccordionItemTrigger = React.forwardRef<
-  HTMLButtonElement,
-  AccordionItemTriggerProps
->(function AccordionItemTrigger(props, ref) {
-  const { children, indicatorPlacement = "end", ...rest } = props
+export const AccordionLayout = ({ title, children }: AccordionLayoutProps) => {
   return (
-    <Accordion.ItemTrigger {...rest} ref={ref}>
-      {indicatorPlacement === "start" && (
-        <Accordion.ItemIndicator rotate={{ base: "-90deg", _open: "0deg" }}>
-          <LuChevronDown />
-        </Accordion.ItemIndicator>
-      )}
-      <HStack gap="4" flex="1" textAlign="start" width="full">
-        {children}
-      </HStack>
-      {indicatorPlacement === "end" && (
-        <Accordion.ItemIndicator>
-          <LuChevronDown />
-        </Accordion.ItemIndicator>
-      )}
-    </Accordion.ItemTrigger>
-  )
-})
+    <AccordionRoot collapsible>
+      <AccordionItem value="item-1">
+        <AccordionItemTrigger>
+          <span
+            style={{
+              fontSize: "18px",
+              fontWeight: 500,
+              lineHeight: "24px",
+              color: "#000000",
+            }}
+          >
+            {title}
+          </span>
+        </AccordionItemTrigger>
+        <AccordionItemContent>{children}</AccordionItemContent>
+      </AccordionItem>
+    </AccordionRoot>
+  );
+};
 
-interface AccordionItemContentProps extends Accordion.ItemContentProps {}
+export const FaqAccordion = ({ title, children }: AccordionLayoutProps) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-export const AccordionItemContent = React.forwardRef<
-  HTMLDivElement,
-  AccordionItemContentProps
->(function AccordionItemContent(props, ref) {
+  const handleToggle = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   return (
-    <Accordion.ItemContent>
-      <Accordion.ItemBody {...props} ref={ref} />
-    </Accordion.ItemContent>
-  )
-})
-
-export const AccordionRoot = Accordion.Root
-export const AccordionItem = Accordion.Item
+    <AccordionRoot
+      collapsible
+      className={`w-full md:w-[716px] border-b-[0.5px] border-[#706E6E] ${
+        isOpen ? "pb-4" : ""
+      }`}
+    >
+      <AccordionItem
+        value="faq-1"
+        className={`${
+          isOpen
+            ? "bg-[#FCF7F1] rounded-3xl flex flex-col gap-3  p-4 w-full"
+            : ""
+        }  `}
+      >
+        <AccordionItemTrigger onClick={handleToggle}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              padding: isOpen ? "0" : "0.8em 0.5em",
+              fontSize: "18px",
+              fontWeight: 400,
+              lineHeight: "24px",
+              color: "#000000",
+              width: "100%",
+            }}
+          >
+            <span>{title}</span>
+            <span style={{ display: "flex", alignItems: "center" }}>
+              {isOpen ? (
+                <Minus size={24} color="#75D130" />
+              ) : (
+                <Plus size={24} color="#75D130" />
+              )}
+            </span>
+          </div>
+        </AccordionItemTrigger>
+        {isOpen && (
+          <AccordionItemContent
+            style={{ fontSize: "16px", color: "#555555" }}
+            width={{ lg: "558px", base: "100%", md: "100%" }}
+          >
+            {children}
+          </AccordionItemContent>
+        )}
+      </AccordionItem>
+    </AccordionRoot>
+  );
+};

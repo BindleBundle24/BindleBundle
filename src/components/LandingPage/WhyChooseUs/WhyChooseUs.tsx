@@ -30,7 +30,10 @@ const whyChooseUSDetails = [
 ];
 
 const WhyChooseUs = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [AutoScroll()]);
+  const [
+    emblaRef,
+    // emblaApi
+  ] = useEmblaCarousel({ loop: true }, [AutoScroll()]);
   return (
     <Box position="">
       <Box className="">

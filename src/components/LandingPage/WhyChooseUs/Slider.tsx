@@ -6,14 +6,14 @@ interface movingType {
     name: string;
     description: string;
     img: string;
-    bgImg: string;
+    bgImg?: string;
   }[];
 }
 
 export const Slider = ({ data }: movingType) => {
   return (
     <>
-      {data.map(({ name, description, bgImg, img }, index: number) => {
+      {data.map(({ name, description, img }, index: number) => {
         return (
           <Card.Root
             key={index}

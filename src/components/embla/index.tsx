@@ -5,8 +5,8 @@ import {
   EmblaOptionsType,
 } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import { usePrevNextButtons } from "./arrow-buttons";
-import { DotButton, useDotButton } from "./dot-button";
+// import { usePrevNextButtons } from "./arrow-buttons";
+// import { DotButton, useDotButton } from "./dot-button";
 import Autoplay from "embla-carousel-autoplay";
 import { Image } from "@chakra-ui/react";
 
@@ -27,15 +27,15 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const tweenFactor = useRef(0);
   const tweenNodes = useRef<HTMLElement[]>([]);
 
-  const { selectedIndex, scrollSnaps, onDotButtonClick } =
-    useDotButton(emblaApi);
+  // const { selectedIndex, scrollSnaps, onDotButtonClick } =
+  //   useDotButton(emblaApi);
 
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-  } = usePrevNextButtons(emblaApi);
+  // const {
+  //   prevBtnDisabled,
+  //   nextBtnDisabled,
+  //   onPrevButtonClick,
+  //   onNextButtonClick,
+  // } = usePrevNextButtons(emblaApi);
 
   const setTweenNodes = useCallback((emblaApi: EmblaCarouselType): void => {
     tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
@@ -117,7 +117,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       </div>
 
       <div className="embla__controls">
-        <div className="embla__dots">
+        {/* <div className="embla__dots">
           {scrollSnaps.map((_: any, index: number) => (
             <DotButton
               key={index}
@@ -127,7 +127,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               )}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

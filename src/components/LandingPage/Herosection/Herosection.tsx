@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Input, Text, Button } from "@chakra-ui/react";
 import { MapPin } from "lucide-react";
 
-const Herosection = () => {
+export const Herosection = () => {
   return (
     <div className="w-full flex justify-center items-center  flex-col pt-[39px] md:pt-[59px]">
       <div className="w-[371px] sm:w-[1016px] mx-auto flex flex-col justify-center items-center">
@@ -29,7 +29,7 @@ const Herosection = () => {
           <MapPin className="w-[19px] h-[19px]" />
           <Input
             placeholder={` Pick-Up`}
-            className=" border-none placeholder:text-[#878484] placeholder:font-medium"
+            className=" outline-none placeholder:text-[#878484] placeholder:font-medium"
           />
         </Box>
         <Box
@@ -43,7 +43,7 @@ const Herosection = () => {
           <MapPin className="w-[19px] h-[19px]" />
           <Input
             placeholder={` Drop-Off`}
-            className=" border-none placeholder:text-[#878484] placeholder:font-medium"
+            className=" outline-none placeholder:text-[#878484] placeholder:font-medium"
           />
         </Box>
         <Button
@@ -56,5 +56,3 @@ const Herosection = () => {
     </div>
   );
 };
-
-export default Herosection;
