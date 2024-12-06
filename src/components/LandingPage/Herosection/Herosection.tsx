@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Box, Input, Text, Button, Heading } from "@chakra-ui/react";
 import { MapPin } from "lucide-react";

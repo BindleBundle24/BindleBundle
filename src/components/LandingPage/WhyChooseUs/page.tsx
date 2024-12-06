@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { WhyHireUs } from "./WhyHireUs";
 import { MoreAboutUs } from "./MoreAboutUs";
