@@ -10,22 +10,22 @@ const whyChooseUSDetails = [
     name: "Full Service Moving",
     description:
       "Our full-service moving package covers everything! From packing and loading to transportation, unloading, and even unpacking, Bindle Bundle handles your move from start to finish. It’s the ultimate stress-free solution for a seamless relocation experience",
-    img: "/src/components/Assests/why-choose-us-1.png",
-    bgImg: "/src/components/Assests/bg-why-choose-us.png",
+    img: "/src/components/Assets/why-choose-us-1.png",
+    bgImg: "/src/components/Assets/bg-why-choose-us.png",
   },
   {
     name: "Full Service Moving",
     description:
       "Our full-service moving package covers everything! From packing and loading to transportation, unloading, and even unpacking, Bindle Bundle handles your move from start to finish. It’s the ultimate stress-free solution for a seamless relocation experience",
-    img: "/src/components/Assests/why-choose-us-1.png",
-    bgImg: "/src/components/Assests/bg-why-choose-us.png",
+    img: "/src/components/Assets/why-choose-us-1.png",
+    bgImg: "/src/components/Assets/bg-why-choose-us.png",
   },
   {
     name: "Full Service Moving",
     description:
       "Our full-service moving package covers everything! From packing and loading to transportation, unloading, and even unpacking, Bindle Bundle handles your move from start to finish. It’s the ultimate stress-free solution for a seamless relocation experience",
-    img: "/src/components/Assests/why-choose-us-1.png",
-    bgImg: "/src/components/Assests/bg-why-choose-us.png",
+    img: "/src/components/Assets/why-choose-us-1.png",
+    bgImg: "/src/components/Assets/bg-why-choose-us.png",
   },
 ];
 

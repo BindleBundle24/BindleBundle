@@ -4,7 +4,7 @@ import React from "react";
 import Autoscroll from "embla-carousel-auto-scroll";
 import useEmblaCarousel from "embla-carousel-react";
 import Location from "@/components/Icons/Location";
-import moreImg from "@/components/Assests/more-Img.png";
+import moreImg from "@/components/Assets/more-Img.png";
 
 const SKEWED_CONTENT1 = [
   "Calgary",

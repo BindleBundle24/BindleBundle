@@ -14,7 +14,7 @@ import {
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/components/Assests/logo.svg";
+import logo from "@/components/Assets/logo.svg";
 import Menu from "@/components/Icons/Menu";
 import CloseBtn from "@/components/Icons/CloseBtn";
 

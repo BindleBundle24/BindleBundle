@@ -2,7 +2,7 @@ import { Box, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import logo from "@/components/Assests/logo.svg";
+import logo from "@/components/Assets/logo.svg";
 
 const Footer = () => {
   return (
