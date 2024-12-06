@@ -100,7 +100,7 @@ export const MoreAboutUs = () => {
         </Box>
         <Box
           height={{ md: "34px", base: "34px" }}
-          width={{ md: "563px", base: "393px" }}
+          width={"100%"}
           mt={{ lg: "2em", md: "2em", base: "2.8em" }}
           className="bg-tranasparent"
         >
