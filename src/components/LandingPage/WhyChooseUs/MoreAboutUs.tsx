@@ -35,7 +35,7 @@ export const MoreAboutUs = () => {
   ]);
 
   return (
-    <div className="flex flex-col md:flex-row gap-[23px] md:gap-0 justify-between items-center w-[354px] md:w-full">
+    <div className="flex flex-col md:flex-row gap-[23px] md:gap-0 justify-between items-start w-[354px] md:w-full">
       <Box
         width={{ base: "343px", md: "719px" }}
         height={{ base: "419px", md: "685px" }}
@@ -52,7 +52,7 @@ export const MoreAboutUs = () => {
         </Text>
         <Text
           className="w-full md:text-[22px] text-[#595959]"
-          lineHeight={{ md: "19.68px", base: "27.06px" }}
+          lineHeight={{ md: "25px", base: "27.06px" }}
         >
           Based in Canada, Bindle Bundle ensures every move is easy, efficient,
           and stress-free. We serve families, businesses, and individuals across
@@ -66,10 +66,10 @@ export const MoreAboutUs = () => {
           />
         </div>
       </Box>
-      <div>
+      <div className="md:mt-48">
         <Box
           height={{ md: "34px", base: "34px" }}
-          width={{ md: "563px", base: "100%" }}
+          width={{ md: "563px", base: "393px" }}
           mt={{ lg: "2em", md: "2em", base: "1rem" }}
         >
           <Box className="overflow-hidden dela " ref={emblaRef}>
@@ -99,7 +99,7 @@ export const MoreAboutUs = () => {
         </Box>
         <Box
           height={{ md: "34px", base: "34px" }}
-          width={{ md: "563px", base: "100%" }}
+          width={{ md: "563px", base: "393px" }}
           mt={{ lg: "2em", md: "2em", base: "2.8em" }}
           className="bg-tranasparent"
         >

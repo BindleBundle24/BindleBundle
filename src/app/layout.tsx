@@ -20,6 +20,20 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Bindle Bundle",
   description: "A moving Company",
+  icons: {
+    icon: "/assets/logo.svg",
+    apple: "/assets/logo.svg",
+  },
+  openGraph: {
+    images: [
+      {
+        url: "/assets/logo.svg",
+        width: 1200,
+        height: 630,
+        alt: "Bindle Bundle Logo",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
