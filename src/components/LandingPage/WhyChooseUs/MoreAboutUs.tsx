@@ -35,13 +35,14 @@ export const MoreAboutUs = () => {
   ]);
 
   return (
-    <div className="flex flex-col md:flex-row gap-[23px] md:gap-0 justify-between items-start w-[354px] md:w-full">
+    <div className="flex flex-col md:flex-row gap-[23px] md:gap-0 justify-between items-start  py-5 md:py-0 w-full">
       <Box
         width={{ base: "343px", md: "719px" }}
         height={{ base: "419px", md: "685px" }}
         display={"flex"}
         flexDirection={"column"}
         gapY={{ base: "23px", md: "12px" }}
+        className="px-6 md:px-0"
       >
         <Text
           className="font-medium w-full "
@@ -66,13 +67,13 @@ export const MoreAboutUs = () => {
           />
         </div>
       </Box>
-      <div className="md:mt-48">
+      <div className="md:mt-48 w-screen md:w-[563px] ">
         <Box
           height={{ md: "34px", base: "34px" }}
-          width={{ md: "563px", base: "393px" }}
+          width={"100%"}
           mt={{ lg: "2em", md: "2em", base: "1rem" }}
         >
-          <Box className="overflow-hidden dela " ref={emblaRef}>
+          <Box className="overflow-hidden" ref={emblaRef}>
             <Box className="flex">
               {SKEWED_CONTENT1?.map((item, index) => {
                 return (

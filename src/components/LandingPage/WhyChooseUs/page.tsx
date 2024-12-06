@@ -5,7 +5,7 @@ import { MoreAboutUs } from "./MoreAboutUs";
 
 export const WhyChooseUsSection = () => {
   return (
-    <div className="flex w-[w-[371px] flex-col  md:w-[1257px] mx-auto justify-between gap-y-8  items-start px-6 md:px-0">
+    <div className="flex w-[w-[371px] flex-col  md:w-[1257px] mx-auto justify-between gap-y-8  items-start  md:px-0">
       <WhyHireUs />
       <MoreAboutUs />
     </div>

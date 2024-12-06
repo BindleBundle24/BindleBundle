@@ -58,14 +58,14 @@ const WhyHireUsCard = ({ icon, title, description }: WhyHireUsCardProps) => {
 
 export const WhyHireUs = () => {
   return (
-    <div className="w-full flex justify-between items-start flex-col md:flex-row">
+    <div className="w-full flex justify-between items-start flex-col md:flex-row px-6 md:px-0">
       <Box
         display={"flex"}
         flexDirection={"column"}
         gapY={"30px"}
         justifyContent={"between"}
         alignItems={"start"}
-        className="mt-28"
+        className="mt-10 md:mt-28"
       >
         <Heading
           className="font-medium w-[354px]  md:w-[470px] text-[36px] md:text-[36px]  text-left
