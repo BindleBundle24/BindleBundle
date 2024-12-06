@@ -53,7 +53,7 @@ export const FAQs = () => {
     <Box
       my="2em"
       mb="2em"
-      className="w-full md:w-[779px] flex flex-col gap-[43px] justify-start "
+      className="w-full md:w-[779px] flex flex-col md:gap-[43px] justify-start "
     >
       <SectionTitle text="Frequently Asked Questions" color="#383838" />
 

@@ -17,7 +17,7 @@ export const ContactUs = () => {
       justifyContent="start"
       alignItems={{ lg: "start", base: "", md: "" }}
       gapY={"25px"}
-      className="w-full md:w-[411px] md:h-[462px] bg-[#FCF7F1] rounded-[6px]"
+      className="w-full md:w-[411px] h-[462px] bg-[#FCF7F1] rounded-[6px]"
     >
       <Text className="text-[#878484] font-medium " lineHeight={"17.22px"}>
         CONTACT US

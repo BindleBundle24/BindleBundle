@@ -30,7 +30,7 @@ export const SectionTitle = ({
       color={color}
       position="relative"
       fontWeight="500"
-      fontSize={{ lg: "56px", md: "36px", base: "16px" }}
+      fontSize={{ lg: "56px", md: "36px", base: "36px" }}
       lineHeight="43px"
       width={{ xl: "fit-content", base: "fit-content", md: "fit-content" }}
     >

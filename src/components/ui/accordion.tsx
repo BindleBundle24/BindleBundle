@@ -64,14 +64,13 @@ export const FaqAccordion = ({ title, children }: AccordionLayoutProps) => {
               justifyContent: "space-between",
               alignItems: "center",
               padding: isOpen ? "0" : "0.8em 0.5em",
-              fontSize: "18px",
               fontWeight: 400,
               lineHeight: "24px",
               color: "#000000",
               width: "100%",
             }}
           >
-            <span>{title}</span>
+            <span className="md:text-[18px] text-left">{title}</span>
             <span style={{ display: "flex", alignItems: "center" }}>
               {isOpen ? (
                 <Minus size={24} color="#75D130" />
