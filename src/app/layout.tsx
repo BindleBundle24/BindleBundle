@@ -3,16 +3,15 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/LandingPage/Footer/Footer";
 import NavBar from "@/components/LandingPage/NavBar/NavBar";
-
 import { Provider } from "@/components/ui/provider";
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+  src: "./fonts/ClashGrotesk-Regular.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+  src: "./fonts/ClashGrotesk-Variable.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
 });

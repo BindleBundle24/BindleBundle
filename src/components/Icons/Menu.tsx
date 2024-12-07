@@ -12,20 +12,20 @@ const Menu = () => {
       <path
         d="M24 1H7"
         stroke="#706E6E"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <path
         d="M24 9H1"
         stroke="#706E6E"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <path
         d="M24 17H1"
         stroke="#706E6E"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
     </svg>
   );

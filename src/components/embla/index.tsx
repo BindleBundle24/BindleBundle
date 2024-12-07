@@ -100,7 +100,15 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       .on("reInit", setTweenFactor)
       .on("reInit", tweenScale)
       .on("scroll", tweenScale);
-  }, [emblaApi, tweenScale]);
+
+    return () => {
+      emblaApi
+        .off("reInit", setTweenNodes)
+        .off("reInit", setTweenFactor)
+        .off("reInit", tweenScale)
+        .off("scroll", tweenScale);
+    };
+  }, [emblaApi, setTweenNodes, setTweenFactor, tweenScale]);
 
   return (
     <div className="embla  hero__slide">

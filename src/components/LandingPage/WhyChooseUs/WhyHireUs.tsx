@@ -82,7 +82,7 @@ export const WhyHireUs = () => {
           Hire us now
         </Button>
       </Box>
-      <Box className="flex flex-wrap mt-10 md:mt-0 justify-center md:justify-between gap-[25px] md:gap-8 w-[341px] h-[330px] md:h-[697px] md:w-[746px] ">
+      <Box className="flex flex-wrap mt-10 md:mt-0 justify-center items-center mx-auto md:justify-between gap-[25px] md:gap-8 w-[341px] h-[330px] md:h-[697px] md:w-[746px] ">
         {whyHireUsDetails.map((detail, idx) => {
           return (
             <WhyHireUsCard

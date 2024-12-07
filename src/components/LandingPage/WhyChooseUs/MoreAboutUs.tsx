@@ -31,13 +31,13 @@ const SKEWED_CONTENT2 = [
 export const MoreAboutUs = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoscroll()]);
   const [emblaRef2] = useEmblaCarousel({ loop: true }, [
-    Autoscroll({ startDelay: 3000 }),
+    Autoscroll({ startDelay: 3000, direction: "backward" }),
   ]);
 
   return (
-    <div className="flex flex-col md:flex-row gap-[23px] md:gap-0 justify-between items-start  py-5 md:py-0 w-full">
+    <div className="flex flex-col md:flex-row gap-[23px] md:gap-0 justify-center md:justify-between items-start  py-5 md:py-0 w-full">
       <Box
-        width={{ base: "343px", md: "719px" }}
+        width={{ base: "100%", md: "719px" }}
         height={{ base: "419px", md: "685px" }}
         display={"flex"}
         flexDirection={"column"}
@@ -47,7 +47,7 @@ export const MoreAboutUs = () => {
         <Text
           className="font-medium w-full "
           fontSize={{ md: "56px", base: "36px" }}
-          lineHeight={{ md: "56px", base: "31px" }}
+          lineHeight={{ md: "56px", base: "38px" }}
         >
           More about us at Bindle Bundle
         </Text>
