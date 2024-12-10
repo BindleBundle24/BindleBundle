@@ -1,9 +1,8 @@
-import Clock from "@/components/Icons/Clock";
-import NotePad from "@/components/Icons/NotePad";
-import People from "@/components/Icons/People";
-import Shield from "@/components/Icons/Shield";
-import { Box, Text, Button, Heading } from "@chakra-ui/react";
+import { Box, Text, Button } from "@chakra-ui/react";
 import React from "react";
+import { UsersThree, Clock, ShieldCheck, Notepad } from "@phosphor-icons/react";
+import Image from "next/image";
+import bgCard from "@/components/Assets/bg-more-details-card.png";
 
 interface WhyHireUsCardProps {
   icon: React.ReactNode;
@@ -13,24 +12,24 @@ interface WhyHireUsCardProps {
 
 const whyHireUsDetails = [
   {
-    icon: <Clock />,
+    icon: <Clock className="md:w-[47px] md:h-[47px] w-6 h-6" />,
     title: "Prompt & Time Effective Drop-Off",
     description: "Punctual service you can count on, every single time",
   },
   {
-    icon: <Shield />,
+    icon: <ShieldCheck className="md:w-[47px] md:h-[47px] w-6 h-6" />,
     title: "Licensed & Insured",
     description:
       "Your peace of mind is our priority—your move is fully protected",
   },
   {
-    icon: <NotePad />,
+    icon: <Notepad className="md:w-[47px] md:h-[47px] w-6 h-6" />,
     title: "Instant Quotes",
     description:
       "Know your moving costs upfront with our quick and transparent quoting tool",
   },
   {
-    icon: <People />,
+    icon: <UsersThree className="md:w-[47px] md:h-[47px] w-6 h-6" />,
     title: "Responsive Team",
     description:
       "effective communication and swift action to meet customer needs",
@@ -46,8 +45,10 @@ const WhyHireUsCard = ({ icon, title, description }: WhyHireUsCardProps) => {
       justifyContent={"space-evenly"}
       alignItems={"start"}
     >
-      <Text className="w-[24px] h-[24px] md:w-[47px] md:h-[47px]">{icon}</Text>
-      <Text className="font-medium md:text-[30px] text-[#575757]">{title}</Text>
+      {icon}
+      <Text className="font-medium md:text-[30px] px-1 text-[#575757]">
+        {title}
+      </Text>
       <Text className="w-[136px] md:w-[219px] bg-transparent h-[1px] group-hover:bg-[#75D130] transition-all duration-300"></Text>
       <Text className="text-[12px] md:text-[20px] text-[#3B3A3A]">
         {description}
@@ -58,23 +59,23 @@ const WhyHireUsCard = ({ icon, title, description }: WhyHireUsCardProps) => {
 
 export const WhyHireUs = () => {
   return (
-    <div className="w-full flex justify-between items-start flex-col md:flex-row px-6 md:px-0">
+    <div className="w-full flex justify-between mx-auto items-start flex-col md:flex-row  bg-[url('/assets/bg-more-details.svg')] bg-repeat  ">
       <Box
         display={"flex"}
         flexDirection={"column"}
         gapY={"30px"}
         justifyContent={"between"}
         alignItems={"start"}
-        className="mt-10 md:mt-28"
+        className="mt-10 md:mt-28 px-6 md:px-0"
       >
-        <Heading
-          className="font-medium w-[354px]  md:w-[470px] text-[36px] md:text-[36px]  text-left
+        <Text
+          className="font-medium w-full  md:w-[470px] text-[36px] md:text-[36px]  text-left
         "
           lineHeight={{ base: "41px", md: "56px" }}
         >
           Why you should <br className="hidden md:flex" />
           hire <span className="text-[#75D130]  ">Bindle Bundle</span>
-        </Heading>{" "}
+        </Text>{" "}
         <Button
           className="flex justify-center items-center py-[13px] px-[26px] w-[136px] md:w-[224px] h-[46px] md:h-[52px] bg-[#051937] text-white text-[16px] font-medium"
           borderRadius="33px"
@@ -82,7 +83,7 @@ export const WhyHireUs = () => {
           Hire us now
         </Button>
       </Box>
-      <Box className="flex flex-wrap mt-10 md:mt-0 justify-center items-center mx-auto md:justify-between gap-[25px] md:gap-8 w-[341px] h-[330px] md:h-[697px] md:w-[746px] ">
+      <Box className="flex flex-wrap mt-10 md:mt-0 justify-center items-center mx-auto md:justify-between gap-[25px] md:gap-8 w-full h-[330px] md:h-[697px] md:w-[746px] relative">
         {whyHireUsDetails.map((detail, idx) => {
           return (
             <WhyHireUsCard
@@ -93,6 +94,9 @@ export const WhyHireUs = () => {
             />
           );
         })}
+        <div className="hidden  md:w-[585px] md:h-[585px] md:flex justify-center items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ">
+          <Image src={bgCard} alt="" className="object-center w-full h-full" />
+        </div>
       </Box>
     </div>
   );

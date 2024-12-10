@@ -1,74 +1,72 @@
-import { Box, Card, Text, CardBody, Image } from "@chakra-ui/react";
+import { Text, Button } from "@chakra-ui/react";
 import React from "react";
-
+import whyChooseUsImg from "@/components/Assets/why-choose-us-1.png";
+import Image from "next/image";
+import useEmblaCarousel from "embla-carousel-react";
+import {
+  NextButton,
+  PrevButton,
+  usePrevNextButtons,
+} from "@/components/embla/arrow-buttons";
 interface movingType {
   data: {
     name: string;
     description: string;
-    img: string;
-    bgImg?: string;
   }[];
 }
 
 export const Slider = ({ data }: movingType) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
+
   return (
-    <>
-      {data.map(({ name, description, img }, index: number) => {
-        return (
-          <Card.Root
-            key={index}
-            borderRadius="8px"
-            background="#fff"
-            height={{ lg: "515px", md: "400px", base: "340px" }}
-            width={{ lg: "370px", md: "225px", base: "50%" }}
-            className="embla__slide"
-            boxShadow="2px 4px 22px 0px #00000014"
-          >
-            <Box height={{ lg: "375px", md: "68%", base: "65%" }}>
-              <Image
-                src={img}
-                alt="popular item"
-                height="100%"
-                width="100%"
-                objectFit="cover"
-                borderTopLeftRadius="8px"
-                borderTopRightRadius="8px"
-              />
-            </Box>
+    <div className="w-full md:w-[1261px] h-[453px] md:h-[515px] flex justify-between items-center">
+      <div className="w-full h-[386px]  md:py-10 md:h-full md:w-[600px] md:px-10 md:pt-5 flex flex-col justify-between md:gap-10">
+        <div className="embla__viewport w-full " ref={emblaRef}>
+          <div className="embla__container w-full h-full">
+            {data.map(({ name, description }, index: number) => (
+              <div className="embla__slide" key={index}>
+                <div className="flex flex-col w-full text-white md:gap-y-[13px]">
+                  <Text
+                    fontSize={{ base: "36px", md: "60px" }}
+                    className="font-medium pl-3"
+                    lineHeight={{ md: "71px" }}
+                  >
+                    {name}
+                  </Text>
+                  <Text
+                    fontSize={{ base: "16px", md: "22px" }}
+                    className="md:font-medium px-3"
+                    lineHeight={{ md: "27px", base: "24px" }}
+                  >
+                    {description}
+                  </Text>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
-            <CardBody px="1.2em" pb={{ lg: ".6em", md: "0", base: ".3em" }}>
-              <Text
-                py=".2em"
-                fontWeight="400"
-                textTransform="capitalize"
-                fontSize={{ lg: "20px", md: "20px", base: "14px" }}
-                lineHeight={{ lg: "32px", base: "27px", md: "27px" }}
-                color="var(--alt-text-6)"
-              ></Text>
+        <div className="pl-3  w-[150px] flex gap-x-5 justify-between ">
+          <PrevButton onClick={onPrevButtonClick} />
+          <NextButton onClick={onNextButtonClick} />
+        </div>
 
-              <Box>
-                <Text
-                  fontWeight="400"
-                  color="#706E6E"
-                  fontSize={{ lg: "18px", md: "16px", base: "14px" }}
-                  lineHeight={{ lg: "32px", base: "27px", md: "27px" }}
-                >
-                  From {name}
-                </Text>
+        <Button
+          className="flex justify-center items-center py-[13px] px-[26px] ml-3 w-[136px] h-[46px]  bg-[#75D130] text-white text-[16px] font-medium"
+          borderRadius="33px"
+        >
+          Learn more
+        </Button>
+      </div>
 
-                <Text
-                  fontWeight="500"
-                  fontSize={{ lg: "28px", md: "20px", base: "18px" }}
-                  color="var(--alt-text-6)"
-                  lineHeight={{ lg: "32px", base: "27px", md: "27px" }}
-                >
-                  {description}
-                </Text>
-              </Box>
-            </CardBody>
-          </Card.Root>
-        );
-      })}
-    </>
+      <div className="w-full h-full md:w-[674px] hidden md:flex justify-end items-center">
+        <Image
+          src={whyChooseUsImg}
+          alt="an image showing a man carrying some boxes"
+          className="object-center w-full h-full"
+        />
+      </div>
+    </div>
   );
 };

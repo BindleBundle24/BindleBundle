@@ -1,8 +1,11 @@
 import { Box, Text, Input, Button, Fieldset, Textarea } from "@chakra-ui/react";
 import React from "react";
-import { UserRound, Smartphone } from "lucide-react";
-import { Email } from "@/components/Icons/Email";
 import { Field } from "@/components/ui/field";
+import {
+  User,
+  EnvelopeSimple,
+  DeviceMobileCamera,
+} from "@phosphor-icons/react";
 
 export const ContactUs = () => {
   const formSubmit = () => {
@@ -11,13 +14,13 @@ export const ContactUs = () => {
   return (
     <Box
       my="2em"
-      padding="1em"
       display="flex"
       flexFlow="column"
-      justifyContent="start"
+      justifyContent={{ lg: "start", base: "", md: "" }}
+      justifySelf={"center"}
       alignItems={{ lg: "start", base: "", md: "" }}
       gapY={"25px"}
-      className="w-full md:w-[411px] h-[462px] bg-[#FCF7F1] rounded-[6px]"
+      className="w-full md:w-[411px] h-[462px] bg-[#FCF7F1] rounded-[6px] px-[0.6em] py-[1em] md:px-[1em]"
     >
       <Text className="text-[#878484] font-medium " lineHeight={"17.22px"}>
         CONTACT US
@@ -37,7 +40,7 @@ export const ContactUs = () => {
                 gapX="7px"
               >
                 {" "}
-                <UserRound className="w-[19px] h-[19px]" />
+                <User size={20} />{" "}
                 <Input
                   placeholder={` full name`}
                   className=" outline-none placeholder:text-[#878484] placeholder:font-medium px-2"
@@ -55,7 +58,7 @@ export const ContactUs = () => {
                 gapX="7px"
               >
                 {" "}
-                <Email />
+                <EnvelopeSimple size={20} />{" "}
                 <Input
                   placeholder={`email address`}
                   className=" outline-none placeholder:text-[#878484] placeholder:font-medium px-2"
@@ -74,7 +77,7 @@ export const ContactUs = () => {
                 gapX="7px"
               >
                 {" "}
-                <Smartphone className="w-[16px] h-[20px]" />
+                <DeviceMobileCamera size={20} />
                 <Input
                   placeholder={`mobile NO`}
                   className=" outline-none placeholder:text-[#878484] placeholder:font-medium px-2 "

@@ -58,7 +58,7 @@ export const FAQs = () => {
       <SectionTitle text="Frequently Asked Questions" color="#383838" />
 
       <Box
-        width="100%"
+        width="99%"
         my="1em"
         display="flex"
         flexFlow="column"

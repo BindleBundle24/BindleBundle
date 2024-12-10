@@ -7,7 +7,7 @@ import logo from "@/components/Assets/logo.svg";
 const Footer = () => {
   return (
     <div className="w-full flex md:h-[426px] justify-center items-center text-white  flex-col py-[50px] md:pt-[51px]  md:flex-row bg-[#051937]">
-      <div className="bg-transparent w-[331px] md:w-[1163px] h-full flex flex-col md:flex-row justify-between items-start mx-auto gap-10 md:gap-20 ">
+      <div className="bg-transparent w-full px-6 md:px-0 md:w-[1235px]  h-full flex flex-col md:flex-row justify-between items-start mx-auto gap-10 md:gap-20 ">
         <Box className="flex flex-col w-full md:w-[225px] gap-4">
           <Link
             href="/"

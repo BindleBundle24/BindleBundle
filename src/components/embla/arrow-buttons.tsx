@@ -32,17 +32,23 @@ export const usePrevNextButtons = (
     if (onButtonClick) onButtonClick(emblaApi);
   }, [emblaApi, onButtonClick]);
 
-  const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
     setPrevBtnDisabled(!emblaApi.canScrollPrev());
     setNextBtnDisabled(!emblaApi.canScrollNext());
-  }, []);
+  }, [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi) return;
 
-    onSelect(emblaApi);
+    onSelect();
     emblaApi.on("reInit", onSelect);
     emblaApi.on("select", onSelect);
+
+    return () => {
+      emblaApi.off("reInit", onSelect);
+      emblaApi.off("select", onSelect);
+    };
   }, [emblaApi, onSelect]);
 
   return {
@@ -66,18 +72,34 @@ export const PrevButton: React.FC<PropType> = (props) => {
   return (
     <button
       style={{
-        border: "1px solid red",
-        height: "40px",
-        width: "40px",
+        height: "61px",
+        width: "61px",
       }}
-      className="embla__button embla__button--prev"
+      className=" bg-[#282A31] cursor-pointer  rounded-full justify-center flex items-center"
       type="button"
       {...restProps}
     >
-      <svg className="embla__button__svg" viewBox="0 0 532 532">
+      <svg
+        width="33"
+        height="33"
+        viewBox="0 0 33 33"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
-          fill="currentColor"
-          d="M355.66 11.354c13.793-13.805 36.208-13.805 50.001 0 13.785 13.804 13.785 36.238 0 50.034L201.22 266l204.442 204.61c13.785 13.805 13.785 36.239 0 50.044-13.793 13.796-36.208 13.796-50.002 0a5994246.277 5994246.277 0 0 0-229.332-229.454 35.065 35.065 0 0 1-10.326-25.126c0-9.2 3.393-18.26 10.326-25.2C172.192 194.973 332.731 34.31 355.66 11.354Z"
+          d="M16.5 30.25C24.0939 30.25 30.25 24.0939 30.25 16.5C30.25 8.90608 24.0939 2.75 16.5 2.75C8.90608 2.75 2.75 8.90608 2.75 16.5C2.75 24.0939 8.90608 30.25 16.5 30.25Z"
+          stroke="white"
+          strokeWidth="1.5"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M18.2325 21.3537L13.3925 16.5L18.2325 11.6462"
+          stroke="white"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
       {children}
@@ -90,16 +112,38 @@ export const NextButton: React.FC<PropType> = (props) => {
 
   return (
     <button
-      className="embla__button embla__button--next"
+      className=" bg-[#282A31] cursor-pointer rounded-full justify-center flex items-center"
       type="button"
+      style={{
+        height: "61px",
+        width: "61px",
+      }}
       {...restProps}
     >
-      <svg className="embla__button__svg" viewBox="0 0 532 532">
+      <svg
+        width="33"
+        height="33"
+        viewBox="0 0 33 33"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
-          fill="currentColor"
-          d="M176.34 520.646c-13.793 13.805-36.208 13.805-50.001 0-13.785-13.804-13.785-36.238 0-50.034L330.78 266 126.34 61.391c-13.785-13.805-13.785-36.239 0-50.044 13.793-13.796 36.208-13.796 50.002 0 22.928 22.947 206.395 206.507 229.332 229.454a35.065 35.065 0 0 1 10.326 25.126c0 9.2-3.393 18.26-10.326 25.2-45.865 45.901-206.404 206.564-229.332 229.52Z"
+          d="M16.5 30.25C24.0939 30.25 30.25 24.0939 30.25 16.5C30.25 8.90608 24.0939 2.75 16.5 2.75C8.90608 2.75 2.75 8.90608 2.75 16.5C2.75 24.0939 8.90608 30.25 16.5 30.25Z"
+          stroke="white"
+          strokeWidth="1.5"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M14.7675 21.3537L19.6075 16.5L14.7675 11.6462"
+          stroke="white"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
+
       {children}
     </button>
   );

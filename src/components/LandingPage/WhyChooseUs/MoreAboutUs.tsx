@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import Autoscroll from "embla-carousel-auto-scroll";
 import useEmblaCarousel from "embla-carousel-react";
-import Location from "@/components/Icons/Location";
+import { MapPin } from "@phosphor-icons/react";
 import moreImg from "@/components/Assets/more-Img.png";
 
 const SKEWED_CONTENT1 = [
@@ -31,7 +31,7 @@ const SKEWED_CONTENT2 = [
 export const MoreAboutUs = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoscroll()]);
   const [emblaRef2] = useEmblaCarousel({ loop: true }, [
-    Autoscroll({ startDelay: 3000, direction: "backward" }),
+    Autoscroll({  direction: "backward" }),
   ]);
 
   return (
@@ -83,13 +83,13 @@ export const MoreAboutUs = () => {
                   >
                     {" "}
                     <Text
-                      fontWeight="300"
+                      fontWeight="500"
                       fontSize={{ lg: "28px", md: "22px", base: "18px" }}
                       lineHeight="38px"
                       color="white"
                       className="flex gap-[9px] justify-center items-center  py-[6px] px-[13px]"
                     >
-                      <Location />
+                      <MapPin size={24} />
                       {item}
                     </Text>
                   </Box>
@@ -120,7 +120,7 @@ export const MoreAboutUs = () => {
                       color="white"
                       className="flex gap-[9px] justify-center items-center  py-[6px] px-[13px]"
                     >
-                      <Location />
+                      <MapPin size={24} />
                       {item}
                     </Text>
                   </Box>

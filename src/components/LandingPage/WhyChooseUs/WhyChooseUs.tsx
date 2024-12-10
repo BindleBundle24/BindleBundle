@@ -2,49 +2,37 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
 import { Slider } from "./Slider";
-import useEmblaCarousel from "embla-carousel-react";
-import AutoScroll from "embla-carousel-auto-scroll";
 
 const whyChooseUSDetails = [
   {
-    name: "Full Service Moving",
+    name: "Commercial Move",
     description:
-      "Our full-service moving package covers everything! From packing and loading to transportation, unloading, and even unpacking, Bindle Bundle handles your move from start to finish. It’s the ultimate stress-free solution for a seamless relocation experience",
-    img: "/src/components/Assets/why-choose-us-1.png",
-    bgImg: "/src/components/Assets/bg-why-choose-us.png",
+      "Commercial moves require precision and speed to ensure minimal disruption to your business operations. At Bindle Bundle Movers, we are committed to delivering efficient, reliable, and stress-free moving services so you can focus on swhat matters most—running your business.",
   },
   {
-    name: "Full Service Moving",
+    name: "Residential Move",
     description:
-      "Our full-service moving package covers everything! From packing and loading to transportation, unloading, and even unpacking, Bindle Bundle handles your move from start to finish. It’s the ultimate stress-free solution for a seamless relocation experience",
-    img: "/src/components/Assets/why-choose-us-1.png",
-    bgImg: "/src/components/Assets/bg-why-choose-us.png",
+      " Residential moves are more than just relocating items; they’re about ensuring that your new space feels like home. At Bindle Bundle Movers, we pride ourselves on offering dependable service, ensuring your move is seamless and stress-free. Whether you need help with packing, transportation, or specialized services for large items, we’re here to assist every step of the way.",
   },
   {
-    name: "Full Service Moving",
+    name: "Specialty Move",
     description:
-      "Our full-service moving package covers everything! From packing and loading to transportation, unloading, and even unpacking, Bindle Bundle handles your move from start to finish. It’s the ultimate stress-free solution for a seamless relocation experience",
-    img: "/src/components/Assets/why-choose-us-1.png",
-    bgImg: "/src/components/Assets/bg-why-choose-us.png",
+      "Specialty moves are all about trust and attention to detail. At Bindle Bundle Movers, we understand the value of your cherished items and are dedicated to providing the care and professionalism required to move them safely. Whether it’s across the street or across the city, we’ve got you covered",
   },
 ];
 
-const WhyChooseUs = () => {
-  const [
-    emblaRef,
-    // emblaApi
-  ] = useEmblaCarousel({ loop: true }, [AutoScroll()]);
+export const WhyChooseUs = () => {
   return (
-    <Box position="">
-      <Box className="">
-        <Box className="" ref={emblaRef}>
-          <Box className="">
-            <Slider data={whyChooseUSDetails} />
-          </Box>
+    <Box
+      width={{ base: "357px", md: "1246px" }}
+      height={{ base: "453px", md: "515px" }}
+      className="bg-[url('/assets/bg-why-choose-us-mobile.png')] md:bg-[url('/assets/bg-why-choose-us.png')] rounded-[20px] mx-auto"
+    >
+      <Box className="w-full h-full">
+        <Box className=" h-full">
+          <Slider data={whyChooseUSDetails} />
         </Box>
       </Box>
     </Box>
   );
 };
-
-export default WhyChooseUs;

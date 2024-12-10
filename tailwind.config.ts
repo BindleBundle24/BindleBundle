@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        clash: ["var(--font-clash-grotesk)", "Arial", "sans-serif"],
+      },
+
     },
   },
   plugins: [],
