@@ -1,7 +1,7 @@
 "use client";
-import { FaqSection } from "@/components/LandingPage/FAQ/page";
+import { FaqSection } from "@/components/LandingPage/FAQ/FaqSection";
 import { Herosection } from "@/components/LandingPage/Herosection/Herosection";
-import { WhyChooseUsSection } from "@/components/LandingPage/WhyChooseUs/page";
+import { WhyChooseUsSection } from "@/components/LandingPage/WhyChooseUs/WhyChooseUsSection";
 import React from "react";
 
 const HomePage = () => {

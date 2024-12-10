@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { Box, Input, Text, Button } from "@chakra-ui/react";
 import { MapPin } from "@phosphor-icons/react";

@@ -8,9 +8,9 @@ import {
 } from "@phosphor-icons/react";
 
 export const ContactUs = () => {
-  const formSubmit = () => {
-    console.log("Submitted");
-  };
+  // const formSubmit = () => {
+  //   console.log("Submitted");
+  // };
   return (
     <Box
       my="2em"
@@ -27,7 +27,7 @@ export const ContactUs = () => {
       </Text>
       <form
         className=" w-full  h-[168px] flex flex-col items-start  justify-between gap-4 md:gap-[22px]"
-        onSubmit={formSubmit}
+        // onSubmit={formSubmit}
       >
         <Fieldset.Root>
           <Fieldset.Content>
@@ -107,7 +107,7 @@ export const ContactUs = () => {
             <Button
               className="flex justify-center items-center py-[13px] px-[26px] w-[287px] md:w-[133px] h-[41px] md:h-[46px] bg-[#051937] text-white text-[16px] font-medium"
               borderRadius="33px"
-              type="submit"
+              // type="submit"
             >
               Contact us
             </Button>
