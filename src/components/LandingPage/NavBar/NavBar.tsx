@@ -38,13 +38,13 @@ const NavBar = () => {
             Bindle Bundle
           </Link>
           <div className="hidden md:flex flex-col md:flex-row w-full md:w-[450px] items-center justify-between">
-            <Link href="#" className="text-black text-lg ">
+            <Link href="/#services" className="text-black text-lg ">
               Services
             </Link>
             <Link href="#" className="text-black text-lg ">
               Testimonials
             </Link>
-            <Link href="#" className="text-black text-lg ">
+            <Link href="/#about-us" className="text-black text-lg ">
               About us
             </Link>
             <Link href="/#contact-us" className="text-black text-lg ">

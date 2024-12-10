@@ -44,6 +44,7 @@ const WhyHireUsCard = ({ icon, title, description }: WhyHireUsCardProps) => {
       flexDirection={"column"}
       justifyContent={"space-evenly"}
       alignItems={"start"}
+      id="about-us"
     >
       {icon}
       <Text className="font-medium md:text-[30px] px-1 text-[#575757]">

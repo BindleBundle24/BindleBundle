@@ -27,6 +27,7 @@ export const WhyChooseUs = () => {
       width={{ base: "357px", md: "1246px" }}
       height={{ base: "453px", md: "515px" }}
       className="bg-[url('/assets/bg-why-choose-us-mobile.png')] md:bg-[url('/assets/bg-why-choose-us.png')] rounded-[20px] mx-auto"
+      id="services"
     >
       <Box className="w-full h-full">
         <Box className=" h-full">
