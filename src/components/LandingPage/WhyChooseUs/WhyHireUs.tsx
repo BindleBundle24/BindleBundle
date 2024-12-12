@@ -39,7 +39,7 @@ const whyHireUsDetails = [
 const WhyHireUsCard = ({ icon, title, description }: WhyHireUsCardProps) => {
   return (
     <Box
-      className="group w-[158px] h-[154px] md:w-[290px] md:h-[300px] hover:drop-shadow-md rounded-[13px] px-[11px] py-2 md:px-[18px] md:py-6 bg-[#FCF7F1] cursor-pointer transition-all ease-in-out duration-300 gap-1 md:gap-[8px]"
+      className="group w-[158px] h-[154px] md:w-[290px] md:h-[300px] hover:drop-shadow-md rounded-[13px] px-[11px] py-2 md:px-[18px] md:py-6 bg-[#FCF7F1] cursor-pointer transition-all ease-in-out duration-100 gap-1 md:gap-[8px] z-[99999]"
       display={"flex"}
       flexDirection={"column"}
       justifyContent={"space-evenly"}
@@ -84,7 +84,7 @@ export const WhyHireUs = () => {
           Hire us now
         </Button>
       </Box>
-      <Box className="flex flex-wrap mt-10 md:mt-0 justify-center items-center mx-auto md:justify-between gap-[25px] md:gap-8 w-full h-[330px] md:h-[697px] md:w-[746px] relative">
+      <Box className="flex flex-wrap mt-10 md:mt-0 justify-center items-center mx-auto md:justify-between gap-[25px] md:gap-8 w-full h-[330px] md:h-[697px] md:w-[746px] relative ">
         {whyHireUsDetails.map((detail, idx) => {
           return (
             <WhyHireUsCard

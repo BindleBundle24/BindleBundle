@@ -21,7 +21,7 @@ export const Slider = ({ data }: movingType) => {
 
   return (
     <div className="w-full md:w-[1261px] h-[453px] md:h-[515px] flex justify-between items-center">
-      <div className="w-full h-[386px]  md:py-10 md:h-full md:w-[600px] md:px-10 md:pt-5 flex flex-col justify-between md:gap-10">
+      <div className="w-full h-[386px]  md:py-10 md:h-full md:w-[600px] md:px-10  flex flex-col justify-between md:gap-10">
         <div className="embla__viewport w-full " ref={emblaRef}>
           <div className="embla__container w-full h-full">
             {data.map(({ name, description }, index: number) => (

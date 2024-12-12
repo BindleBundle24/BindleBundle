@@ -31,7 +31,7 @@ const SKEWED_CONTENT2 = [
 export const MoreAboutUs = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoscroll()]);
   const [emblaRef2] = useEmblaCarousel({ loop: true }, [
-    Autoscroll({  direction: "backward" }),
+    Autoscroll({ direction: "backward" }),
   ]);
 
   return (

@@ -29,9 +29,7 @@ export const WhyChooseUs = () => {
       id="services"
     >
       <Box className="w-full h-full">
-        <Box className=" h-full">
-          <Slider data={whyChooseUSDetails} />
-        </Box>
+        <Slider data={whyChooseUSDetails} />
       </Box>
     </Box>
   );

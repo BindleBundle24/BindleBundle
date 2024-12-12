@@ -3,6 +3,7 @@ import { Box, Input, Text, Button } from "@chakra-ui/react";
 import { MapPin } from "@phosphor-icons/react";
 import Lottie from "react-lottie-player";
 import arrowLottie from "@/components/Assets/arrowLottie.json";
+import { HeroSlider } from "./HeroSlider";
 
 export const Herosection = () => {
   return (
@@ -66,6 +67,7 @@ export const Herosection = () => {
           />
         </div>
       </div>
+      <HeroSlider />
     </div>
   );
 };
