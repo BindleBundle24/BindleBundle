@@ -1,5 +1,5 @@
 import { Text, Button } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import whyChooseUsImg from "@/components/Assets/why-choose-us-1.png";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
@@ -8,23 +8,44 @@ import {
   PrevButton,
   usePrevNextButtons,
 } from "@/components/embla/arrow-buttons";
-interface movingType {
+import { useRouter } from "next/navigation";
+
+interface MovingType {
   data: {
     name: string;
     description: string;
+    type: string;
   }[];
 }
 
-export const Slider = ({ data }: movingType) => {
+export const Slider = ({ data }: MovingType) => {
+  const router = useRouter();
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
+  const [currentType, setCurrentType] = useState(data[0]?.type || "");
+
+  useEffect(() => {
+    if (emblaApi) {
+      const onSelect = () => {
+        const selectedIndex = emblaApi.selectedScrollSnap();
+        setCurrentType(data[selectedIndex]?.type || "");
+      };
+
+      emblaApi.on("select", onSelect);
+
+      return () => {
+        emblaApi.off("select", onSelect);
+      };
+    }
+    return undefined;
+  }, [emblaApi, data]);
 
   return (
     <div className="w-full md:w-[1261px] h-[453px] md:h-[515px] flex justify-between items-center">
-      <div className="w-full h-[386px]  md:py-10 md:h-full md:w-[600px] md:px-10  flex flex-col justify-between md:gap-10">
-        <div className="embla__viewport w-full " ref={emblaRef}>
+      <div className="w-full h-[386px] md:py-10 md:h-full md:w-[600px] md:px-10 flex flex-col justify-between md:gap-10">
+        <div className="embla__viewport w-full" ref={emblaRef}>
           <div className="embla__container w-full h-full">
-            {data.map(({ name, description }, index: number) => (
+            {data.map(({ name, description }, index) => (
               <div className="embla__slide" key={index}>
                 <div className="flex flex-col w-full text-white md:gap-y-[13px]">
                   <Text
@@ -47,14 +68,15 @@ export const Slider = ({ data }: movingType) => {
           </div>
         </div>
 
-        <div className="pl-3  w-[150px] flex gap-x-5 justify-between ">
+        <div className="pl-3 w-[150px] flex gap-x-5 justify-between">
           <PrevButton onClick={onPrevButtonClick} />
           <NextButton onClick={onNextButtonClick} />
         </div>
 
         <Button
-          className="flex justify-center items-center py-[13px] px-[26px] ml-3 w-[136px] h-[46px]  bg-[#75D130] text-white text-[16px] font-medium"
+          className="flex justify-center items-center py-[13px] px-[26px] ml-3 w-[136px] h-[46px] bg-[#75D130] text-white text-[16px] font-medium"
           borderRadius="33px"
+          onClick={() => router.push(`/services?type=${currentType}`)}
         >
           Learn more
         </Button>
@@ -63,7 +85,7 @@ export const Slider = ({ data }: movingType) => {
       <div className="w-full h-full md:w-[674px] hidden md:flex justify-end items-center">
         <Image
           src={whyChooseUsImg}
-          alt="an image showing a man carrying some boxes"
+          alt="An image showing a man carrying some boxes"
           className="object-center w-full h-full"
         />
       </div>

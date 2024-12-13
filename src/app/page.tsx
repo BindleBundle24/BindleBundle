@@ -11,7 +11,7 @@ const HomePage = () => {
       <Herosection />
       <WhyChooseUsSection />
       <FaqSection />
-      <Testimonials/ >
+      <Testimonials />
     </div>
   );
 };
