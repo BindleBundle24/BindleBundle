@@ -13,7 +13,7 @@ export const ServicesDetails = () => {
     const type = searchParams.get("type") || "residential";
 
     const matchingType = movingTypeDetails.find(
-      (detail: MovingTypeDetailProps) => detail.type === type
+      (detail: MovingTypeDetailProps) => detail.type === type,
     );
 
     setData(matchingType || null);
