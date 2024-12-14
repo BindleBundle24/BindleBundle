@@ -15,10 +15,10 @@ git clone https://github.com/ajalapraise/Bindle-bundle.git
 git checkout -b <branch-name>
 ```
 
-- Install yarn if you don't have it already installed on your machine, it is the package manager we're using in this project.
+- Install pnpm if you don't have it already installed on your machine, it is the package manager we're using in this project.
 
 ```shell
-npm install -g yarn
+npm i -g pnpm
 
 ```
 
@@ -30,7 +30,7 @@ pnpm i
 
 - Run the command below to start the dev server. The local address should be **localhost:3000**
 ```shell
-yarn dev
+pnpm run dev
 ```
 
 - When you're done with your changes, send a PR to the dev branch.
