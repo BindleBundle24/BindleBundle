@@ -1,6 +1,6 @@
 "use client";
 import { FaqSection } from "@/components/LandingPage/FAQ/FaqSection";
-import React from "react";
+import React, { Suspense } from "react";
 import { Navbar } from "./Navbar";
 import { ServicesDetails } from "./[id]";
 import { Text } from "@chakra-ui/react";
