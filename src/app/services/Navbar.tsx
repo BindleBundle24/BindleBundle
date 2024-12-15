@@ -1,21 +1,22 @@
 "use client";
 import { Button } from "@chakra-ui/react";
-import React, { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import React from "react";
+import { useRouter, usePathname } from "next/navigation";
+import { useQueryState } from "nuqs";
 
 export const Navbar = () => {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const [moveType, setMoveType] = useState("");
-
-  useEffect(() => {
-    const type = searchParams.get("type") || "residential";
-    setMoveType(type);
-  }, [searchParams]);
+  const pathName = usePathname();
+  const [moveType, setMoveType] = useQueryState("type", {});
 
   const handleMoveTypeChange = (type: string) => {
     setMoveType(type);
-    router.push(`?type=${type}`);
+
+    if (!pathName.includes("/services")) {
+      router.push(`/services?${type}`);
+    } else {
+      router.push(`${pathName}?${type}`);
+    }
   };
 
   return (

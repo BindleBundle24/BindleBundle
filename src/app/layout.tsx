@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "@/components/LandingPage/Footer/Footer";
 import NavBar from "@/components/LandingPage/NavBar/NavBar";
 import { Provider } from "@/components/ui/provider";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { clashGrotesk } from "@/app/fonts/font";
 
 export const metadata: Metadata = {
@@ -36,13 +37,15 @@ export default function RootLayout({
       <body
         className={`font-clash ${clashGrotesk.variable} min-w-[393px] w-screen mx-auto bg-white text-black overflow-x-hidden min-h-screen flex flex-col justify-center`}
       >
-        <Provider>
-          <NavBar />
-          <main className="flex-grow w-full overflow-hidden max-w-[1440px] mx-auto">
-            {children}
-          </main>
-          <Footer />
-        </Provider>
+        <NuqsAdapter>
+          <Provider>
+            <NavBar />
+            <main className="flex-grow w-full overflow-hidden max-w-[1440px] mx-auto">
+              {children}
+            </main>
+            <Footer />
+          </Provider>
+        </NuqsAdapter>
       </body>
     </html>
   );

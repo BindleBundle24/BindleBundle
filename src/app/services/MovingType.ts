@@ -1,5 +1,5 @@
-import img1 from "@/components/Assets/residentialImg.png";
-import img2 from "@/components/Assets/commercialImg.png";
+import img1 from "@/components/Assets/residentialImg.jpeg";
+import img2 from "@/components/Assets/commercialImg.jpeg";
 import img3 from "@/components/Assets/specialtyImg.png";
 import { StaticImageData } from "next/image";
 
@@ -11,6 +11,10 @@ export interface MovingTypeDetailProps {
         title: string;
         description: string;
     }[];
+}
+export interface whatToExpectDetailsProps {
+    title: string;
+    description: string
 }
 export const movingTypeDetails: MovingTypeDetailProps[] = [
     {
@@ -93,7 +97,7 @@ export const movingTypeDetails: MovingTypeDetailProps[] = [
     }
 ]
 
-export const whatToExpect = [
+export const whatToExpectDetails: whatToExpectDetailsProps[] = [
     {
         title: 'Arrival & Initial Walk-Through ',
         description: 'We pride ourselves on punctuality and reliability, arriving on time with a truck from our well- maintained fleet, fully equipped for your move.Together, we’ll walk through your space to confirm what’s staying, what’s going, and any specific instructions to ensure a smooth start to your relocation'
