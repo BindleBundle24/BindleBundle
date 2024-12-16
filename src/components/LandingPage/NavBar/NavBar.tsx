@@ -18,23 +18,12 @@ import Image from "next/image";
 import logo from "@/components/Assets/logo.svg";
 import Menu from "@/components/Icons/Menu";
 import CloseBtn from "@/components/Icons/CloseBtn";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useQueryState } from "nuqs";
 
 const NavBar = () => {
   const router = useRouter();
-  const pathName = usePathname();
-  const [moveType, setMoveType] = useQueryState("type");
-
-  const handleMoveTypeChange = (type: string) => {
-    setMoveType(type);
-
-    if (pathName !== "/services") {
-      router.push(`/services?type=${type}`);
-    } else {
-      router.push(`${pathName}?type=${type}`);
-    }
-  };
+  const [moveType] = useQueryState("type");
 
   return (
     <div className="bg-white w-full h-[72px] flex justify-center items-center mx-auto relative shadow-sm md:shadow-none">
@@ -126,7 +115,9 @@ const NavBar = () => {
                             ? " border-b-[2.5px] border-[#051937] transition-all ease-in-out duration-300"
                             : ""
                         }`}
-                        onClick={() => handleMoveTypeChange("residential")}
+                        onClick={() =>
+                          router.push(`/services?type=residential`)
+                        }
                       >
                         Residential Move
                       </Text>{" "}
@@ -136,7 +127,7 @@ const NavBar = () => {
                             ? " border-b-[2.5px] border-[#051937] transition-all ease-in-out duration-300"
                             : ""
                         }`}
-                        onClick={() => handleMoveTypeChange("commercial")}
+                        onClick={() => router.push(`/services?type=commercial`)}
                       >
                         Commercial Move
                       </Text>
@@ -146,7 +137,7 @@ const NavBar = () => {
                             ? " border-b-[2.5px] border-[#051937] transition-all ease-in-out duration-300"
                             : ""
                         }`}
-                        onClick={() => handleMoveTypeChange("specialty")}
+                        onClick={() => router.push(`/services?type=specialty`)}
                       >
                         Specialty Move
                       </Text>
