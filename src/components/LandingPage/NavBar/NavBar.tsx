@@ -1,3 +1,4 @@
+"use client";
 import {
   Button,
   DrawerActionTrigger,
@@ -38,7 +39,7 @@ const NavBar = () => {
     <Box
       background="white"
       width="full"
-      height={{ base: "72px", md: "130px" }}
+      height={{ base: "72px", md: pathName !== "/services" ? "72px" : "130px" }}
       display="flex"
       flexDirection={"column"}
       justifyContent="center"
@@ -305,7 +306,7 @@ const NavBar = () => {
           </Box>
         </Box>
         <Button
-          display={{ base: "none", md: "flex" }}
+          display={{ base: "none", sm: "flex" }}
           justifyContent="center"
           alignItems="center"
           paddingY="13px"
@@ -326,7 +327,10 @@ const NavBar = () => {
         gap={"40px"}
         width={"full"}
         height={"57px"}
-        display={{ base: "none", sm: "flex" }}
+        display={{
+          base: "none",
+          md: pathName !== "/services" ? "none" : "flex",
+        }}
         justifyContent={"center"}
         alignItems={"center"}
         marginX={"auto"}

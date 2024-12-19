@@ -1,6 +1,7 @@
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
+  --font-family-default: var(--font-clash-grotesk), Arial, sans-serif;
 }
 
 
@@ -11,13 +12,14 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+     color: var(--foreground);
+ background: var(--background);
+  font-family: var(--font-family-default)
+
   }
 }
-body {
-  color: var(--foreground);
- background: var(--background);
-  font-family: var(--font-clash-grotesk), Arial, sans-serif;
-}
+
+
 
 
 .embla__viewport {

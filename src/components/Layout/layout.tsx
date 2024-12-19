@@ -18,7 +18,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
       display={"flex"}
       flexDirection={"column"}
       justifyContent={"center"}
-      fontFamily={clashGrotesk.variable}
+      className={`${clashGrotesk.variable}`}
     >
       <NavBar />
       <Box
