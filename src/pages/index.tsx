@@ -16,7 +16,6 @@ export default function Home() {
           content="Bindle Bundle is a professional moving company offering residential, commercial, and specialty moving services. Get a seamless moving experience with us!"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/assets/logo.svg" />
       </Head>
       <Box display={"flex"} flexDirection={"column"} gapY={"32px"}>
         <Herosection />
