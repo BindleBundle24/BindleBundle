@@ -70,14 +70,17 @@ export const FaqAccordion = ({ title, children }: AccordionLayoutProps) => {
               justifyContent: "space-between",
               alignItems: "center",
               padding: isOpen ? "0" : "0.8em 0.5em",
-              fontWeight: 400,
               lineHeight: "24px",
               color: "#000000",
               width: "100%",
               cursor: "pointer",
             }}
           >
-            <Text textAlign={"left"} fontSize={{ base: "16px", md: "18px" }}>
+            <Text
+              textAlign={"left"}
+              fontWeight={"500"}
+              fontSize={{ base: "16px", md: "18px" }}
+            >
               {title}
             </Text>
             <Text style={{ display: "flex", alignItems: "center" }}>
@@ -91,7 +94,7 @@ export const FaqAccordion = ({ title, children }: AccordionLayoutProps) => {
         </AccordionItemTrigger>
         {isOpen && (
           <AccordionItemContent
-            style={{ fontSize: "16px", color: "#555555" }}
+            style={{ fontSize: "16px", color: "#555555", fontWeight: "400px" }}
             width={{ lg: "558px", base: "100%", md: "100%" }}
           >
             {children}
