@@ -89,13 +89,13 @@ const WhyHireUsCard = ({ icon, title, description }: WhyHireUsCardProps) => {
       <Text
         fontWeight={"medium"}
         fontSize={{ base: "16px", md: "30px" }}
-        paddingX={"4px"}
+        paddingX={{ md: "4px" }}
         color={"#575757"}
       >
         {title}
       </Text>
       <Text
-        width={{ base: "136px", md: "219px" }}
+        width={{ base: "140px", md: "219px" }}
         backgroundColor={"transparent"}
         height={"1px"}
         _groupHover={{ backgroundColor: "#75D130" }}
