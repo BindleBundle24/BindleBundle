@@ -39,9 +39,15 @@ export const HeroSlider = () => {
                 flexShrink={0}
                 flexGrow={0}
                 flexBasis={{ base: "54%", md: "20.3%" }}
-                marginX={"8px"}
+                marginRight={
+                  index === SLIDER_IMAGES.length - 1 &&
+                  SLIDER_IMAGES.length === 6
+                    ? "20px"
+                    : ""
+                }
                 height="100%"
                 display="flex"
+                width={"100%"}
                 alignItems={alignment}
               >
                 <Image
