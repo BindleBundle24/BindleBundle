@@ -175,7 +175,7 @@ const ServicesDetails = () => {
                       WebkitTextStrokeColor={"#000000"}
                       WebkitTextFillColor={"#FFFFFF"}
                       WebkitTextStrokeWidth={"1px"}
-                      marginTop={{ base: "-8px", md: "-13px" }}
+                      marginTop={{ base: "-8px", md: "-20px" }}
                       width={{ base: "41px", md: "82px" }}
                       textAlign={"center"}
                     >
@@ -183,13 +183,13 @@ const ServicesDetails = () => {
                     </Text>
                   </Box>
                   <Box
-                    width={{ base: "100%", md: "417px" }}
+                    width={{ base: "100%", md: "420px" }}
                     height={"100%"}
                     display={"flex"}
                     flexDirection={"column"}
                   >
                     <Text
-                      fontSize={{ base: "20px", md: "28px" }}
+                      fontSize={{ base: "20px", md: "26px" }}
                       fontWeight={"500"}
                       textAlign={"left"}
                       color={"#332F2F"}

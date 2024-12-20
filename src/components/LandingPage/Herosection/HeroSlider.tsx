@@ -50,6 +50,7 @@ export const HeroSlider = () => {
                   width={{ base: "211px", md: "292px" }}
                   height={{ base: "211px", md: "292px" }}
                   display={"flex"}
+                  borderRadius={"13px"}
                 />
               </Box>
             );

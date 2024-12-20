@@ -33,6 +33,7 @@ const Footer = () => {
           flexDirection={"column"}
           width={{ base: "full", md: "225px" }}
           gap={"16px"}
+          height="full"
         >
           {" "}
           <NextLink href="/">
@@ -46,7 +47,7 @@ const Footer = () => {
               height="full"
               justifyContent="start"
               alignItems="center"
-              borderBottom={"1px"}
+              borderBottomWidth={"1px"}
               borderColor={"white"}
             >
               <Box
@@ -84,7 +85,7 @@ const Footer = () => {
         </Box>
         <Box
           width={{ md: "176px" }}
-          height={{ md: "186px" }}
+          height={{ md: "137px" }}
           display={"flex"}
           flexDirection={"column"}
           justifyContent={"space-between"}
@@ -94,6 +95,7 @@ const Footer = () => {
             fontWeight={"semibold"}
             display={"flex"}
             alignItems={"end"}
+            marginTop={{ base: "0px", md: "16px" }}
           >
             Pricing
           </Text>
@@ -135,7 +137,7 @@ const Footer = () => {
             fontWeight={"semibold"}
             display={"flex"}
             alignItems={"end"}
-            marginTop={{ base: "0px", md: "24px" }}
+            marginTop={{ base: "0px", md: "16px" }}
           >
             Location
           </Text>
@@ -157,7 +159,7 @@ const Footer = () => {
             fontWeight={"semibold"}
             display={"flex"}
             alignItems={"end"}
-            marginTop={{ base: "0px", md: "24px" }}
+            marginTop={{ base: "0px", md: "16px" }}
           >
             Contact Us
           </Text>

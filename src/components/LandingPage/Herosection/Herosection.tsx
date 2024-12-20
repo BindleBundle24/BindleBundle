@@ -2,15 +2,31 @@
 import React from "react";
 import { Box, Input, Text, Button } from "@chakra-ui/react";
 import { MapPin } from "@phosphor-icons/react";
-// import arrowLottie from "@/components/Assets/arrowLottie.json";
+// import * as data from "../../../../public/assets/arrowLottie.json";
 import { HeroSlider } from "./HeroSlider";
-// import dynamic from "next/dynamic";
+// import lottie from "lottie-web";
 
 export const Herosection = () => {
-  // const [Lottie, setLottie] = useState(undefined);
-  // useEffect(() => {
-  //   setLottie(dynamic(() => import("lottie-react"), { ssr: false }));
+  // const animationRef = useRef<HTMLDivElement | null>(null);
+
+  // const getLottie = useCallback(async () => {
+  //   if (animationRef.current) {
+  //     lottie.loadAnimation({
+  //       autoplay: true,
+  //       loop: true,
+  //       animationData: data,
+  //       container: animationRef.current,
+  //     });
+  //   }
   // }, []);
+
+  // useEffect(() => {
+  //   getLottie();
+
+  //   return () => {
+  //     lottie.destroy();
+  //   };
+  // }, [getLottie]);
 
   return (
     <Box
@@ -153,15 +169,8 @@ export const Herosection = () => {
           justifyContent={"end"}
           top={"44px"}
           right={"-64px"}
-        >
-          {Lottie && (
-            <Lottie
-              style={{ width: 150, height: 150 }}
-              animationData={arrowLottie}
-              loop={true}
-            />
-          )}
-        </Box> */}
+          ref={animationRef}
+        ></Box> */}
       </Box>
       <Box width={"100%"} marginTop={{ md: "70px" }}>
         <HeroSlider />
