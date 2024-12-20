@@ -170,7 +170,7 @@ export const Herosection = () => {
           position={"absolute"}
           justifyContent={"end"}
           top={"44px"}
-          right={"-64px"}
+          right={"-65px"}
           ref={animationRef}
         ></Box>
       </Box>
