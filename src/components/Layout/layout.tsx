@@ -1,6 +1,5 @@
 import Footer from "@/components/LandingPage/Footer/Footer";
 import NavBar from "@/components/LandingPage/NavBar/NavBar";
-import { clashGrotesk } from "@/data/font";
 import { Box } from "@chakra-ui/react";
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({
@@ -18,7 +17,6 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
       display={"flex"}
       flexDirection={"column"}
       justifyContent={"center"}
-      className={`${clashGrotesk.variable}`}
     >
       <NavBar />
       <Box

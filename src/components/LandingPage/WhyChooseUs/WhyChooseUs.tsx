@@ -6,7 +6,7 @@ const whyChooseUSDetails = [
   {
     name: "Commercial Move",
     description:
-      "Commercial moves require precision and speed to ensure minimal disruption to your business operations. At Bindle Bundle Movers, we are committed to delivering efficient, reliable, and stress-free moving services so you can focus on swhat matters most—running your business.",
+      "Commercial moves require precision and speed to ensure minimal disruption to your business operations. At Bindle Bundle Movers, we are committed to delivering efficient, reliable, and stress-free moving services so you can focus on what matters most—running your business.",
     type: "commercial",
   },
   {
@@ -35,6 +35,7 @@ export const WhyChooseUs = () => {
       borderRadius={"20px"}
       marginX={"auto"}
       id="services"
+      position={"relative"}
     >
       <Box width={"100%"} height={"100%"}>
         <Slider data={whyChooseUSDetails} />

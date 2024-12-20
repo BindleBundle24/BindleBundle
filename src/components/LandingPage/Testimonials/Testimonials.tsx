@@ -22,6 +22,7 @@ export const Testimonials = () => {
         height={{ base: "fit", md: "91px" }}
         display={"flex"}
         justifyContent={"center"}
+        marginX={"auto"}
         alignItems={"center"}
       >
         What our clients say!

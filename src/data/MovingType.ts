@@ -65,7 +65,7 @@ export const movingTypeDetails: MovingTypeDetailProps[] = [
     {
         type: 'specialty',
         name: 'Specialty Move',
-        image: '/assets/specialtyImg.',
+        image: '/assets/specialtyImg.png',
         description: [
             {
                 title: 'Delicate and High-Value Items',
