@@ -1,33 +1,34 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Box, Input, Text, Button } from "@chakra-ui/react";
 import { MapPin } from "@phosphor-icons/react";
-// import * as data from "../../../../public/assets/arrowLottie.json";
+import * as data from "../../../../public/assets/arrowLottie.json";
 import { HeroSlider } from "./HeroSlider";
-// import lottie from "lottie-web";
+import { AnimationItem } from "lottie-web";
 
 export const Herosection = () => {
-  // const animationRef = useRef<HTMLDivElement | null>(null);
+  const animationRef = useRef<HTMLDivElement | null>(null);
 
-  // const getLottie = useCallback(async () => {
-  //   if (animationRef.current) {
-  //     lottie.loadAnimation({
-  //       autoplay: true,
-  //       loop: true,
-  //       animationData: data,
-  //       container: animationRef.current,
-  //     });
-  //   }
-  // }, []);
+  useEffect(() => {
+    let animationInstance: AnimationItem | undefined;
 
-  // useEffect(() => {
-  //   getLottie();
+    if (typeof window !== "undefined" && animationRef.current) {
+      import("lottie-web").then((lottie) => {
+        animationInstance = lottie.default.loadAnimation({
+          container: animationRef.current as Element,
+          animationData: data,
+          autoplay: true,
+          loop: true,
+        });
+      });
+    }
 
-  //   return () => {
-  //     lottie.destroy();
-  //   };
-  // }, [getLottie]);
-
+    return () => {
+      if (animationInstance) {
+        animationInstance.destroy();
+      }
+    };
+  }, []);
   return (
     <Box
       display={"flex"}
@@ -162,15 +163,16 @@ export const Herosection = () => {
         >
           Get Moving
         </Button>
-        {/* <Box
+        <Box
           display={{ base: "none", md: "flex" }}
-          width={"100%"}
+          width={"150px"}
+          height={"150px"}
           position={"absolute"}
           justifyContent={"end"}
           top={"44px"}
           right={"-64px"}
           ref={animationRef}
-        ></Box> */}
+        ></Box>
       </Box>
       <Box width={"100%"} marginTop={{ md: "70px" }}>
         <HeroSlider />
