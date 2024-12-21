@@ -24,7 +24,6 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
         flexGrow={1}
         width={"full"}
         overflow={"hidden"}
-        maxWidth={"1440px"}
         marginX={"auto"}
       >
         {children}

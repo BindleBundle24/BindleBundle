@@ -4,7 +4,7 @@ import { Text, Box, HStack, Flex, Image } from "@chakra-ui/react";
 export const Testimonials = () => {
   return (
     <Box
-      width={"100%"}
+      width={"100vw"}
       height={{ base: "fit", md: "1080px" }}
       display={"flex"}
       flexDirection={"column"}

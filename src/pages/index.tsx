@@ -17,10 +17,22 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <Box display={"flex"} flexDirection={"column"} gapY={"32px"}>
-        <Herosection />
-        <WhyChooseUsSection />
-        <FaqSection />
+      <Box
+        width={"full"}
+        display={"flex"}
+        flexDirection={"column"}
+        gapY={"32px"}
+      >
+        <Box
+          display={"flex"}
+          maxWidth={"1440px"}
+          flexDirection={"column"}
+          gapY={"32px"}
+        >
+          <Herosection />
+          <WhyChooseUsSection />
+          <FaqSection />
+        </Box>
         <Testimonials />
       </Box>
     </>

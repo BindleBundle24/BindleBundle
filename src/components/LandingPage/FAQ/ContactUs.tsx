@@ -18,7 +18,7 @@ export const ContactUs = () => {
       alignItems={{ lg: "start", base: "", md: "" }}
       gapY={"25px"}
       width={{ base: "100%", md: "411px" }}
-      height="490px"
+      height="500px"
       backgroundColor={"#FCF7F1"}
       borderRadius="6px"
       paddingX={{ base: "0.6em", md: "1em" }}

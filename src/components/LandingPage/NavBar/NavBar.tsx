@@ -63,7 +63,7 @@ const NavBar = () => {
         zIndex={"10"}
       >
         <Box
-          width={{ base: "full", md: "630px" }}
+          width={{ base: "full", md: "730px" }}
           display="flex"
           justifyContent={{ base: "space-between", md: "start" }}
           alignItems="center"
@@ -102,7 +102,7 @@ const NavBar = () => {
           <Box
             display={{ base: "none", md: "flex" }}
             flexDirection={{ base: "column", md: "row" }}
-            width={{ base: "full", md: "450px" }}
+            width={{ base: "full", md: "500px" }}
             alignItems="center"
             justifyContent="space-between"
           >

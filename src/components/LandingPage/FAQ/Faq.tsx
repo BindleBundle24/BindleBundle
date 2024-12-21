@@ -57,6 +57,8 @@ export const FAQs = () => {
       flexDirection={"column"}
       justifyContent={"start"}
       gap={{ base: "0px", md: "43px" }}
+      overflowY={"scroll"}
+      height={{ md: "500px" }}
     >
       <SectionTitle text="Frequently Asked Questions" color="#383838" />
 
