@@ -28,6 +28,7 @@ export default function Home() {
           maxWidth={"1440px"}
           flexDirection={"column"}
           gapY={"32px"}
+          marginX={"auto"}
         >
           <Herosection />
           <WhyChooseUsSection />
