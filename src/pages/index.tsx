@@ -22,6 +22,7 @@ export default function Home() {
         display={"flex"}
         flexDirection={"column"}
         gapY={"32px"}
+        marginX={"auto"}
       >
         <Box
           display={"flex"}
