@@ -1,0 +1,8 @@
+:root {
+      --clashGrotesk-extraLight: 'ClashGrotesk-Extralight', sans-serif;
+  --clashGrotesk-light: 'ClashGrotesk-Light', sans-serif;
+  --clashGrotesk-regular: 'ClashGrotesk-Regular', sans-serif;
+  --clashGrotesk-medium: 'ClashGrotesk-Medium',     sans-serif;
+  --clashGrotesk-semiBold: 'ClashGrotesk-Semibold', sans-serif;
+  --clashGrotesk-bold: 'ClashGrotesk-Bold', sans-serif;
+}

@@ -28,6 +28,10 @@ const ServicesDetails = () => {
 
     setData(matchingType || null);
   }, [moveType]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [isFormOpen, setIsFormOpen] = useQueryState("formState", {});
+
+  const openForm = () => setIsFormOpen("open");
 
   return (
     <Box
@@ -118,6 +122,7 @@ const ServicesDetails = () => {
                   fontWeight={"500"}
                   fontSize={"16px"}
                   borderRadius="33px"
+                  onClick={openForm}
                 >
                   Get moving
                 </Button>

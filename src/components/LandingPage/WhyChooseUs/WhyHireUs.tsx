@@ -87,7 +87,7 @@ const WhyHireUsCard = ({ icon, title, description }: WhyHireUsCardProps) => {
     >
       {icon}
       <Text
-        fontWeight={"medium"}
+        fontWeight={"500"}
         fontSize={{ base: "16px", md: "30px" }}
         paddingX={{ md: "4px" }}
         color={"#575757"}
@@ -102,7 +102,11 @@ const WhyHireUsCard = ({ icon, title, description }: WhyHireUsCardProps) => {
         transition={"all"}
         transitionDuration={"300ms"}
       ></Text>
-      <Text fontSize={{ base: "12px", md: "20px" }} color={"#3B3A3A"}>
+      <Text
+        fontWeight={"400"}
+        fontSize={{ base: "12px", md: "20px" }}
+        color={"#3B3A3A"}
+      >
         {description}
       </Text>
     </Box>

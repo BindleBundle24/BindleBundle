@@ -1,10 +1,20 @@
 "use client";
 import { FaqSection } from "@/components/LandingPage/FAQ/FaqSection";
-import React from "react";
+import React, { useEffect } from "react";
 import ServicesDetails from "./[id]";
 import { Text, Box } from "@chakra-ui/react";
+import { useQueryState } from "nuqs";
+import { usePathname } from "next/navigation";
 
 const ServicePage = () => {
+  const Pathname = usePathname();
+  const [moveType, setMoveType] = useQueryState("type", {});
+
+  useEffect(() => {
+    if (Pathname === "/services" && !moveType) {
+      setMoveType("commercial");
+    }
+  }, [moveType, Pathname]);
   return (
     <Box
       display={"flex"}
@@ -14,7 +24,7 @@ const ServicePage = () => {
     >
       <ServicesDetails />
       <Text
-        width={"1257px"}
+        maxWidth={"1257px"}
         height={"1px"}
         display={{ base: "hidden", md: "flex" }}
         marginX={"auto"}

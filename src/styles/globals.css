@@ -1,23 +1,25 @@
+@import "./fonts.css";
+@import "./_variables.css";
 :root {
   --background: #ffffff;
   --foreground: #000000;
-  --font-family-default: var(--font-clash-grotesk), Arial, sans-serif;
+  
+
 }
 
 
-@layer base {
-  html,
-  body {
+
+  html, body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
      color: var(--foreground);
  background: var(--background);
-  font-family: var(--font-family-default)
+  font-family: var(--clashGrotesk-medium);
 
   }
-}
+
 
 
 
