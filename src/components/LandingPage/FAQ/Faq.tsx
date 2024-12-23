@@ -68,6 +68,8 @@ export const FAQs = () => {
         justifyContent={"start"}
         alignItems={{ lg: "start", base: "", md: "" }}
         gapY={"20px"}
+        overflowY={"scroll"}
+        height={{ md: "398px" }}
       >
         {QUESTIONS.map((item) => {
           return (

@@ -9,12 +9,13 @@ export const WhyChooseUsSection = () => {
     <Box
       display={"flex"}
       flexDirection={"column"}
-      width={{ base: "100%", md: "1257px" }}
+      width={{ base: "100%", sm: "80%", md: "1257px" }}
       marginX={"auto"}
       justifyContent={"space-between"}
       alignItems={"start"}
       paddingX={"0px"}
       gapY={"32px"}
+      height={"full"}
     >
       <WhyChooseUs />
       <WhyHireUs />

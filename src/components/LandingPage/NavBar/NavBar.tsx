@@ -35,6 +35,11 @@ const NavBar = () => {
     }
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [isFormOpen, setIsFormOpen] = useQueryState("formState", {});
+
+  const openForm = () => setIsFormOpen("open");
+
   return (
     <Box
       background="white"
@@ -63,7 +68,7 @@ const NavBar = () => {
         zIndex={"10"}
       >
         <Box
-          width={{ base: "full", md: "630px" }}
+          width={{ base: "full", md: "730px" }}
           display="flex"
           justifyContent={{ base: "space-between", md: "start" }}
           alignItems="center"
@@ -102,11 +107,11 @@ const NavBar = () => {
           <Box
             display={{ base: "none", md: "flex" }}
             flexDirection={{ base: "column", md: "row" }}
-            width={{ base: "full", md: "450px" }}
+            width={{ base: "full", md: "500px" }}
             alignItems="center"
             justifyContent="space-between"
           >
-            <NextLink href="/#services">
+            <NextLink href="/services">
               <Text color="black" fontSize="18px">
                 Services
               </Text>
@@ -186,7 +191,7 @@ const NavBar = () => {
                     </NextLink>
                   </DrawerCloseTrigger>
                   <DrawerCloseTrigger asChild>
-                    <NextLink href="/#services">
+                    <NextLink href="/services">
                       <Text
                         color="525050"
                         fontSize="18px"
@@ -318,6 +323,7 @@ const NavBar = () => {
           fontSize="16px"
           fontWeight="medium"
           borderRadius="33px"
+          onClick={openForm}
         >
           Get started
         </Button>

@@ -4,7 +4,7 @@ import { Text, Box, HStack, Flex, Image } from "@chakra-ui/react";
 export const Testimonials = () => {
   return (
     <Box
-      width={"100%"}
+      width={"100vw"}
       height={{ base: "fit", md: "1080px" }}
       display={"flex"}
       flexDirection={"column"}
@@ -14,6 +14,7 @@ export const Testimonials = () => {
       gap={"5px"}
       backgroundColor={"#FCF7F1"}
       id="testimonials"
+      paddingX={{ base: "24px" }}
     >
       <Text
         fontSize={{ base: "36px", md: "56px" }}
@@ -24,6 +25,7 @@ export const Testimonials = () => {
         justifyContent={"center"}
         marginX={"auto"}
         alignItems={"center"}
+        textAlign={"center"}
       >
         What our clients say!
       </Text>
@@ -38,7 +40,7 @@ export const Testimonials = () => {
       >
         <HStack
           width={{ base: "343px", md: "502px" }}
-          height={{ base: "118px", md: "170px" }}
+          height={{ base: "125px", md: "180px" }}
           display={"flex"}
           alignItems={"center"}
           justifyContent={"space-between"}
