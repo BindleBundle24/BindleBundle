@@ -1,10 +1,12 @@
 "use client";
 import { FaqSection } from "@/components/LandingPage/FAQ/FaqSection";
 import React, { useEffect } from "react";
-import ServicesDetails from "./[id]";
 import { Text, Box } from "@chakra-ui/react";
 import { useQueryState } from "nuqs";
 import { usePathname } from "next/navigation";
+import dynamic from "next/dynamic";
+
+const ServicesDetails = dynamic(() => import("./[id]"));
 
 const ServicePage = () => {
   const Pathname = usePathname();
