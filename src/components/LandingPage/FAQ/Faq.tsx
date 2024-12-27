@@ -66,7 +66,7 @@ export const FAQs = () => {
         display={"flex"}
         flexDirection={"column"}
         justifyContent={"start"}
-        alignItems={{ xl: "start", base: "", xl: "" }}
+        alignItems={{ md: "start", base: "" }}
         gapY={"20px"}
         overflowY={"scroll"}
         height={{ xl: "398px" }}

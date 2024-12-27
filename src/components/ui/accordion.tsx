@@ -48,7 +48,7 @@ export const FaqAccordion = ({ title, children }: AccordionLayoutProps) => {
   return (
     <AccordionRoot
       collapsible
-      width={{ base: "100%", xl: "716px" }}
+      width={{ base: "100%", md: "716px" }}
       borderColor={"#706E6E"}
       borderBottomWidth={"0.5px"}
       paddingBottom={isOpen ? "16px" : "0px"}
@@ -79,7 +79,7 @@ export const FaqAccordion = ({ title, children }: AccordionLayoutProps) => {
             <Text
               textAlign={"left"}
               fontWeight={"500"}
-              fontSize={{ base: "16px", xl: "18px" }}
+              fontSize={{ base: "16px", md: "18px" }}
             >
               {title}
             </Text>
@@ -95,7 +95,7 @@ export const FaqAccordion = ({ title, children }: AccordionLayoutProps) => {
         {isOpen && (
           <AccordionItemContent
             style={{ fontSize: "16px", color: "#555555", fontWeight: "400px" }}
-            width={{ xl: "558px", base: "100%", xl: "100%" }}
+            width={{ lg: "558px", base: "100%", md: "100%" }}
           >
             {children}
           </AccordionItemContent>

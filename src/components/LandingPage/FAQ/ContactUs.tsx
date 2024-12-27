@@ -13,9 +13,9 @@ export const ContactUs = () => {
       my="2em"
       display="flex"
       flexDirection="column"
-      justifyContent={{ xl: "start", base: "", xl: "" }}
+      justifyContent={{ xl: "start", base: "" }}
       justifySelf={"center"}
-      alignItems={{ xl: "start", base: "", xl: "" }}
+      alignItems={{ xl: "start", base: "" }}
       gapY={"25px"}
       width={{ base: "100%", xl: "411px" }}
       height="500px"
