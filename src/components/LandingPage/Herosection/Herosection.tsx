@@ -3,7 +3,6 @@ import React, { useEffect, useRef } from "react";
 import { Box, Text, Button, InputAddon, Group } from "@chakra-ui/react";
 import { MapPin } from "@phosphor-icons/react";
 import * as data from "../../../../public/assets/arrowLottie.json";
-import { HeroSlider } from "./HeroSlider";
 import { AnimationItem } from "lottie-web";
 import { useQueryState } from "nuqs";
 import {
@@ -16,6 +15,10 @@ export interface LocationDetails {
   pickUpLocation: string;
   dropOffLocation: string;
 }
+
+import dynamic from "next/dynamic";
+
+const HeroSlider = dynamic(() => import("./HeroSlider"));
 
 export const Herosection = () => {
   const animationRef = useRef<HTMLDivElement | null>(null);

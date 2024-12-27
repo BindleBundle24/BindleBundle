@@ -12,7 +12,7 @@ const SLIDER_IMAGES = [
   "/assets/heroImg3.png",
 ];
 
-export const HeroSlider = () => {
+const HeroSlider = () => {
   const [heroEmblaRef] = useEmblaCarousel({ loop: true }, [Autoscroll()]);
 
   return (
@@ -66,3 +66,5 @@ export const HeroSlider = () => {
     </Box>
   );
 };
+
+export default HeroSlider;

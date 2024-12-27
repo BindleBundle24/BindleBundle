@@ -4,13 +4,18 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta name="description" content="A moving Company" />
-
+        <meta
+          name="description"
+          content="Bindle Bundle is a professional moving company offering residential, commercial, and specialty moving services. Get a seamless moving experience with us!"
+        />
         <link rel="icon" href="/assets/logo.svg" />
         <link rel="apple-touch-icon" href="/assets/logo.svg" />
 
         <meta property="og:title" content="Bindle Bundle" />
-        <meta property="og:description" content="A moving Company" />
+        <meta
+          property="og:description"
+          content="Bindle Bundle is a professional moving company offering residential, commercial, and specialty moving services. Get a seamless moving experience with us!"
+        />
         <meta property="og:image" content="/assets/logo.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
