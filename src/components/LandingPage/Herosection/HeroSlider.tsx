@@ -38,7 +38,7 @@ export const HeroSlider = () => {
                 key={index}
                 flexShrink={0}
                 flexGrow={0}
-                flexBasis={{ base: "54%", md  : "20.3%" }}
+                flexBasis={{ base: "54%", md: "20.3%" }}
                 marginRight={
                   index === SLIDER_IMAGES.length - 1 &&
                   SLIDER_IMAGES.length === 6

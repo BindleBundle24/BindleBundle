@@ -133,7 +133,8 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
   return (
     <Box
       width={{ base: "100%", xl: "707px" }}
-      height={{ base: "100vh", xl: "474px" }}
+      height={{ base: "100%", xl: "474px" }}
+      maxHeight={{ base: "110vh", xl: "474px" }}
       display={"flex"}
       flexDirection={"column"}
       justifyContent={"center"}
@@ -143,7 +144,6 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
       backgroundColor={"#FCF7F1"}
       paddingX={{ base: "16px", xl: "0px" }}
       paddingY={{ base: "15px", xl: "0px" }}
-      overflowY={"scroll"}
     >
       <Box
         width={{ base: "100%", xl: "674px" }}

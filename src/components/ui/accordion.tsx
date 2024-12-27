@@ -95,7 +95,7 @@ export const FaqAccordion = ({ title, children }: AccordionLayoutProps) => {
         {isOpen && (
           <AccordionItemContent
             style={{ fontSize: "16px", color: "#555555", fontWeight: "400px" }}
-            width={{ lg: "558px", base: "100%", xl: "100%" }}
+            width={{ xl: "558px", base: "100%", xl: "100%" }}
           >
             {children}
           </AccordionItemContent>

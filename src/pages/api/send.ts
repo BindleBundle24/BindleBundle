@@ -29,6 +29,7 @@ export default async function handler(
             return res.status(200).json({ success: true, response });
         } catch (error: unknown) {
             console.error("Error sending email:", error);
+            // @ts-ignore - error is unknown
             return res.status(500).json({ success: false, error: error.message });
         }
 

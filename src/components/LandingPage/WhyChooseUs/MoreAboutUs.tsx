@@ -89,7 +89,7 @@ export const MoreAboutUs = () => {
         <Box
           height={{ xl: "34px", base: "34px" }}
           width={"100%"}
-          mt={{ lg: "2em", xl: "2em", base: "1rem" }}
+          mt={{ xl: "2em", xl: "2em", base: "1rem" }}
         >
           <Box overflow={"hidden"} ref={emblaRef}>
             <Box display={"flex"}>
@@ -112,7 +112,7 @@ export const MoreAboutUs = () => {
                     {" "}
                     <Text
                       fontWeight="500"
-                      fontSize={{ lg: "28px", xl: "22px", base: "18px" }}
+                      fontSize={{ xl: "28px", xl: "22px", base: "18px" }}
                       lineHeight="38px"
                       color="white"
                       display={"flex"}
@@ -134,7 +134,7 @@ export const MoreAboutUs = () => {
         <Box
           height={{ xl: "34px", base: "34px" }}
           width={"100%"}
-          mt={{ lg: "2em", xl: "2em", base: "2.8em" }}
+          mt={{ xl: "2em", xl: "2em", base: "2.8em" }}
         >
           <Box overflow={"hidden"} ref={emblaRef2}>
             <Box display={"flex"}>
@@ -157,7 +157,7 @@ export const MoreAboutUs = () => {
                     {" "}
                     <Text
                       fontWeight="500"
-                      fontSize={{ lg: "28px", xl: "22px", base: "18px" }}
+                      fontSize={{ xl: "28px", xl: "22px", base: "18px" }}
                       lineHeight="38px"
                       color="white"
                       display={"flex"}
