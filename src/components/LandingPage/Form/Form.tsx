@@ -7,11 +7,13 @@ import {
   User,
   XCircle,
 } from "@phosphor-icons/react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   NativeSelectField,
   NativeSelectRoot,
 } from "@/components/ui/native-select";
+import { useQueryState } from "nuqs";
+import { LocationDetails } from "../Herosection/Herosection";
 
 interface FormProps {
   isOpen: boolean;
@@ -29,7 +31,7 @@ export const locations = [
   "Three Hills",
   "Saskatoon",
   "Calgary",
-  "Aidrie",
+  "Airdrie",
   "Beiseker",
   "Bowden",
   "Chestermere",
@@ -38,22 +40,101 @@ export const locations = [
 ];
 
 export const Form = ({ isOpen, onClose }: FormProps) => {
-  const [moveCategory, setMoveCategory] = useState("");
-  const [commercialCategory, setCommercialCategory] = useState("");
-  const [specialityMove, setSpecialityMove] = useState("");
-  const [customInput, setCustomInput] = useState("");
+  const [formState, setFormState] = useState({
+    fullName: "",
+    email: "",
+    phoneNumber: "",
+    pickUp: "",
+    dropOff: "",
+    moveCategory: "",
+    commercialCategory: "",
+    specialityMove: "",
+    customInput: "",
+    serviceType: "",
+    propertySize: "",
+    otherSpeciality: "",
+    date: "",
+  });
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    console.log("submitted");
-    onClose();
+  const handleChange = (e: { target: { name: string; value: string } }) => {
+    const { name, value } = e.target;
+    setFormState({ ...formState, [name]: value });
   };
 
+  const [locationsDetails, setLocationsDetails] =
+    useQueryState<LocationDetails>("locationsDetails", {
+      parse: (value) =>
+        value ? JSON.parse(value) : { pickUpLocation: "", dropOffLocation: "" },
+      serialize: (value) => JSON.stringify(value),
+    });
+
+  const getTodayDate = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
+
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      });
+
+      const data = await response.json();
+
+      if (!data.response.error) {
+        console.log("Email sent successfully:", data);
+        setFormState({
+          fullName: "",
+          email: "",
+          phoneNumber: "",
+          pickUp: "",
+          dropOff: "",
+          moveCategory: "",
+          commercialCategory: "",
+          specialityMove: "",
+          customInput: "",
+          serviceType: "",
+          propertySize: "",
+          otherSpeciality: "",
+          date: "",
+        });
+        setLocationsDetails(null);
+        onClose();
+      } else {
+        console.error("Error sending email:", data.error);
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+    }
+  };
+
+  useEffect(() => {
+    if (locationsDetails) {
+      const { pickUpLocation, dropOffLocation } = locationsDetails;
+      setFormState((prev) => ({
+        ...prev,
+        pickUp: pickUpLocation,
+        dropOff: dropOffLocation,
+      }));
+    }
+  }, [locationsDetails]);
+
   if (!isOpen) return null;
+
   return (
     <Box
-      width={{ base: "100%", md: "707px" }}
-      height={{ base: "100vh", md: "474px" }}
+      width={{ base: "100%", xl: "707px" }}
+      height={{ base: "100%", xl: "474px" }}
+      maxHeight={{ base: "110vh", xl: "474px" }}
       display={"flex"}
       flexDirection={"column"}
       justifyContent={"center"}
@@ -61,36 +142,58 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
       borderRadius={"12px"}
       gapY={"10px"}
       backgroundColor={"#FCF7F1"}
-      paddingX={{ base: "16px", md: "0px" }}
-      paddingY={{ base: "15px", md: "0px" }}
+      paddingX={{ base: "16px", xl: "0px" }}
+      paddingY={{ base: "15px", xl: "0px" }}
     >
       <Box
-        width={{ base: "100%", md: "674px" }}
-        height={{ base: "100%", md: "401px" }}
+        width={{ base: "100%", xl: "674px" }}
+        height={{ base: "100%", xl: "401px" }}
         display={"flex"}
         flexDirection={"column"}
-        justifyContent={{ base: "", md: "center" }}
-        paddingX={{ base: "0px", md: "16px" }}
-        paddingY={{ base: "10px", md: "15px" }}
-        gap={{ base: "15px", md: "29px" }}
+        justifyContent={{ base: "", xl: "center" }}
+        paddingX={{ base: "0px", xl: "16px" }}
+        paddingY={{ base: "10px", xl: "15px" }}
+        gap={{ base: "10px", xl: "29px" }}
       >
         <Box
           width={"100%"}
           display={"flex"}
           justifyContent={"space-between"}
           alignItems={"center"}
-          height={{ md: "100px" }}
+          height={{ xl: "100px" }}
         >
           <Text
-            fontSize={{ base: "", md: "24px" }}
+            fontSize={{ base: "", xl: "24px" }}
             fontWeight={"600"}
             textAlign={"left"}
             display={"flex"}
-            lineHeight={{ base: "", md: "29.52px" }}
+            lineHeight={{ base: "", xl: "29.52px" }}
           >
             Let’s get you moving
           </Text>
-          <XCircle size={32} onClick={onClose} cursor={"pointer"} />
+          <XCircle
+            size={32}
+            onClick={() => {
+              onClose();
+              setFormState({
+                fullName: "",
+                email: "",
+                phoneNumber: "",
+                pickUp: "",
+                dropOff: "",
+                moveCategory: "",
+                commercialCategory: "",
+                specialityMove: "",
+                customInput: "",
+                serviceType: "",
+                propertySize: "",
+                otherSpeciality: "",
+                date: "",
+              });
+              setLocationsDetails(null);
+            }}
+            cursor={"pointer"}
+          />
         </Box>
 
         <Box
@@ -98,28 +201,28 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
           gap={"5px"}
           display={"flex"}
           flexDirection={"column"}
-          height={{ base: "fit-content", md: "68px" }}
+          height={{ base: "fit-content", xl: "68px" }}
         >
           <Text
-            fontSize={{ base: "", md: "14px" }}
+            fontSize={{ base: "", xl: "14px" }}
             fontWeight={"400"}
             textAlign={"left"}
-            lineHeight={{ base: "", md: "17.22px" }}
+            lineHeight={{ base: "", xl: "17.22px" }}
             color={"#878484"}
           >
             DESTINATION
           </Text>
           <Box
             display={"flex"}
-            flexDirection={{ base: "column", md: "row" }}
+            flexDirection={{ base: "column", xl: "row" }}
             width={"100%"}
-            gap={{ base: "5px", md: "22px" }}
-            height={{ base: "fit-content", md: "46px" }}
+            gap={{ base: "5px", xl: "22px" }}
+            height={{ base: "fit-content", xl: "46px" }}
           >
             <Group
               attached
-              width={{ base: "100%", md: "233px" }}
-              height={{ base: "46px", md: "100%" }}
+              width={{ base: "100%", xl: "233px" }}
+              height={{ base: "46px", xl: "100%" }}
               borderRadius={"10px"}
               borderWidth={"1px"}
               borderColor={"#CAD0DB"}
@@ -139,7 +242,7 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
 
               <NativeSelectRoot
                 variant={"subtle"}
-                width={{ base: "100%", md: "205.65px" }}
+                width={{ base: "100%", xl: "205.65px" }}
                 display={"flex"}
                 height={"44px"}
                 alignItems={"center"}
@@ -157,6 +260,9 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                   borderColor={"#CAD0DB"}
                   borderRightRadius={"10px"}
                   height={"100%"}
+                  value={formState.pickUp}
+                  onChange={handleChange}
+                  name="pickUp"
                 >
                   {locations.map((location) => (
                     <option key={location} value={location}>
@@ -168,8 +274,8 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
             </Group>
             <Group
               attached
-              width={{ base: "100%", md: "233px" }}
-              height={{ base: "46px", md: "100%" }}
+              width={{ base: "100%", xl: "233px" }}
+              height={{ base: "46px", xl: "100%" }}
               borderRadius={"10px"}
               borderWidth={"1px"}
               borderColor={"#CAD0DB"}
@@ -188,7 +294,7 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
               </InputAddon>
               <NativeSelectRoot
                 variant={"subtle"}
-                width={{ base: "100%", md: "205.65px" }}
+                width={{ base: "100%", xl: "205.65px" }}
                 display={"flex"}
                 height={"44px"}
                 alignItems={"center"}
@@ -206,6 +312,9 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                   borderColor={"#CAD0DB"}
                   borderRightRadius={"10px"}
                   height={"100%"}
+                  value={formState.dropOff}
+                  onChange={handleChange}
+                  name="dropOff"
                 >
                   {locations.map((location) => (
                     <option key={location} value={location}>
@@ -218,7 +327,7 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
 
             <Input
               type={"date"}
-              height={{ base: "46px", md: "100%" }}
+              height={{ base: "46px", xl: "100%" }}
               backgroundColor={"#FFFFFF"}
               _placeholder={{ color: "#878484", fontWeight: "500" }}
               _focus={{
@@ -227,10 +336,14 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
               }}
               variant={"subtle"}
               borderRadius={"10px"}
-              width={{ base: "full", md: "130px" }}
+              width={{ base: "full", xl: "130px" }}
               color={"#878484"}
               borderWidth={"1px"}
               borderColor={"#CAD0DB"}
+              onChange={handleChange}
+              value={formState.date}
+              name="date"
+              min={getTodayDate()}
             />
           </Box>
         </Box>
@@ -239,29 +352,29 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
           gap={"5px"}
           display={"flex"}
           flexDirection={"column"}
-          height={{ base: "fit-content", md: "68px" }}
+          height={{ base: "fit-content", xl: "68px" }}
         >
           <Text
-            fontSize={{ base: "", md: "14px" }}
+            fontSize={{ base: "", xl: "14px" }}
             fontWeight={"400"}
             textAlign={"left"}
-            lineHeight={{ base: "", md: "17.22px" }}
+            lineHeight={{ base: "", xl: "17.22px" }}
             color={"#878484"}
           >
             PERSONAL
           </Text>
           <Box
             display={"flex"}
-            flexDirection={{ base: "column", md: "row" }}
+            flexDirection={{ base: "column", xl: "row" }}
             width={"100%"}
-            gap={{ base: "5px", md: "10px" }}
-            height={{ base: "fit-content", md: "46px" }}
+            gap={{ base: "5px", xl: "10px" }}
+            height={{ base: "fit-content", xl: "46px" }}
             alignItems={"center"}
           >
             <Group
               attached
-              width={{ base: "100%", md: "205.65px" }}
-              height={{ base: "46px", md: "100%" }}
+              width={{ base: "100%", xl: "205.65px" }}
+              height={{ base: "46px", xl: "100%" }}
               borderRadius={"10px"}
               borderWidth={"1px"}
               borderColor={"#CAD0DB"}
@@ -291,13 +404,15 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                   outlineWidth: "0px",
                 }}
                 name="fullName"
+                onChange={handleChange}
+                value={formState.fullName}
                 type="text"
               />
             </Group>
             <Group
               attached
-              width={{ base: "100%", md: "205.65px" }}
-              height={{ base: "46px", md: "100%" }}
+              width={{ base: "100%", xl: "205.65px" }}
+              height={{ base: "46px", xl: "100%" }}
               borderRadius={"10px"}
               borderWidth={"1px"}
               borderColor={"#CAD0DB"}
@@ -328,12 +443,14 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                 height={"100%"}
                 name="email"
                 type="email"
+                onChange={handleChange}
+                value={formState.email}
               />
             </Group>
             <Group
               attached
-              width={{ base: "100%", md: "205.65px" }}
-              height={{ base: "46px", md: "100%" }}
+              width={{ base: "100%", xl: "205.65px" }}
+              height={{ base: "46px", xl: "100%" }}
               borderRadius={"10px"}
               borderWidth={"1px"}
               borderColor={"#CAD0DB"}
@@ -364,6 +481,8 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                 type="tel"
                 placeholder={`mobile NO`}
                 borderRadius={"10px"}
+                value={formState.phoneNumber}
+                onChange={handleChange}
               />
             </Group>
           </Box>
@@ -373,28 +492,28 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
           gap={"5px"}
           display={"flex"}
           flexDirection={"column"}
-          height={{ base: "fit-content", md: "68px" }}
+          height={{ base: "fit-content", xl: "68px" }}
         >
           <Text
-            fontSize={{ base: "", md: "14px" }}
+            fontSize={{ base: "", xl: "14px" }}
             fontWeight={"400"}
             textAlign={"left"}
-            lineHeight={{ base: "", md: "17.22px" }}
+            lineHeight={{ base: "", xl: "17.22px" }}
             color={"#878484"}
           >
             MOVING DETAILS
           </Text>
           <Box
             display={"flex"}
-            flexDirection={{ base: "column", md: "row" }}
+            flexDirection={{ base: "column", xl: "row" }}
             width={"100%"}
-            gap={{ base: "5px", md: "10px" }}
-            height={{ base: "fit-content", md: "46px" }}
-            flexWrap={{ md: "wrap" }}
+            gap={{ base: "5px", xl: "10px" }}
+            height={{ base: "fit-content", xl: "46px" }}
+            flexWrap={{ xl: "wrap" }}
           >
             <NativeSelectRoot
               variant={"subtle"}
-              width={{ base: "100%", md: "205.65px" }}
+              width={{ base: "100%", xl: "205.65px" }}
               display={"flex"}
               height={"46px"}
               alignItems={"center"}
@@ -412,6 +531,9 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                 borderColor={"#CAD0DB"}
                 borderRadius={"10px"}
                 height={"100%"}
+                value={formState.serviceType}
+                onChange={handleChange}
+                name="serviceType"
               >
                 <option value="full _ervice">Full Service </option>
                 <option value="packing">Packing only Service</option>
@@ -420,7 +542,7 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
             </NativeSelectRoot>
             <NativeSelectRoot
               variant={"subtle"}
-              width={{ base: "100%", md: "205.65px" }}
+              width={{ base: "100%", xl: "205.65px" }}
               display={"flex"}
               height={"46px"}
               alignItems={"center"}
@@ -437,27 +559,28 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                 borderWidth={"1px"}
                 borderColor={"#CAD0DB"}
                 borderRadius={"10px"}
-                onChange={(e) => setMoveCategory(e.target.value)}
-                value={moveCategory}
+                value={formState.moveCategory}
+                onChange={handleChange}
                 defaultValue={"residential"}
                 height={"100%"}
+                name="moveCategory"
               >
                 <option value="residential">Residential</option>
                 <option value="commercial">Commercial</option>
               </NativeSelectField>
             </NativeSelectRoot>
-            {moveCategory === "commercial" ? (
+            {formState.moveCategory === "commercial" ? (
               <Box
                 display={"flex"}
                 height={"46px"}
                 gap={"5px"}
-                width={{ base: "100%", md: "205.65px" }}
+                width={{ base: "100%", xl: "205.65px" }}
                 justifyContent={"flex-start"}
                 alignItems={"center"}
               >
                 <NativeSelectRoot
                   variant={"subtle"}
-                  width={{ base: "", md: "2/3" }}
+                  width={{ base: "", xl: "2/3" }}
                   height={"46px"}
                 >
                   <NativeSelectField
@@ -472,9 +595,10 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                     borderColor={"#CAD0DB"}
                     borderRadius={"10px"}
                     defaultValue={"no_of_rooms"}
-                    onChange={(e) => setCommercialCategory(e.target.value)}
-                    value={commercialCategory}
+                    value={formState.commercialCategory}
+                    onChange={handleChange}
                     height={"100%"}
+                    name="commercialCategory"
                   >
                     <option value="no_of_rooms">Number of Rooms/Offices</option>
                     <option value="sq_ft">Square Footage</option>
@@ -490,8 +614,8 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                 </Text>
                 <Input
                   placeholder="value"
-                  value={customInput}
-                  onChange={(e) => setCustomInput(e.target.value)}
+                  value={formState.customInput}
+                  onChange={handleChange}
                   backgroundColor={"#FFFFFF"}
                   _placeholder={{ color: "#878484", fontWeight: "500" }}
                   _focus={{
@@ -499,14 +623,16 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                     outlineWidth: "0px",
                   }}
                   borderRadius="10px"
-                  width={{ base: "", md: "1/3" }}
+                  width={{ base: "", xl: "1/3" }}
                   height={"46px"}
+                  name="customInput"
+                  type="number"
                 />
               </Box>
             ) : (
               <NativeSelectRoot
                 variant={"subtle"}
-                width={{ base: "", md: "205.65px" }}
+                width={{ base: "", xl: "205.65px" }}
                 display={"flex"}
                 height={"46px"}
                 alignItems={"center"}
@@ -524,6 +650,9 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                   borderColor={"#CAD0DB"}
                   borderRadius={"10px"}
                   height={"100%"}
+                  value={formState.propertySize}
+                  onChange={handleChange}
+                  name="propertySize"
                 >
                   <option value="single_room">Single Room, Studio</option>
                   <option value="1_to_3_bedroom_apartment">
@@ -542,28 +671,28 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
           gap={"5px"}
           display={"flex"}
           flexDirection={"column"}
-          height={{ base: "fit-content", md: "68px" }}
+          height={{ base: "fit-content", xl: "68px" }}
         >
           <Text
-            fontSize={{ base: "", md: "14px" }}
+            fontSize={{ base: "", xl: "14px" }}
             fontWeight={"400"}
             textAlign={"left"}
-            lineHeight={{ base: "", md: "17.22px" }}
+            lineHeight={{ base: "", xl: "17.22px" }}
             color={"#878484"}
           >
             SPECIAL HANDLING REQUEST
           </Text>
           <Box
             display={"flex"}
-            flexDirection={{ base: "column", md: "row" }}
+            flexDirection={{ base: "column", xl: "row" }}
             width={"100%"}
             gap={"10px"}
-            height={{ base: "fit-content", md: "46px" }}
-            alignItems={{ md: "center" }}
+            height={{ base: "fit-content", xl: "46px" }}
+            alignItems={{ xl: "center" }}
           >
             <NativeSelectRoot
               variant={"subtle"}
-              width={{ base: "100%", md: "205.65px" }}
+              width={{ base: "100%", xl: "205.65px" }}
               display={"flex"}
               height={"46px"}
               alignItems={"center"}
@@ -580,9 +709,10 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                 borderColor={"#CAD0DB"}
                 borderRadius={"10px"}
                 defaultValue={"none"}
-                onChange={(e) => setSpecialityMove(e.target.value)}
-                value={specialityMove}
+                value={formState.specialityMove}
+                onChange={handleChange}
                 height={"100%"}
+                name="specialityMove"
               >
                 <option value="piano">Piano Type</option>
                 <option value="gun_safe">Gun Safe Weight</option>
@@ -593,7 +723,7 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                 <option value="none">None</option>
               </NativeSelectField>
             </NativeSelectRoot>
-            {specialityMove === "others" && (
+            {formState.specialityMove === "others" && (
               <Input
                 placeholder="Please specify"
                 backgroundColor={"#FFFFFF"}
@@ -603,16 +733,19 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                   outlineWidth: "0px",
                 }}
                 borderRadius="10px"
-                width={{ base: "100%", md: "205.65px" }}
+                width={{ base: "100%", xl: "205.65px" }}
                 height={"46px"}
+                value={formState.otherSpeciality}
+                onChange={handleChange}
+                name="otherSpeciality"
               />
             )}
             <Button
               display={"flex"}
               justifyContent={"center"}
               alignItems={"center"}
-              width={{ base: "287px", md: "104px" }}
-              height={{ base: "41px", md: "46px" }}
+              width={{ base: "287px", xl: "104px" }}
+              height={{ base: "41px", xl: "46px" }}
               backgroundColor={"#051937"}
               color={"#FFFFFF"}
               paddingX={"26px"}
@@ -637,7 +770,7 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
         backgroundColor={"#051937"}
         color={"#FFFFFF"}
         height={"88px"}
-        display={{ base: "flex", md: "none" }}
+        display={{ base: "flex", xl: "none" }}
         flexDirection={"column"}
         justifyContent={"center"}
       >

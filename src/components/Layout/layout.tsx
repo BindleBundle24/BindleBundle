@@ -25,26 +25,30 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
       justifyContent={"center"}
       position={"relative"}
     >
-      <Box display={"flex"} flexDirection={"column"} justifyContent={"center"}>
+      <Box
+        display={"flex"}
+        width={"full"}
+        flexDirection={"column"}
+        justifyContent={"center"}
+      >
         <NavBar />
         <Box
-          display={{ base: isFormOpenBoolean ? "none" : "flex", md: "flex" }}
+          display={{ base: isFormOpenBoolean ? "none" : "flex", xl: "flex" }}
           flexGrow={1}
           width={"full"}
           overflow={"hidden"}
           marginX={"auto"}
-          opacity={{ base: "", md: isFormOpenBoolean ? "0.2" : "1" }}
+          opacity={{ base: "", xl: isFormOpenBoolean ? "0.2" : "1" }}
         >
           {children}
         </Box>
         <Box
           width={"100vw"}
-          height={"100vh"}
-          position={{ md: "fixed" }}
-          top={{ md: "50%" }}
-          left={{ md: "50%" }}
-          transform={{ md: "translate(-50%, -50%)" }}
-          zIndex={{ md: isFormOpenBoolean ? "1" : "-1" }}
+          position={{ xl: "fixed" }}
+          top={{ xl: "50%" }}
+          left={{ xl: "50%" }}
+          transform={{ xl: "translate(-50%, -50%)" }}
+          zIndex={{ xl: isFormOpenBoolean ? "1" : "-1" }}
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}

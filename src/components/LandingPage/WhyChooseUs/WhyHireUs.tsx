@@ -12,8 +12,8 @@ const whyHireUsDetails = [
   {
     icon: (
       <Box
-        width={{ base: "24px", md: "47px" }}
-        height={{ base: "24px", md: "47px" }}
+        width={{ base: "24px", xl: "47px" }}
+        height={{ base: "24px", xl: "47px" }}
       >
         <Clock width={"100%"} height={"100%"} />
       </Box>
@@ -24,8 +24,8 @@ const whyHireUsDetails = [
   {
     icon: (
       <Box
-        width={{ base: "24px", md: "47px" }}
-        height={{ base: "24px", md: "47px" }}
+        width={{ base: "24px", xl: "47px" }}
+        height={{ base: "24px", xl: "47px" }}
       >
         <ShieldCheck width={"100%"} height={"100%"} />
       </Box>
@@ -37,8 +37,8 @@ const whyHireUsDetails = [
   {
     icon: (
       <Box
-        width={{ base: "24px", md: "47px" }}
-        height={{ base: "24px", md: "47px" }}
+        width={{ base: "24px", xl: "47px" }}
+        height={{ base: "24px", xl: "47px" }}
       >
         <Notepad width={"100%"} height={"100%"} />
       </Box>
@@ -50,8 +50,8 @@ const whyHireUsDetails = [
   {
     icon: (
       <Box
-        width={{ base: "24px", md: "47px" }}
-        height={{ base: "24px", md: "47px" }}
+        width={{ base: "24px", xl: "47px" }}
+        height={{ base: "24px", xl: "47px" }}
       >
         <UsersThree width={"100%"} height={"100%"} />
       </Box>
@@ -65,17 +65,17 @@ const whyHireUsDetails = [
 const WhyHireUsCard = ({ icon, title, description }: WhyHireUsCardProps) => {
   return (
     <Box
-      width={{ base: "158px", md: "290px" }}
-      height={{ base: "154px", md: "300px" }}
+      width={{ base: "158px", xl: "290px" }}
+      height={{ base: "154px", xl: "300px" }}
       borderRadius={"13px"}
-      paddingX={{ base: "11px", md: "18px" }}
+      paddingX={{ base: "11px", xl: "18px" }}
       backgroundColor={"#FCF7F1"}
       cursor={"pointer"}
       _hover={{ boxShadow: "lg" }}
-      paddingY={{ base: "8px", md: "24px" }}
+      paddingY={{ base: "8px", xl: "24px" }}
       transition={"all"}
       transitionDuration={"100ms"}
-      gap={{ base: "4px", md: "8px" }}
+      gap={{ base: "4px", xl: "8px" }}
       zIndex={"1000"}
       transitionTimingFunction={"ease-in-out"}
       display={"flex"}
@@ -88,14 +88,14 @@ const WhyHireUsCard = ({ icon, title, description }: WhyHireUsCardProps) => {
       {icon}
       <Text
         fontWeight={"500"}
-        fontSize={{ base: "16px", md: "30px" }}
-        paddingX={{ md: "4px" }}
+        fontSize={{ base: "16px", xl: "30px" }}
+        paddingX={{ xl: "4px" }}
         color={"#575757"}
       >
         {title}
       </Text>
       <Text
-        width={{ base: "140px", md: "219px" }}
+        width={{ base: "140px", xl: "219px" }}
         backgroundColor={"transparent"}
         height={"1px"}
         _groupHover={{ backgroundColor: "#75D130" }}
@@ -104,7 +104,7 @@ const WhyHireUsCard = ({ icon, title, description }: WhyHireUsCardProps) => {
       ></Text>
       <Text
         fontWeight={"400"}
-        fontSize={{ base: "12px", md: "20px" }}
+        fontSize={{ base: "12px", xl: "20px" }}
         color={"#3B3A3A"}
       >
         {description}
@@ -121,7 +121,7 @@ export const WhyHireUs = () => {
       justifyContent={"space-between"}
       marginX={"auto"}
       alignItems={"start"}
-      flexDirection={{ base: "column", md: "row" }}
+      flexDirection={{ base: "column", xl: "row" }}
       backgroundImage={"url('/assets/bg-more-details.svg')"}
       backgroundRepeat={"repeat"}
     >
@@ -131,17 +131,17 @@ export const WhyHireUs = () => {
         gapY={"30px"}
         justifyContent={"between"}
         alignItems={"start"}
-        marginTop={{ base: "40px", md: "112px" }}
-        paddingX={{ base: "24px", md: "0px" }}
+        marginTop={{ base: "40px", xl: "112px" }}
+        paddingX={{ base: "24px", xl: "0px" }}
       >
         <Text
-          width={{ base: "100%", md: "470px" }}
+          width={{ base: "100%", xl: "470px" }}
           fontWeight={"medium"}
           fontSize={"36px"}
           textAlign={"left"}
-          lineHeight={{ base: "41px", md: "56px" }}
+          lineHeight={{ base: "41px", xl: "56px" }}
         >
-          Why you should <br className="hidden md:flex" />
+          Why you should <br className="hidden xl:flex" />
           hire{" "}
           <Text as={"span"} color={"#75D130"}>
             Bindle Bundle
@@ -151,8 +151,8 @@ export const WhyHireUs = () => {
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
-          width={{ base: "136px", md: "224px" }}
-          height={{ base: "46px", md: "52px" }}
+          width={{ base: "136px", xl: "224px" }}
+          height={{ base: "46px", xl: "52px" }}
           backgroundColor={"#051937"}
           color={"#FFFFFF"}
           paddingX={"26px"}
@@ -166,14 +166,14 @@ export const WhyHireUs = () => {
       </Box>
       <Box
         display={"flex"}
-        justifyContent={{ base: "center", md: "space-between" }}
+        justifyContent={{ base: "center", xl: "space-between" }}
         alignItems={"center"}
         flexWrap={"wrap"}
-        marginTop={{ base: "40px", md: "0px" }}
+        marginTop={{ base: "40px", xl: "0px" }}
         marginX={"auto"}
-        gap={{ base: "25px", md: "32px" }}
-        width={{ base: "100%", md: "746px" }}
-        height={{ base: "330px", md: "697px" }}
+        gap={{ base: "25px", xl: "32px" }}
+        width={{ base: "100%", xl: "746px" }}
+        height={{ base: "330px", xl: "697px" }}
         position={"relative"}
       >
         {whyHireUsDetails.map((detail, idx) => {
@@ -187,11 +187,11 @@ export const WhyHireUs = () => {
           );
         })}
         <Box
-          display={{ base: "none", md: "flex" }}
+          display={{ base: "none", xl: "flex" }}
           justifyContent={"center"}
           alignItems={"center"}
-          width={{ base: "0", md: "585px" }}
-          height={{ base: "0", md: "585px" }}
+          width={{ base: "0", xl: "585px" }}
+          height={{ base: "0", xl: "585px" }}
           position={"absolute"}
           marginX={"auto"}
           left={"10%"}

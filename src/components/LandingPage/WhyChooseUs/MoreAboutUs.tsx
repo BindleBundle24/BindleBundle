@@ -6,7 +6,7 @@ import { MapPin } from "@phosphor-icons/react";
 
 const SKEWED_CONTENT1 = [
   "Calgary",
-  "Aidrie",
+  "Airdrie",
   "Beiseker",
   "Bowden",
   "Chestermere",
@@ -35,44 +35,44 @@ export const MoreAboutUs = () => {
   return (
     <Box
       display={"flex"}
-      flexDirection={{ base: "column", md: "row" }}
+      flexDirection={{ base: "column", xl: "row" }}
       alignItems={"start"}
-      justifyContent={{ base: "center", md: "space-between" }}
-      gap={{ base: "23px", md: "0px" }}
-      paddingY={{ base: "20px", md: "0px" }}
+      justifyContent={{ base: "center", xl: "space-between" }}
+      gap={{ base: "23px", xl: "0px" }}
+      paddingY={{ base: "20px", xl: "0px" }}
       width={"100%"}
     >
       <Box
-        width={{ base: "100%", md: "719px" }}
-        height={{ base: "419px", md: "685px" }}
+        width={{ base: "100%", xl: "719px" }}
+        height={{ base: "419px", xl: "685px" }}
         display={"flex"}
         flexDirection={"column"}
-        gapY={{ base: "23px", md: "12px" }}
-        paddingX={{ base: "24px", md: "0px" }}
+        gapY={{ base: "23px", xl: "12px" }}
+        paddingX={{ base: "24px", xl: "0px" }}
       >
         <Text
           fontWeight={"medium"}
           width={"100%"}
-          fontSize={{ md: "56px", base: "36px" }}
-          lineHeight={{ md: "56px", base: "38px" }}
+          fontSize={{ xl: "56px", base: "36px" }}
+          lineHeight={{ xl: "56px", base: "38px" }}
         >
           More about us at Bindle Bundle
         </Text>
         <Text
           width={"100%"}
-          fontSize={{ md: "22px", base: "16px" }}
+          fontSize={{ xl: "22px", base: "16px" }}
           color={"#595959"}
-          lineHeight={{ md: "25px", base: "27.06px" }}
+          lineHeight={{ xl: "25px", base: "27.06px" }}
         >
           Based in Canada, Bindle Bundle ensures every move is easy, efficient,
           and stress-free. We serve families, businesses, and individuals across
           the country, including:
         </Text>
         <Box
-          width={{ base: "100%", md: "733px" }}
-          height={{ base: "211px", md: "472px" }}
+          width={{ base: "100%", xl: "733px" }}
+          height={{ base: "211px", xl: "472px" }}
           display={"flex"}
-          flexDirection={{ base: "column", md: "row" }}
+          flexDirection={{ base: "column", xl: "row" }}
           alignItems={"center"}
           justifyContent={"start"}
         >
@@ -85,11 +85,11 @@ export const MoreAboutUs = () => {
           />
         </Box>
       </Box>
-      <Box width={{ base: "100vw", md: "563px" }} marginTop={{ md: "192px" }}>
+      <Box width={{ base: "100vw", xl: "563px" }} marginTop={{ xl: "192px" }}>
         <Box
-          height={{ md: "34px", base: "34px" }}
+          height={{ xl: "34px", base: "34px" }}
           width={"100%"}
-          mt={{ lg: "2em", md: "2em", base: "1rem" }}
+          mt={{ xl: "2em", md: "2em", base: "1rem" }}
         >
           <Box overflow={"hidden"} ref={emblaRef}>
             <Box display={"flex"}>
@@ -112,7 +112,7 @@ export const MoreAboutUs = () => {
                     {" "}
                     <Text
                       fontWeight="500"
-                      fontSize={{ lg: "28px", md: "22px", base: "18px" }}
+                      fontSize={{ xl: "28px", md: "22px", base: "18px" }}
                       lineHeight="38px"
                       color="white"
                       display={"flex"}
@@ -132,9 +132,9 @@ export const MoreAboutUs = () => {
           </Box>
         </Box>
         <Box
-          height={{ md: "34px", base: "34px" }}
+          height={{ xl: "34px", base: "34px" }}
           width={"100%"}
-          mt={{ lg: "2em", md: "2em", base: "2.8em" }}
+          mt={{ xl: "2em", md: "2em", base: "2.8em" }}
         >
           <Box overflow={"hidden"} ref={emblaRef2}>
             <Box display={"flex"}>
@@ -157,7 +157,7 @@ export const MoreAboutUs = () => {
                     {" "}
                     <Text
                       fontWeight="500"
-                      fontSize={{ lg: "28px", md: "22px", base: "18px" }}
+                      fontSize={{ xl: "28px", md: "22px", base: "18px" }}
                       lineHeight="38px"
                       color="white"
                       display={"flex"}

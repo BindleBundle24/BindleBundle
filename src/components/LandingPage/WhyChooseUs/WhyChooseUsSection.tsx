@@ -9,7 +9,7 @@ export const WhyChooseUsSection = () => {
     <Box
       display={"flex"}
       flexDirection={"column"}
-      width={{ base: "100%", sm: "80%", md: "1257px" }}
+      width={{ base: "100%", sm: "80%", xl: "1257px" }}
       marginX={"auto"}
       justifyContent={"space-between"}
       alignItems={"start"}

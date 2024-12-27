@@ -5,10 +5,10 @@ export const Testimonials = () => {
   return (
     <Box
       width={"100vw"}
-      height={{ base: "fit", md: "1080px" }}
+      height={{ base: "fit", xl: "1080px" }}
       display={"flex"}
       flexDirection={"column"}
-      paddingY={{ base: "20px", md: "50px" }}
+      paddingY={{ base: "20px", xl: "50px" }}
       justifyContent={"center"}
       alignItems={"center"}
       gap={"5px"}
@@ -17,10 +17,10 @@ export const Testimonials = () => {
       paddingX={{ base: "24px" }}
     >
       <Text
-        fontSize={{ base: "36px", md: "56px" }}
+        fontSize={{ base: "36px", xl: "56px" }}
         fontWeight={"500"}
         width={"100%"}
-        height={{ base: "fit", md: "91px" }}
+        height={{ base: "fit", xl: "91px" }}
         display={"flex"}
         justifyContent={"center"}
         marginX={"auto"}
@@ -30,8 +30,8 @@ export const Testimonials = () => {
         What our clients say!
       </Text>
       <Box
-        width={{ base: "343px", md: "1192px" }}
-        height={{ base: "702px", md: "679px" }}
+        width={{ base: "343px", xl: "1192px" }}
+        height={{ base: "702px", xl: "679px" }}
         display={"flex"}
         flexDirection={"column"}
         alignItems={"center"}
@@ -39,15 +39,15 @@ export const Testimonials = () => {
         mx={"auto"}
       >
         <HStack
-          width={{ base: "343px", md: "502px" }}
-          height={{ base: "125px", md: "180px" }}
+          width={{ base: "343px", xl: "502px" }}
+          height={{ base: "125px", xl: "180px" }}
           display={"flex"}
           alignItems={"center"}
           justifyContent={"space-between"}
         >
           <Box
-            width={{ base: "50px", md: "100px" }}
-            height={{ base: "50px", md: "100px" }}
+            width={{ base: "50px", xl: "100px" }}
+            height={{ base: "50px", xl: "100px" }}
             display={"flex"}
             alignItems={"center"}
             justifyContent={"center"}
@@ -61,7 +61,7 @@ export const Testimonials = () => {
             />
           </Box>
           <Box
-            width={{ base: "279px", md: "384px" }}
+            width={{ base: "279px", xl: "384px" }}
             height={"100%"}
             display={"flex"}
             flexDirection={"column"}
@@ -69,21 +69,21 @@ export const Testimonials = () => {
             justifyContent={"start"}
             backgroundColor={"white"}
             shadow={"md"}
-            paddingY={{ base: "12px", md: "24px" }}
+            paddingY={{ base: "12px", xl: "24px" }}
             gap={"2px"}
             borderRadius={"15px"}
-            paddingX={{ base: "10px", md: "32px" }}
+            paddingX={{ base: "10px", xl: "32px" }}
           >
             <Text
               fontWeight={"medium"}
               textAlign={"left"}
-              fontSize={{ base: "16px", md: "24px" }}
+              fontSize={{ base: "16px", xl: "24px" }}
             >
               Chioma Ozu
             </Text>
             <Text
               color={"#2C2C2C"}
-              fontSize={{ base: "12px", md: "14px" }}
+              fontSize={{ base: "12px", xl: "14px" }}
               textAlign={"left"}
             >
               “Over the yearsBindle Bundle as been known for it’s recruitment of
@@ -93,22 +93,22 @@ export const Testimonials = () => {
           </Box>
         </HStack>
         <Flex
-          direction={{ base: "column", md: "row" }}
-          gap={{ base: "7", md: "20" }}
-          justify={{ base: "center", md: "flex-start" }}
+          direction={{ base: "column", xl: "row" }}
+          gap={{ base: "7", xl: "20" }}
+          justify={{ base: "center", xl: "flex-start" }}
           width={"100%"}
         >
           <HStack
-            width={{ base: "343px", md: "502px" }}
-            height={{ base: "118px", md: "170px" }}
+            width={{ base: "343px", xl: "502px" }}
+            height={{ base: "118px", xl: "170px" }}
             display={"flex"}
-            flexDirection={{ base: "row-reverse", md: "row" }}
+            flexDirection={{ base: "row-reverse", xl: "row" }}
             alignItems={"center"}
             justifyContent={"space-between"}
           >
             <Box
-              width={{ base: "50px", md: "100px" }}
-              height={{ base: "50px", md: "100px" }}
+              width={{ base: "50px", xl: "100px" }}
+              height={{ base: "50px", xl: "100px" }}
               display={"flex"}
               alignItems={"center"}
               justifyContent={"center"}
@@ -122,7 +122,7 @@ export const Testimonials = () => {
               />
             </Box>
             <Box
-              width={{ base: "279px", md: "384px" }}
+              width={{ base: "279px", xl: "384px" }}
               height={"100%"}
               display={"flex"}
               flexDirection={"column"}
@@ -130,21 +130,21 @@ export const Testimonials = () => {
               justifyContent={"start"}
               backgroundColor={"white"}
               shadow={"md"}
-              paddingY={{ base: "12px", md: "24px" }}
+              paddingY={{ base: "12px", xl: "24px" }}
               gap={"2px"}
               borderRadius={"15px"}
-              paddingX={{ base: "10px", md: "32px" }}
+              paddingX={{ base: "10px", xl: "32px" }}
             >
               <Text
                 fontWeight={"medium"}
                 textAlign={"left"}
-                fontSize={{ base: "16px", md: "24px" }}
+                fontSize={{ base: "16px", xl: "24px" }}
               >
                 Michell king
               </Text>
               <Text
                 color={"#2C2C2C"}
-                fontSize={{ base: "12px", md: "14px" }}
+                fontSize={{ base: "12px", xl: "14px" }}
                 textAlign={"left"}
               >
                 “Over the yearsBindle Bundle as been known for it’s recruitment
@@ -154,16 +154,16 @@ export const Testimonials = () => {
             </Box>
           </HStack>
           <HStack
-            width={{ base: "343px", md: "502px" }}
-            height={{ base: "118px", md: "170px" }}
+            width={{ base: "343px", xl: "502px" }}
+            height={{ base: "118px", xl: "170px" }}
             display={"flex"}
             flexDirection={"row"}
             alignItems={"center"}
             justifyContent={"space-between"}
           >
             <Box
-              width={{ base: "50px", md: "100px" }}
-              height={{ base: "50px", md: "100px" }}
+              width={{ base: "50px", xl: "100px" }}
+              height={{ base: "50px", xl: "100px" }}
               display={"flex"}
               alignItems={"center"}
               justifyContent={"center"}
@@ -177,7 +177,7 @@ export const Testimonials = () => {
               />
             </Box>
             <Box
-              width={{ base: "279px", md: "384px" }}
+              width={{ base: "279px", xl: "384px" }}
               height={"100%"}
               display={"flex"}
               flexDirection={"column"}
@@ -185,21 +185,21 @@ export const Testimonials = () => {
               justifyContent={"start"}
               backgroundColor={"white"}
               shadow={"md"}
-              paddingY={{ base: "12px", md: "24px" }}
+              paddingY={{ base: "12px", xl: "24px" }}
               gap={"2px"}
               borderRadius={"15px"}
-              paddingX={{ base: "10px", md: "32px" }}
+              paddingX={{ base: "10px", xl: "32px" }}
             >
               <Text
                 fontWeight={"medium"}
                 textAlign={"left"}
-                fontSize={{ base: "16px", md: "24px" }}
+                fontSize={{ base: "16px", xl: "24px" }}
               >
                 Daniel Arinze
               </Text>
               <Text
                 color={"#2C2C2C"}
-                fontSize={{ base: "12px", md: "14px" }}
+                fontSize={{ base: "12px", xl: "14px" }}
                 textAlign={"left"}
               >
                 “Over the yearsBindle Bundle as been known for it’s recruitment
@@ -210,22 +210,22 @@ export const Testimonials = () => {
           </HStack>
         </Flex>
         <Flex
-          direction={{ base: "column", md: "row" }}
-          gap={{ base: "7", md: "20" }}
-          justify={{ base: "center", md: "flex-end" }}
+          direction={{ base: "column", xl: "row" }}
+          gap={{ base: "7", xl: "20" }}
+          justify={{ base: "center", xl: "flex-end" }}
           width={"100%"}
         >
           <HStack
-            width={{ base: "343px", md: "502px" }}
-            height={{ base: "118px", md: "170px" }}
+            width={{ base: "343px", xl: "502px" }}
+            height={{ base: "118px", xl: "170px" }}
             display={"flex"}
-            flexDirection={{ base: "row-reverse", md: "row" }}
+            flexDirection={{ base: "row-reverse", xl: "row" }}
             alignItems={"center"}
             justifyContent={"space-between"}
           >
             <Box
-              width={{ base: "50px", md: "100px" }}
-              height={{ base: "50px", md: "100px" }}
+              width={{ base: "50px", xl: "100px" }}
+              height={{ base: "50px", xl: "100px" }}
               display={"flex"}
               alignItems={"center"}
               justifyContent={"center"}
@@ -239,7 +239,7 @@ export const Testimonials = () => {
               />
             </Box>
             <Box
-              width={{ base: "279px", md: "384px" }}
+              width={{ base: "279px", xl: "384px" }}
               height={"100%"}
               display={"flex"}
               flexDirection={"column"}
@@ -247,21 +247,21 @@ export const Testimonials = () => {
               justifyContent={"start"}
               backgroundColor={"white"}
               shadow={"md"}
-              paddingY={{ base: "12px", md: "24px" }}
+              paddingY={{ base: "12px", xl: "24px" }}
               gap={"2px"}
               borderRadius={"15px"}
-              paddingX={{ base: "10px", md: "32px" }}
+              paddingX={{ base: "10px", xl: "32px" }}
             >
               <Text
                 fontWeight={"medium"}
                 textAlign={"left"}
-                fontSize={{ base: "16px", md: "24px" }}
+                fontSize={{ base: "16px", xl: "24px" }}
               >
                 Oreoluwa Adedayo
               </Text>
               <Text
                 color={"#2C2C2C"}
-                fontSize={{ base: "12px", md: "14px" }}
+                fontSize={{ base: "12px", xl: "14px" }}
                 textAlign={"left"}
               >
                 {" "}
@@ -272,16 +272,16 @@ export const Testimonials = () => {
             </Box>
           </HStack>
           <HStack
-            width={{ base: "343px", md: "502px" }}
-            height={{ base: "118px", md: "170px" }}
+            width={{ base: "343px", xl: "502px" }}
+            height={{ base: "118px", xl: "170px" }}
             display={"flex"}
             flexDirection={"row"}
             alignItems={"center"}
             justifyContent={"space-between"}
           >
             <Box
-              width={{ base: "50px", md: "100px" }}
-              height={{ base: "50px", md: "100px" }}
+              width={{ base: "50px", xl: "100px" }}
+              height={{ base: "50px", xl: "100px" }}
               display={"flex"}
               alignItems={"center"}
               justifyContent={"center"}
@@ -295,7 +295,7 @@ export const Testimonials = () => {
               />
             </Box>
             <Box
-              width={{ base: "279px", md: "384px" }}
+              width={{ base: "279px", xl: "384px" }}
               height={"100%"}
               display={"flex"}
               flexDirection={"column"}
@@ -303,21 +303,21 @@ export const Testimonials = () => {
               justifyContent={"start"}
               backgroundColor={"white"}
               shadow={"md"}
-              paddingY={{ base: "12px", md: "24px" }}
+              paddingY={{ base: "12px", xl: "24px" }}
               gap={"2px"}
               borderRadius={"15px"}
-              paddingX={{ base: "10px", md: "32px" }}
+              paddingX={{ base: "10px", xl: "32px" }}
             >
               <Text
                 fontWeight={"medium"}
                 textAlign={"left"}
-                fontSize={{ base: "16px", md: "24px" }}
+                fontSize={{ base: "16px", xl: "24px" }}
               >
                 Babafemi Olowoyo
               </Text>
               <Text
                 color={"#2C2C2C"}
-                fontSize={{ base: "12px", md: "14px" }}
+                fontSize={{ base: "12px", xl: "14px" }}
                 textAlign={"left"}
               >
                 “Over the yearsBindle Bundle as been known for it’s recruitment

@@ -42,22 +42,22 @@ export const Slider = ({ data }: MovingType) => {
   return (
     <Box
       display={"flex"}
-      width={{ base: "100%", md: "1261px" }}
-      height={{ base: "453px", md: "550px" }}
+      width={{ base: "100%", xl: "1261px" }}
+      height={{ base: "453px", xl: "550px" }}
       justifyContent={"space-between"}
       alignItems={"center"}
-      paddingBottom={{ base: "", md: "16px" }}
-      marginLeft={{ base: "0px", md: "20px" }}
+      paddingBottom={{ base: "", xl: "16px" }}
+      marginLeft={{ base: "0px", xl: "20px" }}
     >
       <Box
         display={"flex"}
         flexDirection="column"
-        width={{ base: "100%", md: "600px" }}
-        height={{ base: "396px", md: "100%" }}
+        width={{ base: "100%", xl: "600px" }}
+        height={{ base: "396px", xl: "100%" }}
         justifyContent={"space-between"}
-        paddingY={{ base: "", md: "40px" }}
-        paddingX={{ base: "", md: "40px" }}
-        gap={{ base: "5px", md: "20px" }}
+        paddingY={{ base: "", xl: "40px" }}
+        paddingX={{ base: "", xl: "40px" }}
+        gap={{ base: "5px", xl: "20px" }}
       >
         <Box width={"100%"} height="100%" overflow={"hidden"} ref={emblaRef}>
           <Box display={"flex"} width={"100%"} height={"100%"}>
@@ -76,27 +76,27 @@ export const Slider = ({ data }: MovingType) => {
                 <Box
                   display={"flex"}
                   flexDirection="column"
-                  width={{ base: "100%", md: "561px" }}
+                  width={{ base: "100%", xl: "561px" }}
                   color={"#FFFFFF"}
-                  gapY={{ base: "", md: "13px" }}
+                  gapY={{ base: "", xl: "13px" }}
                   height="100%"
                 >
                   <Text
-                    fontSize={{ base: "36px", md: "60px" }}
+                    fontSize={{ base: "36px", xl: "60px" }}
                     paddingLeft={"12px"}
                     fontWeight={"500"}
-                    lineHeight={{ md: "71px" }}
+                    lineHeight={{ xl: "71px" }}
                     width="100%"
                   >
                     {name}
                   </Text>
                   <Text
-                    fontSize={{ base: "16px", md: "22px" }}
-                    fontWeight={{ md: "500" }}
+                    fontSize={{ base: "16px", xl: "22px" }}
+                    fontWeight={{ xl: "500" }}
                     paddingX={"12px"}
                     width="100%"
                     height="100%"
-                    lineHeight={{ md: "27px", base: "24px" }}
+                    lineHeight={{ xl: "27px", base: "24px" }}
                   >
                     {description}
                   </Text>
@@ -138,9 +138,9 @@ export const Slider = ({ data }: MovingType) => {
       </Box>
 
       <Box
-        width={{ base: "100%", md: "715px" }}
-        height={{ base: "100%", md: "588px" }}
-        display={{ base: "none", md: "flex" }}
+        width={{ base: "100%", xl: "715px" }}
+        height={{ base: "100%", xl: "588px" }}
+        display={{ base: "none", xl: "flex" }}
         justifyContent={"end"}
         alignItems={"end"}
         position={"absolute"}

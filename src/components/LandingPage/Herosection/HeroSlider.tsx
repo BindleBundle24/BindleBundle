@@ -17,7 +17,7 @@ export const HeroSlider = () => {
 
   return (
     <Box
-      width={{ base: "100vw", md: "1440px" }}
+      width={{ base: "100vw", xl: "1440px" }}
       height={{ base: "329px", md: "414px" }}
       display={"flex"}
       justifyContent="center"
@@ -53,8 +53,8 @@ export const HeroSlider = () => {
                 <Image
                   src={imgSrc}
                   alt={`slider image ${index + 1}`}
-                  width={{ base: "211px", md: "292px" }}
-                  height={{ base: "211px", md: "292px" }}
+                  width={{ base: "211px", xl: "292px" }}
+                  height={{ base: "211px", xl: "292px" }}
                   display={"flex"}
                   borderRadius={"13px"}
                 />

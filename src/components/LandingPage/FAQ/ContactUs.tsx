@@ -13,15 +13,15 @@ export const ContactUs = () => {
       my="2em"
       display="flex"
       flexDirection="column"
-      justifyContent={{ lg: "start", base: "", md: "" }}
+      justifyContent={{ xl: "start", base: "" }}
       justifySelf={"center"}
-      alignItems={{ lg: "start", base: "", md: "" }}
+      alignItems={{ xl: "start", base: "" }}
       gapY={"25px"}
-      width={{ base: "100%", md: "411px" }}
+      width={{ base: "100%", xl: "411px" }}
       height="500px"
       backgroundColor={"#FCF7F1"}
       borderRadius="6px"
-      paddingX={{ base: "0.6em", md: "1em" }}
+      paddingX={{ base: "0.6em", xl: "1em" }}
       paddingY="1em"
     >
       <Text color="#878484" fontWeight={"500"} lineHeight={"17.22px"}>
@@ -36,7 +36,7 @@ export const ContactUs = () => {
           flexDirection={"column"}
           alignItems={"start"}
           justifyContent={"space-between"}
-          gap={{ base: "22px", md: "22px" }}
+          gap={{ base: "22px", xl: "22px" }}
         >
           <Field required>
             <Box
@@ -180,8 +180,8 @@ export const ContactUs = () => {
             display={"flex"}
             justifyContent={"center"}
             alignItems={"center"}
-            width={{ base: "287px", md: "133px" }}
-            height={{ base: "41px", md: "46px" }}
+            width={{ base: "287px", xl: "133px" }}
+            height={{ base: "41px", xl: "46px" }}
             backgroundColor={"#051937"}
             color={"#FFFFFF"}
             paddingX={"26px"}
