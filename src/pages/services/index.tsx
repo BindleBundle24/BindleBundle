@@ -20,13 +20,13 @@ const ServicePage = () => {
       display={"flex"}
       width={"100%"}
       flexDirection={"column"}
-      gapY={{ base: "32px", md: "64px" }}
+      gapY={{ base: "32px", xl: "64px" }}
     >
       <ServicesDetails />
       <Text
         maxWidth={"1257px"}
         height={"1px"}
-        display={{ base: "hidden", md: "flex" }}
+        display={{ base: "hidden", xl: "flex" }}
         marginX={"auto"}
         backgroundColor={"#8D8B8B"}
       ></Text>

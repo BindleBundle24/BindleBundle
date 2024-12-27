@@ -26,11 +26,11 @@ const whyChooseUSDetails = [
 export const WhyChooseUs = () => {
   return (
     <Box
-      width={{ base: "357px", md: "1246px" }}
-      height={{ base: "453px", md: "515px" }}
+      width={{ base: "357px", xl: "1246px" }}
+      height={{ base: "453px", xl: "515px" }}
       backgroundImage={{
         base: "url('/assets/bg-why-choose-us-mobile.png')",
-        md: "url(/assets/bg-why-choose-us.png)",
+        xl: "url(/assets/bg-why-choose-us.png)",
       }}
       borderRadius={"20px"}
       marginX={"auto"}

@@ -12,6 +12,10 @@ import {
   Text,
   Box,
   Image,
+  AccordionRoot,
+  AccordionItem,
+  AccordionItemTrigger,
+  AccordionItemContent,
 } from "@chakra-ui/react";
 import React from "react";
 import Menu from "@/components/Icons/Menu";
@@ -44,33 +48,33 @@ const NavBar = () => {
     <Box
       background="white"
       width="full"
-      height={{ base: "72px", md: pathName !== "/services" ? "72px" : "130px" }}
+      height={{ base: "72px", xl: pathName !== "/services" ? "72px" : "130px" }}
       display="flex"
       flexDirection={"column"}
       justifyContent="center"
       alignItems="center"
       marginX="auto"
       position="relative"
-      shadow={{ base: "sm", md: "none" }}
+      shadow={{ base: "sm", xl: "none" }}
     >
       <Box
         background="white"
-        width={{ base: "full", md: "1257px" }}
-        paddingX={{ base: "24px", md: 0 }}
+        width={{ base: "full", xl: "1257px" }}
+        paddingX={{ base: "24px", xl: 0 }}
         paddingY={"20px"}
         display="flex"
         justifyContent="space-between"
         alignItems="center"
         marginX="auto"
-        height={{ base: "full", md: "64px" }}
-        borderBottomWidth={{ base: "none", md: "1px" }}
-        borderBottomColor={{ md: "#D4CACA" }}
+        height={{ base: "full", xl: "64px" }}
+        borderBottomWidth={{ base: "none", xl: "1px" }}
+        borderBottomColor={{ xl: "#D4CACA" }}
         zIndex={"10"}
       >
         <Box
-          width={{ base: "full", md: "730px" }}
+          width={{ base: "full", xl: "730px" }}
           display="flex"
-          justifyContent={{ base: "space-between", md: "start" }}
+          justifyContent={{ base: "space-between", xl: "start" }}
           alignItems="center"
           gap="37px"
           height="100%"
@@ -105,9 +109,9 @@ const NavBar = () => {
             </Text>
           </NextLink>
           <Box
-            display={{ base: "none", md: "flex" }}
-            flexDirection={{ base: "column", md: "row" }}
-            width={{ base: "full", md: "500px" }}
+            display={{ base: "none", xl: "flex" }}
+            flexDirection={{ base: "column", xl: "row" }}
+            width={{ base: "full", xl: "500px" }}
             alignItems="center"
             justifyContent="space-between"
           >
@@ -132,12 +136,12 @@ const NavBar = () => {
               </Text>
             </NextLink>
           </Box>
-          <Box display={{ base: "flex", md: "hidden" }} overflow={"hidden"}>
+          <Box display={{ base: "flex", xl: "hidden" }} overflow={"hidden"}>
             <DrawerRoot size="full">
               <DrawerBackdrop />
               <DrawerTrigger
                 asChild
-                display={{ base: "flex", md: "none" }}
+                display={{ base: "flex", xl: "none" }}
                 width="31px"
                 height="16px"
               >
@@ -172,7 +176,7 @@ const NavBar = () => {
                   </HStack>
                 </DrawerActionTrigger>{" "}
                 <DrawerBody
-                  display={{ base: "flex", md: "none" }}
+                  display={{ base: "flex", xl: "none" }}
                   flexDirection="column"
                   width="100%"
                   gap="30px"
@@ -185,90 +189,104 @@ const NavBar = () => {
                         fontSize="18px"
                         fontWeight="medium"
                         borderBottom="0.5px solid #C3C3C34D"
+                        marginTop={"20px"}
                       >
                         Home
                       </Text>
                     </NextLink>
                   </DrawerCloseTrigger>
-                  <DrawerCloseTrigger asChild>
-                    <NextLink href="/services">
-                      <Text
-                        color="525050"
-                        fontSize="18px"
-                        fontWeight="medium"
-                        borderBottom="0.5px solid #C3C3C34D"
-                      >
-                        Services
-                      </Text>
-                    </NextLink>
-                  </DrawerCloseTrigger>
+                  <AccordionRoot collapsible>
+                    <AccordionItem value="services">
+                      <AccordionItemTrigger padding={"0px"}>
+                        <Text
+                          color="525050"
+                          fontSize="18px"
+                          fontWeight="medium"
+                        >
+                          Services
+                        </Text>
+                      </AccordionItemTrigger>
 
-                  <DrawerCloseTrigger asChild>
-                    <Box
-                      display={"flex"}
-                      flexDirection={"column"}
-                      gapY={"30px"}
-                      width={"90%"}
-                      marginLeft={"40px"}
-                    >
-                      <Text
-                        color="#525050"
-                        display="flex"
-                        justifyContent="flex-start"
-                        alignItems="center"
-                        fontWeight="medium"
-                        width="100%"
-                        borderBottomWidth={
-                          moveType === "residential" ? "2.5px" : "0px"
-                        }
-                        borderBottomColor={
-                          moveType === "residential" ? "#051937" : "transparent"
-                        }
-                        transition="all 0.3s ease-in-out"
-                        onClick={() =>
-                          router.push(`/services?type=residential`)
-                        }
-                      >
-                        Residential Move
-                      </Text>{" "}
-                      <Text
-                        color="#525050"
-                        display="flex"
-                        justifyContent="flex-start"
-                        alignItems="center"
-                        fontWeight="medium"
-                        width="100%"
-                        borderBottomWidth={
-                          moveType === "commercial" ? "2.5px" : "0px"
-                        }
-                        borderBottomColor={
-                          moveType === "commercial" ? "#051937" : "transparent"
-                        }
-                        transition="all 0.3s ease-in-out"
-                        onClick={() => router.push(`/services?type=commercial`)}
-                      >
-                        Commercial Move
-                      </Text>
-                      <Text
-                        color="#525050"
-                        display="flex"
-                        justifyContent="flex-start"
-                        alignItems="center"
-                        fontWeight="medium"
-                        width="100%"
-                        borderBottomWidth={
-                          moveType === "specialty" ? "2.5px" : "0px"
-                        }
-                        borderBottomColor={
-                          moveType === "specialty" ? "#051937" : "transparent"
-                        }
-                        transition="all 0.3s ease-in-out"
-                        onClick={() => router.push(`/services?type=specialty`)}
-                      >
-                        Specialty Move
-                      </Text>
-                    </Box>
-                  </DrawerCloseTrigger>
+                      <AccordionItemContent marginY={"10px"}>
+                        <DrawerCloseTrigger asChild>
+                          <Box
+                            display={"flex"}
+                            flexDirection={"column"}
+                            gapY={"30px"}
+                            width={"90%"}
+                            marginLeft={"40px"}
+                          >
+                            <Text
+                              color="#525050"
+                              display="flex"
+                              justifyContent="flex-start"
+                              alignItems="center"
+                              fontWeight="medium"
+                              width="100%"
+                              borderBottomWidth={
+                                moveType === "residential" ? "2.5px" : "0px"
+                              }
+                              borderBottomColor={
+                                moveType === "residential"
+                                  ? "#051937"
+                                  : "transparent"
+                              }
+                              transition="all 0.3s ease-in-out"
+                              onClick={() =>
+                                router.push(`/services?type=residential`)
+                              }
+                            >
+                              Residential Move
+                            </Text>{" "}
+                            <Text
+                              color="#525050"
+                              display="flex"
+                              justifyContent="flex-start"
+                              alignItems="center"
+                              fontWeight="medium"
+                              width="100%"
+                              borderBottomWidth={
+                                moveType === "commercial" ? "2.5px" : "0px"
+                              }
+                              borderBottomColor={
+                                moveType === "commercial"
+                                  ? "#051937"
+                                  : "transparent"
+                              }
+                              transition="all 0.3s ease-in-out"
+                              onClick={() =>
+                                router.push(`/services?type=commercial`)
+                              }
+                            >
+                              Commercial Move
+                            </Text>
+                            <Text
+                              color="#525050"
+                              display="flex"
+                              justifyContent="flex-start"
+                              alignItems="center"
+                              fontWeight="medium"
+                              width="100%"
+                              borderBottomWidth={
+                                moveType === "specialty" ? "2.5px" : "0px"
+                              }
+                              borderBottomColor={
+                                moveType === "specialty"
+                                  ? "#051937"
+                                  : "transparent"
+                              }
+                              transition="all 0.3s ease-in-out"
+                              onClick={() =>
+                                router.push(`/services?type=specialty`)
+                              }
+                            >
+                              Specialty Move
+                            </Text>
+                          </Box>
+                        </DrawerCloseTrigger>
+                      </AccordionItemContent>
+                    </AccordionItem>
+                  </AccordionRoot>
                   <DrawerCloseTrigger asChild>
                     <NextLink href="/#testimonials">
                       <Text
@@ -311,7 +329,7 @@ const NavBar = () => {
           </Box>
         </Box>
         <Button
-          display={{ base: "none", sm: "flex" }}
+          display={{ base: "none", xl: "flex" }}
           justifyContent="center"
           alignItems="center"
           paddingY="13px"
@@ -335,7 +353,7 @@ const NavBar = () => {
         height={"57px"}
         display={{
           base: "none",
-          md: pathName !== "/services" ? "none" : "flex",
+          xl: pathName !== "/services" ? "none" : "flex",
         }}
         justifyContent={"center"}
         alignItems={"center"}

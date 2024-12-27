@@ -8,13 +8,13 @@ export const FaqSection = () => {
     <Box maxWidth={"1440px"} marginX="auto">
       <Box
         display={"flex"}
-        flexDirection={{ base: "column", md: "row" }}
-        width={{ base: "100%", md: "1257px" }}
-        marginTop={{ base: "40px", md: "0px" }}
+        flexDirection={{ base: "column", xl: "row" }}
+        width={{ base: "100%", xl: "1257px" }}
+        marginTop={{ base: "40px", xl: "0px" }}
         marginX={"auto"}
         justifyContent={"space-between"}
         alignItems={"start"}
-        paddingX={{ base: "24px", md: "0px" }}
+        paddingX={{ base: "24px", xl: "0px" }}
         id="contact-us"
       >
         <FAQs />

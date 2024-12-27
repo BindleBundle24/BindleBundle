@@ -35,14 +35,14 @@ const ServicesDetails = () => {
 
   return (
     <Box
-      width={{ base: "100%", md: "1164px" }}
-      height={{ base: "fit", md: "578px" }}
+      width={{ base: "100%", xl: "1164px" }}
+      height={{ base: "fit", xl: "578px" }}
       display={"flex"}
       justifyContent={"center"}
       alignItems={"center"}
       marginX={"auto"}
       flexDirection={"column"}
-      paddingX={{ base: "24px", md: "0px" }}
+      paddingX={{ base: "24px", xl: "0px" }}
       marginTop={"20px"}
     >
       {data ? (
@@ -56,10 +56,10 @@ const ServicesDetails = () => {
           justifyContent={"space-between"}
         >
           <Text
-            fontSize={{ base: "36px", md: "56px" }}
+            fontSize={{ base: "36px", xl: "56px" }}
             fontWeight={"500"}
             textAlign={"left"}
-            lineHeight={{ base: "41px", md: "54px" }}
+            lineHeight={{ base: "41px", xl: "54px" }}
           >
             {data.name}
           </Text>
@@ -67,13 +67,13 @@ const ServicesDetails = () => {
             width={"100%"}
             height={"100%"}
             display={"flex"}
-            flexDirection={{ base: "column", md: "row" }}
+            flexDirection={{ base: "column", xl: "row" }}
             alignItems={"start"}
             justifyContent={"space-between"}
           >
             <Box
-              width={{ base: "100%", md: "613px" }}
-              height={{ base: "fit", md: "559px" }}
+              width={{ base: "100%", xl: "613px" }}
+              height={{ base: "fit", xl: "559px" }}
               display={"flex"}
               flexDirection={"column"}
               alignItems={"start"}
@@ -82,7 +82,7 @@ const ServicesDetails = () => {
             >
               <Box
                 width={"full"}
-                height={{ base: "268px", md: "401px" }}
+                height={{ base: "268px", xl: "401px" }}
                 display={"flex"}
                 alignItems={"center"}
                 justifyContent={"center"}
@@ -102,9 +102,9 @@ const ServicesDetails = () => {
                 />
               </Box>
               <Box
-                width={{ base: "100%", md: "474px" }}
+                width={{ base: "100%", xl: "474px" }}
                 display={"flex"}
-                flexDirection={{ base: "column", md: "row" }}
+                flexDirection={{ base: "column", xl: "row" }}
                 alignItems={"center"}
                 justifyContent={"space-between"}
                 gapY={"14px"}
@@ -113,7 +113,7 @@ const ServicesDetails = () => {
                   display={"flex"}
                   justifyContent={"center"}
                   alignItems={"center"}
-                  width={{ base: "full", md: "224px" }}
+                  width={{ base: "full", xl: "224px" }}
                   height={"52px"}
                   backgroundColor={"#051937"}
                   color={"#FFFFFF"}
@@ -130,7 +130,7 @@ const ServicesDetails = () => {
                   display={"flex"}
                   justifyContent={"center"}
                   alignItems={"center"}
-                  width={{ base: "full", md: "224px" }}
+                  width={{ base: "full", xl: "224px" }}
                   height={"52px"}
                   backgroundColor={"#75D130"}
                   color={"#FFFFFF"}
@@ -147,15 +147,15 @@ const ServicesDetails = () => {
             </Box>
 
             <Box
-              width={{ base: "100%", md: "499px" }}
-              height={{ base: "fit", md: "496px" }}
+              width={{ base: "100%", xl: "499px" }}
+              height={{ base: "fit", xl: "496px" }}
               display={"flex"}
               flexDirection={"column"}
               alignItems={"start"}
               justifyContent={"start"}
-              gapY={{ base: "26px", md: "46px" }}
-              overflow={{ base: "hidden", md: "auto" }}
-              marginTop={{ base: "20px", md: "0px" }}
+              gapY={{ base: "26px", xl: "46px" }}
+              overflow={{ base: "hidden", xl: "auto" }}
+              marginTop={{ base: "20px", xl: "0px" }}
             >
               {data.description.map((item, index) => (
                 <Box
@@ -163,10 +163,10 @@ const ServicesDetails = () => {
                   flexDirection={"row"}
                   key={index}
                   width={"100%"}
-                  height={{ base: "", md: "150px" }}
+                  height={{ base: "", xl: "150px" }}
                   alignItems={"start"}
                   justifyContent={"space-between"}
-                  gapX={{ base: "12px", md: "0" }}
+                  gapX={{ base: "12px", xl: "0" }}
                 >
                   <Box
                     height={"100%"}
@@ -175,26 +175,26 @@ const ServicesDetails = () => {
                     justifyContent={"start"}
                   >
                     <Text
-                      fontSize={{ base: "50px", md: "78px" }}
+                      fontSize={{ base: "50px", xl: "78px" }}
                       fontWeight={"500"}
                       WebkitTextStrokeColor={"#000000"}
                       WebkitTextFillColor={"#FFFFFF"}
                       WebkitTextStrokeWidth={"1px"}
-                      marginTop={{ base: "-8px", md: "-20px" }}
-                      width={{ base: "41px", md: "82px" }}
+                      marginTop={{ base: "-8px", xl: "-20px" }}
+                      width={{ base: "41px", xl: "82px" }}
                       textAlign={"center"}
                     >
                       {index + 1}
                     </Text>
                   </Box>
                   <Box
-                    width={{ base: "100%", md: "420px" }}
+                    width={{ base: "100%", xl: "420px" }}
                     height={"100%"}
                     display={"flex"}
                     flexDirection={"column"}
                   >
                     <Text
-                      fontSize={{ base: "20px", md: "26px" }}
+                      fontSize={{ base: "20px", xl: "26px" }}
                       fontWeight={"500"}
                       textAlign={"left"}
                       color={"#332F2F"}
@@ -202,12 +202,12 @@ const ServicesDetails = () => {
                       {item.title}
                     </Text>
                     <Text
-                      fontSize={{ base: "14px", md: "22px" }}
+                      fontSize={{ base: "14px", xl: "22px" }}
                       fontWeight={"400"}
                       textAlign={"left"}
-                      lineHeight={{ base: "17.22px", md: "27.06px" }}
+                      lineHeight={{ base: "17.22px", xl: "27.06px" }}
                       color={"#595959"}
-                      paddingRight={{ base: "", md: "4px" }}
+                      paddingRight={{ base: "", xl: "4px" }}
                     >
                       {item.description}
                     </Text>

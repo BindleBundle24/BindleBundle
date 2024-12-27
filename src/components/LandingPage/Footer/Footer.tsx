@@ -7,31 +7,31 @@ const Footer = () => {
     <Box
       width="100%"
       display="flex"
-      flexDirection={{ base: "column", md: "row" }}
+      flexDirection={{ base: "column", xl: "row" }}
       justifyContent="center"
       alignItems="center"
-      paddingY={{ base: "50px", md: "0px" }}
-      paddingTop={{ base: "0px", md: "51px" }}
-      height={{ md: "426px" }}
+      paddingY={{ base: "50px", xl: "0px" }}
+      paddingTop={{ base: "0px", xl: "51px" }}
+      height={{ xl: "426px" }}
       backgroundColor="#051937"
       color={"white"}
     >
       <Box
         background="transparent"
-        paddingX={{ base: "24px", md: "0" }}
-        width={{ base: "full", md: "1235px" }}
+        paddingX={{ base: "24px", xl: "0" }}
+        width={{ base: "full", xl: "1235px" }}
         height="full"
         display="flex"
-        flexDirection={{ base: "column", md: "row" }}
+        flexDirection={{ base: "column", xl: "row" }}
         justifyContent="space-between"
         alignItems="start"
         marginX="auto"
-        gap={{ base: "40px", md: "80px" }}
+        gap={{ base: "40px", xl: "80px" }}
       >
         <Box
           display={"flex"}
           flexDirection={"column"}
-          width={{ base: "full", md: "225px" }}
+          width={{ base: "full", xl: "225px" }}
           gap={"16px"}
           height="full"
         >
@@ -84,8 +84,8 @@ const Footer = () => {
           </NextLink>
         </Box>
         <Box
-          width={{ md: "176px" }}
-          height={{ md: "137px" }}
+          width={{ xl: "176px" }}
+          height={{ xl: "137px" }}
           display={"flex"}
           flexDirection={"column"}
           justifyContent={"space-between"}
@@ -95,7 +95,7 @@ const Footer = () => {
             fontWeight={"semibold"}
             display={"flex"}
             alignItems={"end"}
-            marginTop={{ base: "0px", md: "16px" }}
+            marginTop={{ base: "0px", xl: "16px" }}
           >
             Pricing
           </Text>
@@ -105,7 +105,7 @@ const Footer = () => {
             justifyContent={"space-between"}
             flexDirection={"column"}
             gap={"16px"}
-            marginTop={{ base: "0px", md: "24px" }}
+            marginTop={{ base: "0px", xl: "24px" }}
           >
             <NextLink href="/#services">
               <Text color="#C5C5C5" fontSize="16px">
@@ -125,8 +125,8 @@ const Footer = () => {
           </Box>
         </Box>
         <Box
-          width={{ md: "354px" }}
-          height={{ md: "186px" }}
+          width={{ xl: "354px" }}
+          height={{ xl: "186px" }}
           display={"flex"}
           flexDirection={"column"}
           justifyContent={"start"}
@@ -137,7 +137,7 @@ const Footer = () => {
             fontWeight={"semibold"}
             display={"flex"}
             alignItems={"end"}
-            marginTop={{ base: "0px", md: "16px" }}
+            marginTop={{ base: "0px", xl: "16px" }}
           >
             Location
           </Text>
@@ -147,8 +147,8 @@ const Footer = () => {
           </Text>
         </Box>
         <Box
-          width={{ md: "168px" }}
-          height={{ md: "186px" }}
+          width={{ xl: "168px" }}
+          height={{ xl: "186px" }}
           display={"flex"}
           flexDirection={"column"}
           justifyContent={"start"}
@@ -159,7 +159,7 @@ const Footer = () => {
             fontWeight={"semibold"}
             display={"flex"}
             alignItems={"end"}
-            marginTop={{ base: "0px", md: "16px" }}
+            marginTop={{ base: "0px", xl: "16px" }}
           >
             Contact Us
           </Text>

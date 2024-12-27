@@ -23,16 +23,16 @@ export const SectionTitle = ({
       _after={{
         position: "absolute",
         content: "''",
-        bottom: { lg: -1, base: 0, md: 0 },
-        left: center ? { lg: 0, base: 0, md: -1 } : 0,
-        width: { xl: "100%", base: "100%", md: "100%" },
+        bottom: { lg: -1, base: 0, xl: 0 },
+        left: center ? { lg: 0, base: 0, xl: -1 } : 0,
+        width: { xl: "100%", base: "100%", xl: "100%" },
       }}
       color={color}
       position="relative"
       fontWeight="500"
-      fontSize={{ lg: "56px", md: "36px", base: "36px" }}
+      fontSize={{ lg: "56px", xl: "36px", base: "36px" }}
       lineHeight="43px"
-      width={{ xl: "fit-content", base: "fit-content", md: "fit-content" }}
+      width={{ xl: "fit-content", base: "fit-content", xl: "fit-content" }}
     >
       {text}
     </Text>

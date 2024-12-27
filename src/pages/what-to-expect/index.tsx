@@ -10,13 +10,15 @@ const WhatToExpectPage = () => {
     <Box
       display={"flex"}
       flexDirection={"column"}
-      gapY={{ base: "32px", md: "64px" }}
+      gapY={{ base: "32px", xl: "64px" }}
+      width={"100%"}
+      marginX={"auto"}
     >
       <WhatToExpect />
       <Text
         width={"1257px"}
         height={"1px"}
-        display={{ base: "none", md: "flex" }}
+        display={{ base: "none", xl: "flex" }}
         marginX={"auto"}
         backgroundColor={"#8D8B8B"}
       ></Text>
@@ -24,7 +26,7 @@ const WhatToExpectPage = () => {
       <Text
         width={"1257px"}
         height={"1px"}
-        display={{ base: "none", md: "flex" }}
+        display={{ base: "none", xl: "flex" }}
         marginX={"auto"}
         backgroundColor={"#8D8B8B"}
       ></Text>

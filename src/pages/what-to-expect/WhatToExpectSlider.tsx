@@ -50,7 +50,7 @@ const WhatToExpectSlider = () => {
 
   return (
     <Box
-      width={{ base: "100vw", md: "1440px" }}
+      width={{ base: "100vw", xl: "1440px" }}
       height={"fit"}
       display={"flex"}
       flexDirection={"column"}
@@ -60,17 +60,17 @@ const WhatToExpectSlider = () => {
       gapY={"15px"}
     >
       <Box
-        width={{ base: "100%", md: "1257px" }}
+        width={{ base: "100%", xl: "1257px" }}
         display={"flex"}
         flexDirection={"row"}
         height={"70px"}
         justifyContent={"start"}
         gapX={"20px"}
         alignItems={"center"}
-        paddingX={{ base: "24px", md: "0px" }}
+        paddingX={{ base: "24px", xl: "0px" }}
       >
         <Text
-          fontSize={{ base: "36px", md: "56px" }}
+          fontSize={{ base: "36px", xl: "56px" }}
           fontWeight={"500"}
           lineHeight={"54px"}
         >
@@ -79,7 +79,7 @@ const WhatToExpectSlider = () => {
         <Box
           width={"150px"}
           gapX={"20px"}
-          display={{ base: "none", md: "flex" }}
+          display={{ base: "none", xl: "flex" }}
           flexDirection={"row"}
           justifyContent={"space-between"}
         >
@@ -89,11 +89,11 @@ const WhatToExpectSlider = () => {
       </Box>
       <Box
         width={"100%"}
-        height={{ base: "420px", md: "520px" }}
+        height={{ base: "420px", xl: "520px" }}
         display={"flex"}
         flexDirection={"column"}
         justifyContent={"space-between"}
-        gap={{ md: "25px" }}
+        gap={{ xl: "25px" }}
       >
         <Box
           width={"100%"}
@@ -104,8 +104,8 @@ const WhatToExpectSlider = () => {
           <Box width={"100%"} height={"100%"} className="embla__container">
             {SLIDER_DETAILS.map(({ img, tip }, index) => (
               <Box
-                width={{ base: "307px", md: "464px" }}
-                height={{ base: "384px", md: "520px" }}
+                width={{ base: "307px", xl: "464px" }}
+                height={{ base: "384px", xl: "520px" }}
                 key={index}
                 backgroundColor={"#FCF7F1"}
                 paddingX={"20px"}
@@ -118,12 +118,12 @@ const WhatToExpectSlider = () => {
                 marginX={"8px"}
                 flexShrink={0}
                 flexGrow={0}
-                flexBasis={{ base: "54%", md: "20.3%" }}
+                flexBasis={{ base: "54%", xl: "20.3%" }}
                 gapY={"10px"}
               >
                 <Box
-                  width={{ base: "267px", md: "424px" }}
-                  height={{ base: "212px", md: "320px" }}
+                  width={{ base: "267px", xl: "424px" }}
+                  height={{ base: "212px", xl: "320px" }}
                   display={"flex"}
                   flexDirection={"row"}
                   justifyContent={"center"}
@@ -138,9 +138,9 @@ const WhatToExpectSlider = () => {
                   />
                 </Box>
                 <Text
-                  fontSize={{ base: "14px", md: "18px" }}
+                  fontSize={{ base: "14px", xl: "18px" }}
                   fontWeight={"400"}
-                  lineHeight={{ base: "17.22px", md: "22.14px" }}
+                  lineHeight={{ base: "17.22px", xl: "22.14px" }}
                 >
                   {tip}
                 </Text>
@@ -151,10 +151,10 @@ const WhatToExpectSlider = () => {
       </Box>
       <Box
         width={"100%"}
-        display={{ base: "flex", md: "none" }}
+        display={{ base: "flex", xl: "none" }}
         flexDirection={"row"}
         justifyContent={"space-between"}
-        paddingX={{ base: "24px", md: "0px" }}
+        paddingX={{ base: "24px", xl: "0px" }}
       >
         <PrevButton onClick={onPrevButtonClick} />
         <NextButton onClick={onNextButtonClick} />

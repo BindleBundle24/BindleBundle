@@ -52,11 +52,11 @@ export const FAQs = () => {
   return (
     <Box
       marginY={"2em"}
-      width={{ base: "100%", md: "779px" }}
+      width={{ base: "100%", xl: "779px" }}
       display={"flex"}
       flexDirection={"column"}
       justifyContent={"start"}
-      gap={{ base: "0px", md: "43px" }}
+      gap={{ base: "0px", xl: "43px" }}
     >
       <SectionTitle text="Frequently Asked Questions" color="#383838" />
 
@@ -66,10 +66,10 @@ export const FAQs = () => {
         display={"flex"}
         flexDirection={"column"}
         justifyContent={"start"}
-        alignItems={{ lg: "start", base: "", md: "" }}
+        alignItems={{ lg: "start", base: "", xl: "" }}
         gapY={"20px"}
         overflowY={"scroll"}
-        height={{ md: "398px" }}
+        height={{ xl: "398px" }}
       >
         {QUESTIONS.map((item) => {
           return (

@@ -12,12 +12,38 @@ import {
 } from "@/components/ui/native-select";
 import { locations } from "../Form/Form";
 
+export interface LocationDetails {
+  pickUpLocation: string;
+  dropOffLocation: string;
+}
+
 export const Herosection = () => {
   const animationRef = useRef<HTMLDivElement | null>(null);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isFormOpen, setIsFormOpen] = useQueryState("formState", {});
 
-  const openForm = () => setIsFormOpen("open");
+  const [locationsDetails, setLocationsDetails] =
+    useQueryState<LocationDetails>("locationsDetails", {
+      parse: (value) =>
+        value ? JSON.parse(value) : { pickUpLocation: "", dropOffLocation: "" },
+      serialize: (value) => JSON.stringify(value),
+      defaultValue: {
+        pickUpLocation: "",
+        dropOffLocation: "",
+      },
+    });
+  const { pickUpLocation, dropOffLocation } = locationsDetails;
+
+  const updatePickUpLocation = (value: string) => {
+    setLocationsDetails((prev) => ({ ...prev, pickUpLocation: value }));
+  };
+
+  const updateDropOffLocation = (value: string) => {
+    setLocationsDetails((prev) => ({ ...prev, dropOffLocation: value }));
+  };
+  const openForm = () => {
+    setIsFormOpen("open");
+  };
 
   useEffect(() => {
     let animationInstance: AnimationItem | undefined;
@@ -54,12 +80,12 @@ export const Herosection = () => {
         width={"100%"}
         justifyContent={"center"}
         alignItems={"center"}
-        paddingTop={{ base: "20px", md: "59px" }}
-        marginBottom={{ base: "0px", md: "96px" }}
+        paddingTop={{ base: "20px", xl: "59px" }}
+        marginBottom={{ base: "0px", xl: "96px" }}
       >
         <Box
-          width={{ base: "100%", md: "1016px" }}
-          paddingX={{ base: "24px", md: "0px" }}
+          width={{ base: "100%", xl: "1016px" }}
+          paddingX={{ base: "24px", xl: "0px" }}
           marginX={"auto"}
           display={"flex"}
           flexDirection={"column"}
@@ -68,24 +94,24 @@ export const Herosection = () => {
         >
           <Text
             fontWeight={"500"}
-            fontSize={{ base: "36px", md: "63px" }}
+            fontSize={{ base: "36px", xl: "63px" }}
             width={"100%"}
             textAlign={{ base: "left", md: "center" }}
-            lineHeight={{ base: "44px", md: "71px" }}
+            lineHeight={{ base: "44px", xl: "71px" }}
           >
             Seamless Moves, Boundless Care with{" "}
             <Text
               as="span"
               color={"#75D130"}
               fontWeight={"600"}
-              fontSize={{ base: "43px", md: "70px" }}
+              fontSize={{ base: "43px", xl: "70px" }}
             >
               Bindle Bundle
             </Text>
           </Text>
           <Text
             fontWeight={"500"}
-            fontSize={{ base: "16px", md: "24px" }}
+            fontSize={{ base: "16px", xl: "24px" }}
             width={"100%"}
             textAlign={{ base: "left", md: "center" }}
             color={"#686767"}
@@ -96,23 +122,23 @@ export const Herosection = () => {
         </Box>
         <Box
           backgroundColor="#FCF7F1"
-          width={{ base: "100%", md: "690px" }}
-          height={{ base: "200px", md: "76px" }}
+          width={{ base: "100%", xl: "690px" }}
+          height={{ base: "200px", xl: "76px" }}
           display={"flex"}
-          flexDirection={{ base: "column", md: "row" }}
-          alignItems={{ base: "center", md: "start" }}
+          flexDirection={{ base: "column", xl: "row" }}
+          alignItems={{ base: "center", xl: "start" }}
           justifyContent={"space-between"}
           borderRadius={"11px"}
           marginTop={"20px"}
           paddingY={"15px"}
-          paddingX={{ base: "35px", md: "16px" }}
+          paddingX={{ base: "35px", xl: "16px" }}
           position={"relative"}
-          gap={{ base: "16px", md: "22px" }}
+          gap={{ base: "16px", xl: "22px" }}
         >
           <Group
             attached
-            width={{ base: "287px", md: "233px" }}
-            height={{ base: "45px", md: "42px" }}
+            width={{ base: "287px", xl: "233px" }}
+            height={{ base: "45px", xl: "42px" }}
             borderRadius={"10px"}
             borderWidth={"1px"}
             borderColor={"#CAD0DB"}
@@ -131,9 +157,9 @@ export const Herosection = () => {
             </InputAddon>
             <NativeSelectRoot
               variant={"subtle"}
-              width={{ base: "100%", md: "205.65px" }}
+              width={{ base: "100%", xl: "205.65px" }}
               display={"flex"}
-              height={{ base: "43px", md: "40px" }}
+              height={{ base: "43px", xl: "40px" }}
               alignItems={"center"}
             >
               <NativeSelectField
@@ -149,6 +175,8 @@ export const Herosection = () => {
                 borderColor={"#CAD0DB"}
                 borderRightRadius={"10px"}
                 height={"100%"}
+                value={pickUpLocation}
+                onChange={(e) => updatePickUpLocation(e.target.value)}
               >
                 {locations.map((location: string) => (
                   <option key={location} value={location}>
@@ -161,8 +189,8 @@ export const Herosection = () => {
 
           <Group
             attached
-            width={{ base: "287px", md: "233px" }}
-            height={{ base: "45px", md: "42px" }}
+            width={{ base: "287px", xl: "233px" }}
+            height={{ base: "45px", xl: "42px" }}
             borderRadius={"10px"}
             borderWidth={"1px"}
             borderColor={"#CAD0DB"}
@@ -181,9 +209,9 @@ export const Herosection = () => {
             </InputAddon>
             <NativeSelectRoot
               variant={"subtle"}
-              width={{ base: "100%", md: "205.65px" }}
+              width={{ base: "100%", xl: "205.65px" }}
               display={"flex"}
-              height={{ base: "43px", md: "40px" }}
+              height={{ base: "43px", xl: "40px" }}
               alignItems={"center"}
             >
               <NativeSelectField
@@ -199,6 +227,8 @@ export const Herosection = () => {
                 borderColor={"#CAD0DB"}
                 borderRightRadius={"10px"}
                 height={"100%"}
+                value={dropOffLocation}
+                onChange={(e) => updateDropOffLocation(e.target.value)}
               >
                 {locations.map((location: string) => (
                   <option key={location} value={location}>
@@ -212,8 +242,8 @@ export const Herosection = () => {
             display={"flex"}
             justifyContent={"center"}
             alignItems={"center"}
-            width={{ base: "287px", md: "133px" }}
-            height={{ base: "41px", md: "46px" }}
+            width={{ base: "287px", xl: "133px" }}
+            height={{ base: "41px", xl: "46px" }}
             backgroundColor={"#051937"}
             color={"#FFFFFF"}
             paddingX={"26px"}
@@ -226,7 +256,7 @@ export const Herosection = () => {
             Get Moving
           </Button>
           <Box
-            display={{ base: "none", md: "flex" }}
+            display={{ base: "none", xl: "flex" }}
             width={"150px"}
             height={"150px"}
             position={"absolute"}
@@ -236,7 +266,7 @@ export const Herosection = () => {
             ref={animationRef}
           ></Box>
         </Box>
-        <Box width={"100%"} marginTop={{ md: "70px" }}>
+        <Box width={"100%"} marginTop={{ xl: "70px" }}>
           <HeroSlider />
         </Box>
       </Box>
