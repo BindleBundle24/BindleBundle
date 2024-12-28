@@ -23,12 +23,14 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
       minHeight={"100vh"}
       display={"flex"}
       justifyContent={"center"}
+      alignItems={"center"}
       position={"relative"}
     >
       <Box
         display={"flex"}
         width={"full"}
         flexDirection={"column"}
+        alignItems={"center"}
         justifyContent={"center"}
       >
         <NavBar />
@@ -39,6 +41,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
           overflow={"hidden"}
           marginX={"auto"}
           opacity={{ base: "", xl: isFormOpenBoolean ? "0.2" : "1" }}
+          justifyContent={"center"}
+          alignItems={"center"}
         >
           {children}
         </Box>
