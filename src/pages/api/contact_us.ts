@@ -1,4 +1,4 @@
-import { EmailFormTemplate } from "@/components/EmailTemplate/EmailTemplate";
+import { EmailContactUsTemplate } from "@/components/EmailTemplate/EmailTemplate";
 import { NextApiRequest, NextApiResponse } from "next";
 import { Resend } from "resend";
 
@@ -12,24 +12,15 @@ export default async function handler(
         const { fullName,
             email,
             phoneNumber,
-            pickUp,
-            dropOff,
-            date,
-            moveCategory,
-            commercialCategory,
-            specialityMove,
-            customInput,
-            serviceType,
-            propertySize,
-            otherSpeciality, } = req.body;
+            message } = req.body;
 
         try {
             const emailData = {
                 from: `info@bindlebundlemovers.com`,
                 to: "henryugo@outlook.com",
-                subject: "New Moving Details Submission",
-                react: EmailFormTemplate(
-                    { fullName, email, phoneNumber, pickUp, dropOff, date, moveCategory, commercialCategory, specialityMove, customInput, serviceType, propertySize, otherSpeciality }),
+                subject: "A new message from Bindle Bundle Movers",
+                react: EmailContactUsTemplate(
+                    { fullName, email, phoneNumber, message }),
 
             };
 

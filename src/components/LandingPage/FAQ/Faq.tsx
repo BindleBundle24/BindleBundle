@@ -69,7 +69,7 @@ export const FAQs = () => {
         alignItems={{ md: "start", base: "" }}
         gapY={"20px"}
         overflowY={"scroll"}
-        height={{ xl: "398px" }}
+        height={{ xl: "440px" }}
       >
         {QUESTIONS.map((item) => {
           return (

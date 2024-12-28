@@ -1,6 +1,7 @@
 import { Box, Text, Button, Image } from "@chakra-ui/react";
 import React from "react";
 import { UsersThree, Clock, ShieldCheck, Notepad } from "@phosphor-icons/react";
+import { useQueryState } from "nuqs";
 
 interface WhyHireUsCardProps {
   icon: React.ReactNode;
@@ -114,6 +115,10 @@ const WhyHireUsCard = ({ icon, title, description }: WhyHireUsCardProps) => {
 };
 
 export const WhyHireUs = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [isFormOpen, setIsFormOpen] = useQueryState("formState", {});
+
+  const openForm = () => setIsFormOpen("open");
   return (
     <Box
       width={"100%"}
@@ -160,6 +165,7 @@ export const WhyHireUs = () => {
           fontWeight={"medium"}
           fontSize={"16px"}
           borderRadius="33px"
+          onClick={openForm}
         >
           Hire us now
         </Button>
