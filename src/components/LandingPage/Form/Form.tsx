@@ -93,7 +93,6 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
     try {
       const details = { ...formState };
 
-      // Remove fields based on conditions
       if (details.moveCategory !== "commercial") {
         delete details.customInput;
         delete details.commercialCategory;
@@ -134,7 +133,6 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
         setLocationsDetails(null);
         setSuccess(true);
 
-        // Auto-close success message after 5 seconds
         const timer = setTimeout(() => {
           onClose();
           setSuccess(false);

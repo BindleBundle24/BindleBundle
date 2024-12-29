@@ -64,7 +64,7 @@ export const ContactUs = () => {
       const data = await response.json();
       console.log("data", data);
 
-      if (!data.response.error) {
+      if (data.success) {
         setSuccess(true);
         resetForm();
         setTimeout(() => setSuccess(false), 5000);
