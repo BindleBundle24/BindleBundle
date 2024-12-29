@@ -56,6 +56,7 @@ export const Slider = ({ data }: MovingType) => {
         height={{ base: "396px", xl: "100%" }}
         justifyContent={"space-between"}
         paddingY={{ base: "", xl: "40px" }}
+        marginX={"auto"}
         paddingX={{ base: "", xl: "40px" }}
         gap={{ base: "5px", xl: "20px" }}
       >
