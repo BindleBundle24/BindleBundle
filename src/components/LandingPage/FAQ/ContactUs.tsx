@@ -53,16 +53,13 @@ export const ContactUs = () => {
     { resetForm }: { resetForm: () => void }
   ) => {
     try {
-      const response = await fetch(
-        "https://www.bindlebundlemovers.com/api/contact_us",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
-        }
-      );
+      const response = await fetch("api/contact_us", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
 
       const data = await response.json();
       console.log("data", data);
