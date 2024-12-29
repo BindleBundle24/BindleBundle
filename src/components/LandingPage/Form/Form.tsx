@@ -105,17 +105,19 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
         delete details.propertySize;
       }
 
-      const response = await fetch("/api/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(details),
-      });
+      const response = await fetch(
+        "https://www.bindlebundlemovers.com/api/send",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(details),
+        }
+      );
 
       const data = await response.json();
 
-      // Check the backend response for success
       if (data.success) {
         setFormState({
           fullName: "",
