@@ -25,6 +25,7 @@ export default async function handler(
             };
 
             const response = await resend.emails.send(emailData);
+            console.log("response", response);
             return res.status(200).json({ success: true, response });
         } catch (error: unknown) {
             console.error("Error sending email:", error);

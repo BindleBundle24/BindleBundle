@@ -621,7 +621,7 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                       borderWidth={"1px"}
                       borderColor={"#CAD0DB"}
                       borderRadius={"10px"}
-                      defaultValue={"no_of_rooms"}
+                      defaultValue={"sq_ft"}
                       value={formState.commercialCategory}
                       onChange={handleChange}
                       height={"100%"}

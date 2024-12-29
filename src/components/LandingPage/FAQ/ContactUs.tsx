@@ -62,6 +62,7 @@ export const ContactUs = () => {
       });
 
       const data = await response.json();
+      console.log("data", data);
 
       if (!data.response.error) {
         setSuccess(true);
