@@ -9,7 +9,8 @@ export default async function handler(
     res: NextApiResponse
 ) {
     if (req.method === "POST") {
-        const { fullName,
+        const {
+            fullName,
             email,
             phoneNumber,
             pickUp,
@@ -21,27 +22,53 @@ export default async function handler(
             customInput,
             serviceType,
             propertySize,
-            otherSpeciality, } = req.body;
+            otherSpeciality,
+        } = req.body;
 
         try {
+            // Define the email payload
             const emailData = {
-                from: `info@bindlebundlemovers.com`,
-                to: "henryugo@outlook.com",
+                from: "Bindle Bundle Movers <info@bindlebundlemovers.com>",
+                to: ["henryugo@outlook.com"], // Supports multiple recipients if needed
                 subject: "New Moving Details Submission",
-                react: EmailFormTemplate(
-                    { fullName, email, phoneNumber, pickUp, dropOff, date, moveCategory, commercialCategory, specialityMove, customInput, serviceType, propertySize, otherSpeciality }),
-
+                react: EmailFormTemplate({
+                    fullName,
+                    email,
+                    phoneNumber,
+                    pickUp,
+                    dropOff,
+                    date,
+                    moveCategory,
+                    commercialCategory,
+                    specialityMove,
+                    customInput,
+                    serviceType,
+                    propertySize,
+                    otherSpeciality,
+                }),
             };
 
-            const response = await resend.emails.send(emailData);
-            return res.status(200).json({ success: true, response });
-        } catch (error: unknown) {
-            console.error("Error sending email:", error);
-            // @ts-ignore - error is unknown
-            return res.status(500).json({ success: false, error: error.message });
-        }
+            // Send the email using Resend
+            const { data, error } = await resend.emails.send(emailData);
 
+            // Handle any errors from Resend
+            if (error) {
+                console.error("Error from Resend:", error);
+                return res.status(400).json({ success: false, error });
+            }
+
+            // Return success response
+            return res.status(200).json({ success: true, data });
+        } catch (error: unknown) {
+            // Catch unexpected errors
+            console.error("Unexpected server error:", error);
+            return res.status(500).json({
+                success: false,
+                error: (error as Error).message || "Unknown error occurred",
+            });
+        }
     } else {
-        return res.status(405).json({ message: "Method not allowed" });
+        // Method not allowed
+        return res.status(405).json({ success: false, message: "Method not allowed" });
     }
 }

@@ -92,6 +92,8 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
 
     try {
       const details = { ...formState };
+
+      // Remove fields based on conditions
       if (details.moveCategory !== "commercial") {
         delete details.customInput;
         delete details.commercialCategory;
@@ -110,8 +112,11 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
         },
         body: JSON.stringify(details),
       });
+
       const data = await response.json();
-      if (!data.response.error) {
+
+      // Check the backend response for success
+      if (data.success) {
         setFormState({
           fullName: "",
           email: "",
@@ -129,6 +134,8 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
         });
         setLocationsDetails(null);
         setSuccess(true);
+
+        // Auto-close success message after 5 seconds
         const timer = setTimeout(() => {
           onClose();
           setSuccess(false);
