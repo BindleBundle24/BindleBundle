@@ -30,17 +30,18 @@ export const Testimonials = () => {
         What our clients say!
       </Text>
       <Box
-        width={{ base: "343px", xl: "1192px" }}
-        height={{ base: "702px", xl: "679px" }}
+        width={{ base: "100%", xl: "1192px" }}
+        height={{ base: "fit", xl: "679px" }}
         display={"flex"}
         flexDirection={"column"}
         alignItems={"center"}
         justifyContent={"space-between"}
         mx={"auto"}
+        gapY={"20px"}
       >
         <HStack
-          width={{ base: "343px", xl: "502px" }}
-          height={{ base: "125px", xl: "180px" }}
+          width={{ base: "100%", xl: "502px" }}
+          height={{ base: "fit", xl: "180px" }}
           display={"flex"}
           alignItems={"center"}
           justifyContent={"space-between"}
@@ -99,8 +100,8 @@ export const Testimonials = () => {
           width={"100%"}
         >
           <HStack
-            width={{ base: "343px", xl: "502px" }}
-            height={{ base: "118px", xl: "170px" }}
+            width={{ base: "100%", xl: "502px" }}
+            height={{ base: "fit", xl: "180px" }}
             display={"flex"}
             flexDirection={{ base: "row-reverse", xl: "row" }}
             alignItems={"center"}
@@ -154,8 +155,8 @@ export const Testimonials = () => {
             </Box>
           </HStack>
           <HStack
-            width={{ base: "343px", xl: "502px" }}
-            height={{ base: "118px", xl: "170px" }}
+            width={{ base: "100%", xl: "502px" }}
+            height={{ base: "fit", xl: "180px" }}
             display={"flex"}
             flexDirection={"row"}
             alignItems={"center"}
@@ -216,8 +217,8 @@ export const Testimonials = () => {
           width={"100%"}
         >
           <HStack
-            width={{ base: "343px", xl: "502px" }}
-            height={{ base: "118px", xl: "170px" }}
+            width={{ base: "100%", xl: "502px" }}
+            height={{ base: "fit", xl: "180px" }}
             display={"flex"}
             flexDirection={{ base: "row-reverse", xl: "row" }}
             alignItems={"center"}
@@ -272,8 +273,8 @@ export const Testimonials = () => {
             </Box>
           </HStack>
           <HStack
-            width={{ base: "343px", xl: "502px" }}
-            height={{ base: "118px", xl: "170px" }}
+            width={{ base: "100%", xl: "502px" }}
+            height={{ base: "fit", xl: "180px" }}
             display={"flex"}
             flexDirection={"row"}
             alignItems={"center"}
