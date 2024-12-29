@@ -14,7 +14,6 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
 
   return (
     <Box
-      minWidth={"393px"}
       width={"100vw"}
       backgroundColor={"white"}
       color={"black"}

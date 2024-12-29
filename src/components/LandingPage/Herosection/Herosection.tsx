@@ -107,7 +107,7 @@ export const Herosection = () => {
               as="span"
               color={"#75D130"}
               fontWeight={"600"}
-              fontSize={{ base: "43px", xl: "70px" }}
+              fontSize={{ base: "36px", xl: "70px" }}
             >
               Bindle Bundle
             </Text>
