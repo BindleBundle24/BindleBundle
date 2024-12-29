@@ -92,6 +92,8 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
 
     try {
       const details = { ...formState };
+
+      // Remove fields based on conditions
       if (details.moveCategory !== "commercial") {
         delete details.customInput;
         delete details.commercialCategory;
@@ -103,15 +105,17 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
         delete details.propertySize;
       }
 
-      const response = await fetch("/api/send", {
+      const response = await fetch("api/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(details),
       });
+
       const data = await response.json();
-      if (!data.response.error) {
+
+      if (data.success) {
         setFormState({
           fullName: "",
           email: "",
@@ -129,6 +133,8 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
         });
         setLocationsDetails(null);
         setSuccess(true);
+
+        // Auto-close success message after 5 seconds
         const timer = setTimeout(() => {
           onClose();
           setSuccess(false);
@@ -621,7 +627,7 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                       borderWidth={"1px"}
                       borderColor={"#CAD0DB"}
                       borderRadius={"10px"}
-                      defaultValue={"no_of_rooms"}
+                      defaultValue={"sq_ft"}
                       value={formState.commercialCategory}
                       onChange={handleChange}
                       height={"100%"}

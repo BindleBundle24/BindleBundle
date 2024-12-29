@@ -53,7 +53,7 @@ export const ContactUs = () => {
     { resetForm }: { resetForm: () => void }
   ) => {
     try {
-      const response = await fetch("/api/contact_us", {
+      const response = await fetch("api/contact_us", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -62,6 +62,7 @@ export const ContactUs = () => {
       });
 
       const data = await response.json();
+      console.log("data", data);
 
       if (!data.response.error) {
         setSuccess(true);
