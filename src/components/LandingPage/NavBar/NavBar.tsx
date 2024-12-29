@@ -47,7 +47,7 @@ const NavBar = () => {
   return (
     <Box
       background="white"
-      width="full"
+      width="100%"
       height={{ base: "72px", xl: pathName !== "/services" ? "72px" : "130px" }}
       display="flex"
       flexDirection={"column"}
@@ -59,7 +59,7 @@ const NavBar = () => {
     >
       <Box
         background="white"
-        width={{ base: "full", xl: "1257px" }}
+        width={{ base: "100%", xl: "1257px" }}
         paddingX={{ base: "24px", xl: 0 }}
         paddingY={"20px"}
         display="flex"
@@ -72,11 +72,12 @@ const NavBar = () => {
         zIndex={"10"}
       >
         <Box
-          width={{ base: "full", xl: "730px" }}
+          width={{ base: "100%", xl: "730px" }}
           display="flex"
           justifyContent={{ base: "space-between", xl: "start" }}
           alignItems="center"
           gap="37px"
+          marginX={"auto"}
           height="100%"
         >
           <NextLink href="/">
