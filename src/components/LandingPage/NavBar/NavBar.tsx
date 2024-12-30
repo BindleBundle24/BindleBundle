@@ -77,7 +77,6 @@ const NavBar = () => {
           justifyContent={{ base: "space-between", xl: "start" }}
           alignItems="center"
           gap="37px"
-          marginX={"auto"}
           height="100%"
         >
           <NextLink href="/">
