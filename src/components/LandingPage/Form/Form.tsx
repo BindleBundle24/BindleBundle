@@ -22,7 +22,6 @@ import {
 } from "@/components/ui/native-select";
 import { useQueryState } from "nuqs";
 import { LocationDetails } from "../Herosection/Herosection";
-import { FormStateType } from "@/components/EmailTemplate/EmailTemplate";
 
 interface FormProps {
   isOpen: boolean;
@@ -48,6 +47,21 @@ export const locations = [
   "Crossfield",
 ];
 
+export interface FormStateType {
+  fullName: string;
+  email: string;
+  phoneNumber: string;
+  pickUp: string;
+  dropOff: string;
+  moveCategory: string;
+  commercialCategory?: string;
+  specialityMove: string;
+  customInput?: string;
+  serviceType: string;
+  propertySize?: string;
+  otherSpeciality?: string;
+  date: string;
+}
 export const Form = ({ isOpen, onClose }: FormProps) => {
   const [success, setSuccess] = useState(false);
 
@@ -92,7 +106,6 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
 
     try {
       const details = { ...formState };
-
       if (details.moveCategory !== "commercial") {
         delete details.customInput;
         delete details.commercialCategory;
@@ -103,8 +116,7 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
       if (details.moveCategory !== "residential") {
         delete details.propertySize;
       }
-
-      const response = await fetch("api/send", {
+      const response = await fetch("/api/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -114,7 +126,8 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
 
       const data = await response.json();
 
-      if (data.success) {
+      if (!data.response.error) {
+        console.log("Email sent successfully:", data);
         setFormState({
           fullName: "",
           email: "",
@@ -132,7 +145,6 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
         });
         setLocationsDetails(null);
         setSuccess(true);
-
         const timer = setTimeout(() => {
           onClose();
           setSuccess(false);
@@ -625,7 +637,7 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                       borderWidth={"1px"}
                       borderColor={"#CAD0DB"}
                       borderRadius={"10px"}
-                      defaultValue={"sq_ft"}
+                      defaultValue={"no_of_rooms"}
                       value={formState.commercialCategory}
                       onChange={handleChange}
                       height={"100%"}
