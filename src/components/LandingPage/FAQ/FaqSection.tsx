@@ -14,7 +14,7 @@ export const FaqSection = () => {
         marginX={"auto"}
         justifyContent={"space-between"}
         alignItems={"start"}
-        paddingX={{ base: "24px", xl: "0px" }}
+        paddingX={{ base: "0px", xl: "0px" }}
         id="contact-us"
       >
         <FAQs />

@@ -126,7 +126,7 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
 
       const data = await response.json();
 
-      if (!data.response.error) {
+      if (data.success) {
         console.log("Email sent successfully:", data);
         setFormState({
           fullName: "",
@@ -177,7 +177,7 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
       <Box
         width={{ base: "100%", xl: "707px" }}
         height={{ base: "100%", xl: "474px" }}
-        maxHeight={{ base: "110vh", xl: "474px" }}
+        maxHeight={{ base: "120vh", xl: "474px" }}
         display={success ? "none" : "flex"}
         flexDirection={"column"}
         justifyContent={"center"}
@@ -862,7 +862,7 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
           display={"flex"}
           flexDirection={"column"}
           gapY={"10px"}
-          width={"333px"}
+          width={{ base: "100%", xl: "339px" }}
           height={"189px"}
           justifyContent={"center"}
           alignItems={"center"}

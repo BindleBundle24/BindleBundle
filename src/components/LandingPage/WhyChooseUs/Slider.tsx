@@ -56,7 +56,7 @@ export const Slider = ({ data }: MovingType) => {
         height={{ base: "396px", xl: "100%" }}
         justifyContent={"space-between"}
         paddingY={{ base: "", xl: "40px" }}
-        marginX={"auto"}
+        marginX={{ base: "auto", xl: "0px" }}
         paddingX={{ base: "", xl: "40px" }}
         gap={{ base: "5px", xl: "20px" }}
       >
@@ -69,7 +69,7 @@ export const Slider = ({ data }: MovingType) => {
                 flexShrink={0}
                 flexGrow={0}
                 flexBasis={"100%"}
-                minWidth="90%"
+                width="90%"
                 gap="15px"
                 key={index}
                 height="100%"
