@@ -26,6 +26,7 @@ export default function Home() {
       >
         <Box
           display={"flex"}
+          width={"full"}
           maxWidth={"1440px"}
           flexDirection={"column"}
           gapY={"32px"}

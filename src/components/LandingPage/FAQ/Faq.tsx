@@ -57,11 +57,12 @@ export const FAQs = () => {
       flexDirection={"column"}
       justifyContent={"start"}
       gap={{ base: "0px", xl: "43px" }}
+      paddingX={{ base: "24px", xl: "0px" }}
     >
       <SectionTitle text="Frequently Asked Questions" color="#383838" />
 
       <Box
-        width={"99%"}
+        width={"100%"}
         marginY={"1em"}
         display={"flex"}
         flexDirection={"column"}

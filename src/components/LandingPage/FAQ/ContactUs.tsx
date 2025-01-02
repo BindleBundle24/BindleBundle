@@ -77,7 +77,7 @@ export const ContactUs = () => {
   };
 
   return (
-    <>
+    <Box width={"100%"} paddingX={{ base: "24px", xl: "0px" }}>
       <Box
         my="2em"
         display={success ? "none" : "flex"}
@@ -313,7 +313,6 @@ export const ContactUs = () => {
         <Box
           width={{ base: "100%", xl: "389px" }}
           height={{ base: "100%", xl: "321px" }}
-          maxHeight={{ base: "110vh", xl: "321px" }}
           display={success ? "flex" : "none"}
           flexDirection={"column"}
           justifyContent={"space-evenly"}
@@ -323,6 +322,7 @@ export const ContactUs = () => {
           backgroundColor={"#FCF7F1"}
           paddingX={"16px"}
           paddingY={"15px"}
+          marginX={"auto"}
         >
           <Box
             width={"100%"}
@@ -343,7 +343,7 @@ export const ContactUs = () => {
             display={"flex"}
             flexDirection={"column"}
             gapY={"10px"}
-            width={"333px"}
+            width={{ base: "100%", xl: "339px" }}
             height={"189px"}
             justifyContent={"center"}
             alignItems={"center"}
@@ -358,13 +358,13 @@ export const ContactUs = () => {
             <Text fontSize={"16px"} fontWeight={"600"} textAlign={"center"}>
               Successful
             </Text>
-            <Text fontSize={"16px"} textAlign={"center"}>
+            <Text fontSize={"16px"} textAlign={"center"} width={"100%"}>
               We have received your message, our team will get back to you in a
               few hours
             </Text>
           </Box>
         </Box>
       )}
-    </>
+    </Box>
   );
 };
