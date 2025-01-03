@@ -64,6 +64,7 @@ export interface FormStateType {
 }
 export const Form = ({ isOpen, onClose }: FormProps) => {
   const [success, setSuccess] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const [formState, setFormState] = useState<FormStateType>({
     fullName: "",
@@ -103,6 +104,7 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
+    setSubmitting(true);
 
     try {
       const details = { ...formState };
@@ -127,7 +129,6 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
       const data = await response.json();
 
       if (data.success) {
-        console.log("Email sent successfully:", data);
         setFormState({
           fullName: "",
           email: "",
@@ -145,6 +146,7 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
         });
         setLocationsDetails(null);
         setSuccess(true);
+        setSubmitting(false);
         const timer = setTimeout(() => {
           onClose();
           setSuccess(false);
@@ -799,10 +801,12 @@ export const Form = ({ isOpen, onClose }: FormProps) => {
                 fontWeight={"500"}
                 fontSize={"16px"}
                 borderRadius="33px"
+                cursor={submitting ? "disabled" : "pointer"}
+                opacity={submitting ? 0.5 : 1}
                 type="submit"
                 onClick={handleSubmit}
               >
-                Submit
+                {submitting ? "Submitting..." : "Submit"}
               </Button>
             </Box>
           </Box>
