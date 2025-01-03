@@ -21,6 +21,7 @@ import { Field } from "@/components/ui/field";
 
 export const ContactUs = () => {
   const [success, setSuccess] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const initialValues = {
     fullName: "",
@@ -52,6 +53,7 @@ export const ContactUs = () => {
     values: typeof initialValues,
     { resetForm }: { resetForm: () => void }
   ) => {
+    setSubmitting(true);
     try {
       const response = await fetch("api/contact_us", {
         method: "POST",
@@ -62,16 +64,18 @@ export const ContactUs = () => {
       });
 
       const data = await response.json();
-      console.log("data", data);
 
       if (data.success) {
         setSuccess(true);
+        setSubmitting(false);
         resetForm();
         setTimeout(() => setSuccess(false), 5000);
       } else {
+        setSubmitting(false);
         console.error("Error sending email:", data.error);
       }
     } catch (error) {
+      setSubmitting(false);
       console.error("Network error:", error);
     }
   };
@@ -299,8 +303,10 @@ export const ContactUs = () => {
                     fontSize={"16px"}
                     borderRadius="33px"
                     type="submit"
+                    opacity={submitting ? 0.5 : 1}
+                    cursor={submitting ? "disabled" : "pointer"}
                   >
-                    Contact us
+                    {submitting ? "Submitting..." : "Submit"}
                   </Button>
                 </Fieldset.Content>
               </Fieldset.Root>
