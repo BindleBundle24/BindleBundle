@@ -16,7 +16,7 @@ export interface FormStateType {
   date: string;
 }
 
-export interface ContactUsProps {
+interface ContactUsProps {
   fullName: string;
   email: string;
   phoneNumber: string;

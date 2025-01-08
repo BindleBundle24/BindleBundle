@@ -300,7 +300,7 @@ export const ContactUs = () => {
                     paddingX={"26px"}
                     paddingY={"13px"}
                     fontWeight={"500"}
-                    fontSize={"16px"}
+                    fontSize={"14px"}
                     borderRadius="33px"
                     type="submit"
                     opacity={submitting ? 0.5 : 1}
