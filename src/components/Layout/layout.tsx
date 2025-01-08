@@ -3,7 +3,7 @@ import NavBar from "@/components/LandingPage/NavBar/NavBar";
 import { Box } from "@chakra-ui/react";
 import React from "react";
 import { useQueryState } from "nuqs";
-import { Form } from "../LandingPage/Form/Form";
+import { MovingForm } from "../LandingPage/Form/Form";
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -56,7 +56,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
           justifyContent={"center"}
           alignItems={"center"}
         >
-          <Form isOpen={isFormOpenBoolean} onClose={closeForm} />
+          <MovingForm isOpen={isFormOpenBoolean} onClose={closeForm} />
         </Box>
         <Footer />
       </Box>
