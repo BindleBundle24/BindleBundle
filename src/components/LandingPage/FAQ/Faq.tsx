@@ -69,8 +69,24 @@ export const FAQs = () => {
         justifyContent={"start"}
         alignItems={{ md: "start", base: "" }}
         gapY={"20px"}
-        overflowY={"scroll"}
+        overflowY={"auto"}
+        overflowX={"hidden"}
         height={{ xl: "440px" }}
+        css={{
+          "&::-webkit-scrollbar": {
+            width: "8px",
+          },
+          "&::-webkit-scrollbar-track": {
+            background: "transparent",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            background: "#051937",
+            borderRadius: "4px",
+          },
+          "&::-webkit-scrollbar-thumb:hover": {
+            background: "#051937",
+          },
+        }}
       >
         {QUESTIONS.map((item) => {
           return (
