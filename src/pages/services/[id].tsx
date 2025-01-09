@@ -156,6 +156,21 @@ const ServicesDetails = () => {
               gapY={{ base: "26px", xl: "46px" }}
               overflow={{ base: "hidden", xl: "auto" }}
               marginTop={{ base: "20px", xl: "0px" }}
+              css={{
+                "&::-webkit-scrollbar": {
+                  width: "8px",
+                },
+                "&::-webkit-scrollbar-track": {
+                  background: "transparent",
+                },
+                "&::-webkit-scrollbar-thumb": {
+                  background: "#051937",
+                  borderRadius: "4px",
+                },
+                "&::-webkit-scrollbar-thumb:hover": {
+                  background: "#051937",
+                },
+              }}
             >
               {data.description.map((item, index) => (
                 <Box
