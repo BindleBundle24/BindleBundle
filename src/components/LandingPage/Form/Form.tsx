@@ -7,6 +7,7 @@ import {
   Text,
   Button,
   Image,
+  Textarea,
 } from "@chakra-ui/react";
 import {
   DeviceMobileCamera,
@@ -26,6 +27,7 @@ import { Formik, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { ObjectSchema } from "yup";
 import { FormStateType } from "@/components/EmailTemplate/EmailTemplate";
+import { Field } from "@/components/ui/field";
 
 interface FormProps {
   isOpen: boolean;
@@ -85,6 +87,7 @@ export const MovingForm = ({ isOpen, onClose }: FormProps) => {
       otherwise: (schema) => schema.optional(),
     }),
     date: Yup.string().required("Required"),
+    additionalMessage: Yup.string(),
   });
 
   const [locationsDetails, setLocationsDetails] =
@@ -108,6 +111,7 @@ export const MovingForm = ({ isOpen, onClose }: FormProps) => {
     propertySize: "",
     otherSpeciality: "",
     date: "",
+    additionalMessage: "",
   };
 
   const getTodayDate = () => {
@@ -173,8 +177,8 @@ export const MovingForm = ({ isOpen, onClose }: FormProps) => {
     <>
       <Box
         width={{ base: "100%", xl: "707px" }}
-        height={{ base: "100%", xl: "474px" }}
-        maxHeight={{ base: "120vh", xl: "474px" }}
+        height={{ base: "100%", xl: "674px" }}
+        maxHeight={{ base: "120vh", xl: "674px" }}
         display={success ? "none" : "flex"}
         flexDirection={"column"}
         justifyContent={"center"}
@@ -193,13 +197,13 @@ export const MovingForm = ({ isOpen, onClose }: FormProps) => {
           {({ values, handleChange, setValues }) => (
             <Box
               width={{ base: "100%", xl: "674px" }}
-              height={{ base: "100%", xl: "451px" }}
+              height={{ base: "100%", xl: "600px" }}
               display={"flex"}
               flexDirection={"column"}
               justifyContent={{ base: "", xl: "center" }}
               paddingX={{ base: "0px", xl: "16px" }}
               paddingY={{ base: "10px", xl: "15px" }}
-              gap={{ base: "10px", xl: "29px" }}
+              gap={{ base: "10px", xl: "10px" }}
             >
               <Box
                 width={"100%"}
@@ -236,6 +240,7 @@ export const MovingForm = ({ isOpen, onClose }: FormProps) => {
                       propertySize: "",
                       otherSpeciality: "",
                       date: "",
+                      additionalMessage: "",
                     });
                     setLocationsDetails(null);
                   }}
@@ -249,6 +254,7 @@ export const MovingForm = ({ isOpen, onClose }: FormProps) => {
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
+                  gap: "15px",
                 }}
               >
                 <Box
@@ -948,26 +954,84 @@ export const MovingForm = ({ isOpen, onClose }: FormProps) => {
                         </Text>
                       </Box>
                     )}
-                    <Button
-                      display={"flex"}
-                      justifyContent={"center"}
-                      alignItems={"center"}
-                      width={{ base: "287px", xl: "104px" }}
-                      height={{ base: "41px", xl: "46px" }}
-                      backgroundColor={"#051937"}
-                      color={"#FFFFFF"}
-                      paddingX={"26px"}
-                      paddingY={"13px"}
-                      fontWeight={"500"}
-                      fontSize={"14px"}
-                      borderRadius="33px"
-                      cursor={submitting ? "disabled" : "pointer"}
-                      opacity={submitting ? 0.5 : 1}
-                      type="submit"
-                    >
-                      {submitting ? "Submitting..." : "Submit"}
-                    </Button>
                   </Box>
+                </Box>
+                <Box
+                  display={"flex"}
+                  flexDirection={{ base: "column", xl: "row" }}
+                  width={"100%"}
+                  gap={"10px"}
+                  height={{ base: "fit-content", xl: "130px" }}
+                  alignItems={{ xl: "center" }}
+                >
+                  <Field>
+                    <Text
+                      fontSize={{ base: "", xl: "14px" }}
+                      fontWeight={"400"}
+                      textAlign={"left"}
+                      lineHeight={{ base: "", xl: "17.22px" }}
+                      color={"#878484"}
+                    >
+                      Additional Infomation
+                    </Text>
+                    <Box
+                      width={"100%"}
+                      height="100px"
+                      borderRadius={"10px"}
+                      backgroundColor={"#FFFFFF"}
+                      borderColor={"#CAD0DB"}
+                      paddingX={"12px"}
+                      paddingY="11px"
+                      borderWidth={"1px"}
+                      display={"flex"}
+                      justifyContent="space-between"
+                      alignItems="center"
+                      gapX="7px"
+                    >
+                      <Textarea
+                        variant={"subtle"}
+                        color={"#878484"}
+                        _placeholder={{ color: "#878484", fontWeight: "500" }}
+                        paddingX={"8px"}
+                        fontWeight={"500"}
+                        backgroundColor={"#FFFFFF"}
+                        _focus={{
+                          borderWidth: "0px",
+                          outlineWidth: "0px",
+                        }}
+                        height="100%"
+                        paddingY={"8px"}
+                        placeholder={
+                          "Add more information about your moving details...."
+                        }
+                        name="additionalMessage"
+                        value={values.additionalMessage}
+                        onChange={handleChange}
+                      />
+                    </Box>
+                    <Text color="red.500" fontSize="10px" paddingX={"12px"}>
+                      <ErrorMessage name="additionalMessage" />
+                    </Text>
+                  </Field>
+                  <Button
+                    display={"flex"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    width={{ base: "287px", xl: "104px" }}
+                    height={{ base: "41px", xl: "46px" }}
+                    backgroundColor={"#051937"}
+                    color={"#FFFFFF"}
+                    paddingX={"26px"}
+                    paddingY={"13px"}
+                    fontWeight={"500"}
+                    fontSize={"14px"}
+                    borderRadius="33px"
+                    cursor={submitting ? "disabled" : "pointer"}
+                    opacity={submitting ? 0.5 : 1}
+                    type="submit"
+                  >
+                    {submitting ? "Submitting..." : "Submit"}
+                  </Button>
                 </Box>
               </Form>
             </Box>
