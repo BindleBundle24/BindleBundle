@@ -14,6 +14,7 @@ export interface FormStateType {
   propertySize?: string;
   otherSpeciality?: string;
   date: string;
+  additionalMessage?: string;
 }
 
 interface ContactUsProps {
@@ -37,6 +38,7 @@ export const EmailFormTemplate: React.FC<FormStateType> = ({
   serviceType,
   propertySize,
   otherSpeciality,
+  additionalMessage,
 }) => (
   <ChakraProvider value={defaultSystem}>
     <Box padding="4" borderWidth="1px" borderRadius="md" boxShadow="md">
@@ -90,6 +92,9 @@ export const EmailFormTemplate: React.FC<FormStateType> = ({
           <strong>Other Speciality:</strong> {otherSpeciality || "N/A"}
         </Text>
       )}
+      <Text>
+        <strong>Additional Message:</strong> {additionalMessage || "N/A"}
+      </Text>
     </Box>
   </ChakraProvider>
 );

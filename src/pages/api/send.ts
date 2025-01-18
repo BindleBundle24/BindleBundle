@@ -23,12 +23,13 @@ export default async function handler(
             serviceType,
             propertySize,
             otherSpeciality,
+            additionalMessage
         } = req.body;
 
         try {
             const emailData = {
-                from: "Bindle Bundle Movers <info@bindlebundlemovers.com>",
-                to: ["henryugo@outlook.com"],
+                from: "Bindle Bundle Movers <moving@bindlebundlemovers.com>",
+                to: ["info@bindlebundlemovers.com"],
                 subject: "New Moving Details Submission",
                 react: EmailFormTemplate({
                     fullName,
@@ -44,6 +45,7 @@ export default async function handler(
                     serviceType,
                     propertySize,
                     otherSpeciality,
+                    additionalMessage
                 }),
             };
 

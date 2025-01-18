@@ -16,8 +16,8 @@ export default async function handler(
 
         try {
             const emailData = {
-                from: "Bindle Bundle Movers <info@bindlebundlemovers.com>",
-                to: "henryugo@outlook.com",
+                from: "Bindle Bundle Movers <contact@bindlebundlemovers.com>",
+                to: "info@bindlebundlemovers.com",
                 subject: "A new message from Bindle Bundle Movers",
                 react: EmailContactUsTemplate(
                     { fullName, email, phoneNumber, message }),
