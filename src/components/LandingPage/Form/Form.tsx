@@ -177,8 +177,8 @@ export const MovingForm = ({ isOpen, onClose }: FormProps) => {
     <>
       <Box
         width={{ base: "100%", xl: "707px" }}
-        height={{ base: "100%", xl: "674px" }}
-        maxHeight={{ base: "120vh", xl: "674px" }}
+        height={{ base: "100%", xl: "640px" }}
+        maxHeight={{ base: "120vh", xl: "640px" }}
         display={success ? "none" : "flex"}
         flexDirection={"column"}
         justifyContent={"center"}
